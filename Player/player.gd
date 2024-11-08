@@ -22,6 +22,8 @@ enum Glasses {
 	MONOCLE
 } 
 
+
+static var obtained_glasses = [Glasses.NONE]
 static var worn_glasses = Glasses.NONE
 
 signal glasses_changed(old_glasses : Glasses, new_glasses : Glasses)
@@ -29,17 +31,51 @@ signal glasses_changed(old_glasses : Glasses, new_glasses : Glasses)
 func _init() -> void:
 	instance = self
 
-func _process(delta: float) -> void:
-	if Input.is_key_pressed(KEY_1):
-		put_on_glasses(Glasses.SUNGLASSES)
-	pass
+func _input(event: InputEvent) -> void:
+	var desired_switch = null
 	
-func put_on_glasses(new_glasses):
-	glasses_changed.emit(worn_glasses,new_glasses)
+	if event.is_action_pressed("unequip"):
+		desired_switch = Glasses.NONE
+	elif event.is_action_pressed("equip_sunglasses"):
+		desired_switch = Glasses.SUNGLASSES
+	elif event.is_action_pressed("equip_infared"):
+		desired_switch = Glasses.INFARED
+	elif event.is_action_pressed("equip_smart"):
+		desired_switch = Glasses.SMART
+	elif event.is_action_pressed("equip_drone"):
+		desired_switch = Glasses.DRONE
+	elif event.is_action_pressed("equip_lidar"):
+		desired_switch = Glasses.LIDAR
+	elif event.is_action_pressed("equip_normal"):
+		desired_switch = Glasses.NORMAL
+	elif event.is_action_pressed("equip_kaleidoscope"):
+		desired_switch = Glasses.KALEIDOSCOPE
+	elif event.is_action_pressed("equip_monocle"):
+		desired_switch = Glasses.MONOCLE
+	
+	
+	
+	if desired_switch != null and obtained_glasses.has(desired_switch):
+		switch_glasses(desired_switch)
+		
+		
+	
+func grant_glasses(new_glasses):
+	if !obtained_glasses.has(new_glasses):
+		obtained_glasses.append(new_glasses)
+	else:
+		printerr("Player: Error! player already has these glasses")
+		
+	
+	switch_glasses(new_glasses)
+	
+	
+func switch_glasses(new_glasses):
+	print(new_glasses)
+	glasses_changed.emit(worn_glasses,new_glasses)	
 	
 func _on_glasses_changed(old_glasses: int, new_glasses: int) -> void:
 	self.worn_glasses = new_glasses
-	print(self.worn_glasses)
 	pass # Replace with function body.
 
 func _physics_process(delta):
