@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1ddculbd8x03"]
+
+[ext_resource type="PackedScene" uid="uid://u4ayn3q3dre" path="res://Interactable/interactable.tscn" id="1_80jmk"]
+[ext_resource type="Script" path="res://Interactable/Glasses/Kaleidoscope/kaleidoscope_glasses_pickup.gd" id="2_obrxv"]
+[ext_resource type="Texture2D" uid="uid://cknv8qqt8usjd" path="res://Interactable/Glasses/Sunglasses/glasses.png" id="3_5nrkb"]
+
+[node name="KaleidoscopeGlassesPickup" instance=ExtResource("1_80jmk")]
+script = ExtResource("2_obrxv")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("3_5nrkb")

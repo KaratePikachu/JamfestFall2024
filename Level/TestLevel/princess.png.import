@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://noiqxfa6cuxu"
-path="res://.godot/imported/full_heart.png-457e936ccab0d8eb78ec99602d5e2d7e.ctex"
+uid="uid://cxl5cvsgyxcoe"
+path="res://.godot/imported/princess.png-7519d3e22f81dcd1e8b2787efc204094.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/full_heart.png"
-dest_files=["res://.godot/imported/full_heart.png-457e936ccab0d8eb78ec99602d5e2d7e.ctex"]
+source_file="res://Level/TestLevel/princess.png"
+dest_files=["res://.godot/imported/princess.png-7519d3e22f81dcd1e8b2787efc204094.ctex"]
 
 [params]
 

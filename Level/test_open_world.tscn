@@ -1,0 +1,63 @@
+[gd_scene load_steps=4 format=3 uid="uid://bubey2aaxawy6"]
+
+[ext_resource type="PackedScene" uid="uid://u5vlmp8hm4ku" path="res://Player/player.tscn" id="1_svam2"]
+[ext_resource type="Texture2D" uid="uid://cxl5cvsgyxcoe" path="res://Level/TestLevel/princess.png" id="2_wrlyu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jw1re"]
+size = Vector2(1527.41, 382.014)
+
+[node name="TestOpenWorld" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-66, 610)
+scale = Vector2(1.465, 1.465)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(753.703, 181.007)
+shape = SubResource("RectangleShape2D_jw1re")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
+offset_left = -10.2389
+offset_top = -8.87372
+offset_right = 29.7611
+offset_bottom = 31.1263
+scale = Vector2(37.5051, 9.19112)
+
+[node name="Player" parent="StaticBody2D" instance=ExtResource("1_svam2")]
+position = Vector2(375.427, -269.625)
+
+[node name="Camera2D" type="Camera2D" parent="StaticBody2D/Player"]
+position = Vector2(-0.682556, 4.09557)
+scale = Vector2(0.682594, 0.682594)
+
+[node name="temp" type="Node2D" parent="."]
+
+[node name="Princess" type="Sprite2D" parent="temp"]
+position = Vector2(477, 532)
+scale = Vector2(1.465, 1.465)
+texture = ExtResource("2_wrlyu")
+
+[node name="Princess2" type="Sprite2D" parent="temp"]
+position = Vector2(955, 411)
+scale = Vector2(1.465, 1.465)
+texture = ExtResource("2_wrlyu")
+
+[node name="Princess3" type="Sprite2D" parent="temp"]
+position = Vector2(1398, 530)
+scale = Vector2(1.465, 1.465)
+texture = ExtResource("2_wrlyu")
+
+[node name="Princess4" type="Sprite2D" parent="temp"]
+position = Vector2(64, 332)
+scale = Vector2(1.465, 1.465)
+texture = ExtResource("2_wrlyu")
+
+[node name="Princess5" type="Sprite2D" parent="temp"]
+position = Vector2(1436, 300)
+scale = Vector2(1.465, 1.465)
+texture = ExtResource("2_wrlyu")
+
+[node name="Princess6" type="Sprite2D" parent="temp"]
+position = Vector2(1993, 508)
+scale = Vector2(1.465, 1.465)
+texture = ExtResource("2_wrlyu")
