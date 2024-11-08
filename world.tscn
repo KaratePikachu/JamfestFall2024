@@ -1,7 +1,7 @@
 [gd_scene load_steps=23 format=3 uid="uid://de7qapkqfycxl"]
 
 [ext_resource type="Texture2D" uid="uid://cs8h2qyuakmko" path="res://level/obstacle.png" id="2"]
-[ext_resource type="PackedScene" path="res://player/player.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://u5vlmp8hm4ku" path="res://Player/Player.tscn" id="3"]
 [ext_resource type="Texture2D" uid="uid://cxl5cvsgyxcoe" path="res://level/princess.png" id="4"]
 [ext_resource type="Texture2D" uid="uid://1ign8s1w414r" path="res://level/circle.png" id="5"]
 [ext_resource type="Texture2D" uid="uid://hp84e6iwjqjy" path="res://level/long_obstacle.png" id="6"]
@@ -276,6 +276,6 @@ shape = SubResource("12")
 offset = Vector2(265, 247)
 
 [node name="Player" parent="." instance=ExtResource("3")]
-position = Vector2(233.06, 223.436)
+position = Vector2(155, 54)
 
 [connection signal="body_entered" from="Princess" to="Princess" method="_on_body_entered"]
