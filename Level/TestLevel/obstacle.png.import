@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hp84e6iwjqjy"
-path="res://.godot/imported/long_obstacle.png-d70ee394f796e1de9a423783aa84ec5d.ctex"
+uid="uid://cs8h2qyuakmko"
+path="res://.godot/imported/obstacle.png-e85126deb087f152c0b84c8776b00858.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://level/long_obstacle.png"
-dest_files=["res://.godot/imported/long_obstacle.png-d70ee394f796e1de9a423783aa84ec5d.ctex"]
+source_file="res://Level/TestLevel/obstacle.png"
+dest_files=["res://.godot/imported/obstacle.png-e85126deb087f152c0b84c8776b00858.ctex"]
 
 [params]
 
