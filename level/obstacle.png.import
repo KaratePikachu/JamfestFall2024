@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://noiqxfa6cuxu"
-path="res://.godot/imported/full_heart.png-457e936ccab0d8eb78ec99602d5e2d7e.ctex"
+uid="uid://cs8h2qyuakmko"
+path="res://.godot/imported/obstacle.png-06287f6b2d26dd03335fd87ab78c2cc2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/full_heart.png"
-dest_files=["res://.godot/imported/full_heart.png-457e936ccab0d8eb78ec99602d5e2d7e.ctex"]
+source_file="res://level/obstacle.png"
+dest_files=["res://.godot/imported/obstacle.png-06287f6b2d26dd03335fd87ab78c2cc2.ctex"]
 
 [params]
 

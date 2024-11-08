@@ -1,34 +1,32 @@
-class_name Player extends CharacterBody2D
-@export var move_speed: float = 500.0 ## Move speed in pixels per second
-@onready var force_applied: Vector2 = Vector2.ZERO ## All external forces
-@export var knockback_friction: float = 5.0 ## How fast the player slows down
+extends CharacterBody2D
 
-static var instance: Player
+const WALK_FORCE = 600
+const WALK_MAX_SPEED = 200
+const STOP_FORCE = 1300
+const JUMP_SPEED = 200
 
+@onready var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-enum VisionType {
-  NONE,
-  SUNGLASSES,
-  IR,
-}
+func _physics_process(delta):
+	# Horizontal movement code. First, get the player's input.
+	var walk = WALK_FORCE * (Input.get_axis(&"move_left", &"move_right"))
+	# Slow down the player if they're not trying to move.
+	if abs(walk) < WALK_FORCE * 0.2:
+		# The velocity, slowed down a bit, and then reassigned.
+		velocity.x = move_toward(velocity.x, 0, STOP_FORCE * delta)
+	else:
+		velocity.x += walk * delta
+	# Clamp to the maximum horizontal movement speed.
+	velocity.x = clamp(velocity.x, -WALK_MAX_SPEED, WALK_MAX_SPEED)
 
-func _init() -> void:
-	instance = self
-	
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+	# Vertical movement code. Apply gravity.
+	velocity.y += gravity * delta
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
-func _physics_process(delta: float) -> void:
-	# normal movement input is not processed while rolling
-	velocity = Input.get_vector("move_left", "move_right", "jump", "jump") * move_speed
-	
-	velocity += force_applied 	
-	force_applied = force_applied.lerp(Vector2.ZERO, delta * knockback_friction)
+	# Move based on the velocity and snap to the ground.
+	# TODO: This information should be set to the CharacterBody properties instead of arguments: snap, Vector2.DOWN, Vector2.UP
+	# TODO: Rename velocity to linear_velocity in the rest of the script.
 	move_and_slide()
+
+	# Check for jumping. is_on_floor() must be called after movement code.
+	if is_on_floor() and Input.is_action_just_pressed(&"jump"):
+		velocity.y = -JUMP_SPEED
