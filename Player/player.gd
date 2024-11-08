@@ -20,7 +20,18 @@ enum Glasses {
 	MONOCLE
 } 
 
-static var worn_glasses : Glasses;
+static var worn_glasses = Glasses.NONE
+
+signal glasses_changed(old_glasses : Glasses, new_glasses : Glasses)
+
+func _process(delta: float) -> void:
+	if Input.is_key_pressed(KEY_1):
+		glasses_changed.emit(worn_glasses,Glasses.SUNGLASSES)
+	pass
+	
+func _on_glasses_changed(old_glasses: int, new_glasses: int) -> void:
+	worn_glasses = new_glasses
+	pass # Replace with function body.
 
 func _physics_process(delta):
 	# Horizontal movement code. First, get the player's input.

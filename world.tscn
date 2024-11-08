@@ -279,3 +279,4 @@ offset = Vector2(265, 247)
 position = Vector2(155, 54)
 
 [connection signal="body_entered" from="Princess" to="Princess" method="_on_body_entered"]
+[connection signal="glasses_changed" from="Player" to="Player" method="_on_glasses_changed"]
