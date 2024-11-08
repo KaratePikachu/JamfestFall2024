@@ -6,6 +6,12 @@ class_name Player extends CharacterBody2D
 static var instance: Player
 
 
+enum VisionType {
+  NONE,
+  SUNGLASSES,
+  IR,
+}
+
 func _init() -> void:
 	instance = self
 	
