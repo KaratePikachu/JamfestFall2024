@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://bk88m1w1rap0u"]
+
+[ext_resource type="Shader" path="res://Shaders/new_shader.gdshader" id="1_4ogih"]
+[ext_resource type="Texture2D" uid="uid://b4kmo1gwee084" path="res://Shaders/20230708_101806-47f4.jpg" id="1_a7o3d"]
+[ext_resource type="Script" path="res://Shaders/testCanvasModule.gd" id="2_tdoqe"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iob2y"]
+shader = ExtResource("1_4ogih")
+shader_parameter/scale = 3.832
+
+[node name="TestHSaders" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_iob2y")
+texture = ExtResource("1_a7o3d")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer"]
+script = ExtResource("2_tdoqe")
