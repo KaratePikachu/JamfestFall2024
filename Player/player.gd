@@ -1,9 +1,11 @@
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
 
 const WALK_FORCE = 600
 const WALK_MAX_SPEED = 200
 const STOP_FORCE = 1300
 const JUMP_SPEED = 200
+
+static var instance : Player
 
 @onready var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -23,6 +25,9 @@ enum Glasses {
 static var worn_glasses = Glasses.NONE
 
 signal glasses_changed(old_glasses : Glasses, new_glasses : Glasses)
+
+func _init() -> void:
+	instance = self
 
 func _process(delta: float) -> void:
 	if Input.is_key_pressed(KEY_1):
