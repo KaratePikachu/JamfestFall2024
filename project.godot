@@ -29,6 +29,7 @@ window/stretch/aspect="expand"
 [file_customization]
 
 folder_colors={
+"res://Enviorment/": "orange",
 "res://Interactable/": "red",
 "res://Level/": "green",
 "res://Objects/": "gray",
@@ -124,7 +125,7 @@ equip_monocle={
 [physics]
 
 common/physics_ticks_per_second=120
-2d/default_gravity=500
+2d/default_gravity=3000
 
 [rendering]
 

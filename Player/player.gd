@@ -1,9 +1,9 @@
 class_name Player extends CharacterBody2D
 
-const WALK_FORCE = 1000
-const WALK_MAX_SPEED = 400
+const WALK_FORCE = 2000
+const WALK_MAX_SPEED = 450
 const STOP_FORCE = 1800
-const JUMP_SPEED = 400
+const JUMP_SPEED = 1000
 
 static var instance : Player
 
