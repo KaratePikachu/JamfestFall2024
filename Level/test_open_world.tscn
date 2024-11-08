@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bubey2aaxawy6"]
+[gd_scene load_steps=4 format=3 uid="uid://d1kjkl2jsqa1j"]
 
 [ext_resource type="PackedScene" uid="uid://u5vlmp8hm4ku" path="res://Player/player.tscn" id="1_svam2"]
 [ext_resource type="Texture2D" uid="uid://cxl5cvsgyxcoe" path="res://Level/TestLevel/princess.png" id="2_wrlyu"]
