@@ -1,20 +1,33 @@
-[gd_scene load_steps=5 format=3 uid="uid://bk88m1w1rap0u"]
+[gd_scene load_steps=6 format=3 uid="uid://bk88m1w1rap0u"]
 
-[ext_resource type="Shader" path="res://Shaders/new_shader.gdshader" id="1_4ogih"]
 [ext_resource type="Texture2D" uid="uid://b4kmo1gwee084" path="res://Shaders/20230708_101806-47f4.jpg" id="1_a7o3d"]
+[ext_resource type="Shader" path="res://Shaders/test_sceen_texture.gdshader" id="1_xw2sn"]
 [ext_resource type="Script" path="res://Shaders/testCanvasModule.gd" id="2_tdoqe"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_iob2y"]
-shader = ExtResource("1_4ogih")
-shader_parameter/scale = 3.832
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oi0xf"]
+shader = ExtResource("1_xw2sn")
+shader_parameter/brightness = 10.0
+shader_parameter/contrast = 1.0
+shader_parameter/saturation = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d6met"]
+resource_local_to_scene = true
+shader = ExtResource("1_xw2sn")
+shader_parameter/brightness = 1.0
+shader_parameter/contrast = 1.0
+shader_parameter/saturation = 1.0
 
 [node name="TestHSaders" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_iob2y")
-texture = ExtResource("1_a7o3d")
+[node name="BackBufferCopy" type="BackBufferCopy" parent="."]
+material = SubResource("ShaderMaterial_oi0xf")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="BackBufferCopy"]
 
-[node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer"]
+[node name="CanvasModulate" type="CanvasModulate" parent="BackBufferCopy/CanvasLayer"]
+clip_children = 1
+material = SubResource("ShaderMaterial_d6met")
 script = ExtResource("2_tdoqe")
+
+[node name="Sprite2D" type="Sprite2D" parent="BackBufferCopy"]
+texture = ExtResource("1_a7o3d")

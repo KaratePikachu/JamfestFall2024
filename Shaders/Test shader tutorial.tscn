@@ -1,14 +1,18 @@
 [gd_scene load_steps=4 format=3 uid="uid://be4igra1vheo1"]
 
-[ext_resource type="Shader" path="res://Shaders/new_shader.gdshader" id="1_vynaa"]
+[ext_resource type="Shader" path="res://Shaders/test_sceen_texture.gdshader" id="1_qctae"]
 [ext_resource type="Texture2D" uid="uid://b4kmo1gwee084" path="res://Shaders/20230708_101806-47f4.jpg" id="2_b0cqm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r7gsa"]
-shader = ExtResource("1_vynaa")
-shader_parameter/scale = 1.0
+shader = ExtResource("1_qctae")
+shader_parameter/brightness = 1.0
+shader_parameter/contrast = 1.0
+shader_parameter/saturation = 1.0
 
 [node name="Node2D" type="Node2D"]
 
-[node name="20230708101806-47f4" type="Sprite2D" parent="."]
+[node name="BackBufferCopy" type="BackBufferCopy" parent="."]
+
+[node name="20230708101806-47f4" type="Sprite2D" parent="BackBufferCopy"]
 material = SubResource("ShaderMaterial_r7gsa")
 texture = ExtResource("2_b0cqm")
