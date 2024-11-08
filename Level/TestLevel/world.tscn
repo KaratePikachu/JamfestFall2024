@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cxl5cvsgyxcoe" path="res://Level/TestLevel/princess.png" id="3_f8m6e"]
 [ext_resource type="Texture2D" uid="uid://1ign8s1w414r" path="res://Level/TestLevel/circle.png" id="4_xsv0w"]
 [ext_resource type="Texture2D" uid="uid://hp84e6iwjqjy" path="res://Level/TestLevel/long_obstacle.png" id="5_panxe"]
-[ext_resource type="PackedScene" uid="uid://u5vlmp8hm4ku" path="res://Player/Player.tscn" id="6_flw6u"]
+[ext_resource type="PackedScene" uid="uid://u5vlmp8hm4ku" path="res://Player/player.tscn" id="6_flw6u"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_on5ov"]
 
@@ -276,7 +276,6 @@ shape = SubResource("12")
 offset = Vector2(265, 247)
 
 [node name="Player" parent="." instance=ExtResource("6_flw6u")]
-position = Vector2(155, 54)
+position = Vector2(175, 62)
 
 [connection signal="body_entered" from="Princess" to="Princess" method="_on_body_entered"]
-[connection signal="glasses_changed" from="Player" to="Player" method="_on_glasses_changed"]
