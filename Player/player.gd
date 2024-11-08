@@ -7,6 +7,21 @@ const JUMP_SPEED = 200
 
 @onready var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+
+enum Glasses {
+	NONE,
+	SUNGLASSES,
+	INFARED,
+	SMART,
+	DRONE,
+	LIDAR,
+	NORMAL,
+	KALEIDOSCOPE,
+	MONOCLE
+} 
+
+static var worn_glasses : Glasses;
+
 func _physics_process(delta):
 	# Horizontal movement code. First, get the player's input.
 	var walk = WALK_FORCE * (Input.get_axis(&"move_left", &"move_right"))
