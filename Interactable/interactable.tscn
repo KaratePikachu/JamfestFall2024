@@ -1,19 +1,18 @@
 [gd_scene load_steps=4 format=3 uid="uid://u4ayn3q3dre"]
 
-[ext_resource type="Texture2D" uid="uid://cknv8qqt8usjd" path="res://Items/Glasses/Generic/glasses.png" id="1_muyig"]
-[ext_resource type="Script" path="res://Items/Glasses/Generic/generic_glasses_pickup.gd" id="1_mwdno"]
+[ext_resource type="Script" path="res://Interactable/interactable.gd" id="1_mwdno"]
+[ext_resource type="Texture2D" uid="uid://b6xec1krmix1b" path="res://Interactable/full_heart.png" id="2_i2g7v"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jwq1a"]
 
-[node name="Pickup" type="Area2D"]
+[node name="Interactable" type="Area2D"]
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_mwdno")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.05, 0.05)
-texture = ExtResource("1_muyig")
+texture = ExtResource("2_i2g7v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.315559, 0.157784)
 shape = SubResource("CircleShape2D_jwq1a")

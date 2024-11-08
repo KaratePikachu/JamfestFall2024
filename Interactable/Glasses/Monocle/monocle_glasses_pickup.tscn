@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://2q73ao7wr7sb"]
+
+[ext_resource type="PackedScene" uid="uid://u4ayn3q3dre" path="res://Interactable/interactable.tscn" id="1_jgveb"]
+[ext_resource type="Script" path="res://Interactable/Glasses/Monocle/monocle_glasses_pickup.gd" id="2_ohi1b"]
+[ext_resource type="Texture2D" uid="uid://cknv8qqt8usjd" path="res://Interactable/Glasses/Sunglasses/glasses.png" id="3_86eo3"]
+
+[node name="MonocleGlassesPickup" instance=ExtResource("1_jgveb")]
+script = ExtResource("2_ohi1b")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("3_86eo3")
