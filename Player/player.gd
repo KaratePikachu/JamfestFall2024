@@ -39,6 +39,7 @@ func put_on_glasses(new_glasses):
 	
 func _on_glasses_changed(old_glasses: int, new_glasses: int) -> void:
 	self.worn_glasses = new_glasses
+	print(self.worn_glasses)
 	pass # Replace with function body.
 
 func _physics_process(delta):
