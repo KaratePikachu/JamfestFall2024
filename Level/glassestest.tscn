@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://ckq0spk63sqja" path="res://Interactable/Glasses/Lidar/lidar_glasses_pickup.tscn" id="12_wgqg5"]
 [ext_resource type="PackedScene" uid="uid://b1ddculbd8x03" path="res://Interactable/Glasses/Kaleidoscope/kaleidoscope_glasses_pickup.tscn" id="14_ypcft"]
 [ext_resource type="PackedScene" uid="uid://2q73ao7wr7sb" path="res://Interactable/Glasses/Monocle/monocle_glasses_pickup.tscn" id="15_qvcqj"]
-[ext_resource type="PackedScene" uid="uid://h1vg2qyr6ug2" path="res://Objects/dark_platform.tscn" id="16_l12yt"]
+[ext_resource type="PackedScene" uid="uid://h1vg2qyr6ug2" path="res://Objects/Dark Platform/dark_platform.tscn" id="16_l12yt"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p2x72"]
 shader = ExtResource("3_hdps6")

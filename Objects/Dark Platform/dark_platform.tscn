@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://h1vg2qyr6ug2"]
 
-[ext_resource type="Script" path="res://Objects/dark_platform.gd" id="1_kfo4g"]
+[ext_resource type="Script" path="res://Objects/Dark Platform/dark_platform.gd" id="1_kfo4g"]
 [ext_resource type="Texture2D" uid="uid://cs8h2qyuakmko" path="res://Level/TestLevel/obstacle.png" id="2_wfm86"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ddgo1"]
