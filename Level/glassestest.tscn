@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dslhk34jkqehp"]
+[gd_scene load_steps=20 format=3 uid="uid://dslhk34jkqehp"]
 
 [ext_resource type="PackedScene" uid="uid://b68p8jegitusu" path="res://Enviorment/DeathSquare/death_square.tscn" id="1_w7orw"]
 [ext_resource type="PackedScene" uid="uid://u5vlmp8hm4ku" path="res://Player/player.tscn" id="2_nafhv"]
@@ -15,7 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://ckq0spk63sqja" path="res://Interactable/Glasses/Lidar/lidar_glasses_pickup.tscn" id="12_wgqg5"]
 [ext_resource type="PackedScene" uid="uid://b1ddculbd8x03" path="res://Interactable/Glasses/Kaleidoscope/kaleidoscope_glasses_pickup.tscn" id="14_ypcft"]
 [ext_resource type="PackedScene" uid="uid://2q73ao7wr7sb" path="res://Interactable/Glasses/Monocle/monocle_glasses_pickup.tscn" id="15_qvcqj"]
-[ext_resource type="PackedScene" uid="uid://h1vg2qyr6ug2" path="res://Objects/Dark Platform/dark_platform.tscn" id="16_l12yt"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p2x72"]
 shader = ExtResource("3_hdps6")
@@ -143,8 +142,5 @@ position = Vector2(1309, 534)
 
 [node name="MonocleGlassesPickup" parent="." instance=ExtResource("15_qvcqj")]
 position = Vector2(1437, 537)
-
-[node name="DarkPlatform" parent="." instance=ExtResource("16_l12yt")]
-position = Vector2(391, 535)
 
 [connection signal="triggered" from="Switch" to="Door" method="_on_triggered"]

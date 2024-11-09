@@ -29,7 +29,8 @@ static var worn_glasses = Glasses.NONE
 signal glasses_changed(old_glasses : Glasses, new_glasses : Glasses)
 
 func _init() -> void:
-	instance = self
+	if(instance == null):
+		instance = self
 	
 func _ready() -> void:
 	grant_glasses(Glasses.NONE)
