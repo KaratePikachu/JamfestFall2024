@@ -133,7 +133,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Enemy" parent="." instance=ExtResource("8_ovm8l")]
-position = Vector2(1023, 545)
+position = Vector2(1603, 530)
 isSpinning = true
 
 [node name="NormalGlassesPickup" parent="." instance=ExtResource("9_0o1u1")]
