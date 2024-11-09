@@ -6,12 +6,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ufkie"]
 size = Vector2(105, 91)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_rlefm"]
-a = Vector2(78.69, 1)
-b = Vector2(-111.31, 45)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_0o2so"]
-b = Vector2(-191, -62)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_umrop"]
+size = Vector2(117, 104)
 
 [node name="Enemy" type="CharacterBody2D"]
 script = ExtResource("1_2de7v")
