@@ -115,6 +115,18 @@ color = Color(1, 0, 0, 1)
 
 [node name="VisionEffects" parent="." instance=ExtResource("6_o2frb")]
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_jqcd5")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
 [node name="Enemy" parent="." instance=ExtResource("8_ovm8l")]
 position = Vector2(1023, 545)
 
