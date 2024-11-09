@@ -76,7 +76,7 @@ scale = Vector2(0.702462, 37.3872)
 
 [node name="Player" parent="." instance=ExtResource("2_q76co")]
 material = SubResource("ShaderMaterial_p2x72")
-position = Vector2(467, 360)
+position = Vector2(468, 364)
 scale = Vector2(1.465, 1.465)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -123,7 +123,6 @@ scale = Vector2(2, 1.465)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/StaticBody2D"]
 position = Vector2(976, 186.348)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_jw1re")
 
 [node name="ColorRect" type="ColorRect" parent="Floor/StaticBody2D"]
