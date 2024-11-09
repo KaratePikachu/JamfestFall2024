@@ -1,11 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://bctlrrfwdo0e4"]
+[gd_scene load_steps=9 format=3 uid="uid://c0r6y44m2xc3d"]
 
-[ext_resource type="PackedScene" uid="uid://dahe3mxk2aea5" path="res://Objects/tile_map_layers.tscn" id="1_ckgsx"]
+[ext_resource type="PackedScene" uid="uid://dajpedmmp6a8i" path="res://Objects/tile_map_layers.tscn" id="1_ckgsx"]
 [ext_resource type="PackedScene" uid="uid://u5vlmp8hm4ku" path="res://Player/player.tscn" id="2_1spve"]
 [ext_resource type="Shader" path="res://Shaders/blur.gdshader" id="3_y5n8n"]
 [ext_resource type="PackedScene" uid="uid://dp7fxu33gf8m0" path="res://Canvas/vision_effects.tscn" id="7_ev5ol"]
 [ext_resource type="PackedScene" uid="uid://cc4ppwhyjy67u" path="res://Interactable/Glasses/Sunglasses/sunglasses_pickup.tscn" id="8_5uihc"]
-[ext_resource type="PackedScene" uid="uid://c0irdu28sl6ah" path="res://Interactable/Glasses/Infared/infared_glasses_pickup.tscn" id="9_mgjx3"]
+[ext_resource type="PackedScene" path="res://Interactable/Glasses/Infared/infared_glasses_pickup.tscn" id="9_mgjx3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p2x72"]
 shader = ExtResource("3_y5n8n")
@@ -42,4 +42,4 @@ position = Vector2(-0.682969, -33.4467)
 position = Vector2(647, 231)
 
 [node name="InfaredGlassesPickup" parent="." instance=ExtResource("9_mgjx3")]
-position = Vector2(304, 237)
+position = Vector2(352, 231)

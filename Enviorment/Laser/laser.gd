@@ -1,10 +1,10 @@
 extends Area2D
 
-@expo rt var loop_time : int = 5
+@export var loop_time : int = 5
 
 # Called when the node enters the scene tree for the first time.
-fun  c _ready() -> void:
-   	Player.instance.glasses_changed.connect(_on_glasses_change)
+func _ready() -> void:
+	Player.instance.glasses_changed.connect(_on_glasses_change)
 	$Timer.wait_time = loop_time
 
 func _on_body_entered(body: Node2D) -> void:
