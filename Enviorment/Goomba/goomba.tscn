@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://cf5674d77sx2n"]
+
+[ext_resource type="Texture2D" uid="uid://da2cvolycwt0q" path="res://Enviorment/Goomba/reswdgswerdg.png" id="1_g16gs"]
+[ext_resource type="Script" path="res://Enviorment/Goomba/goomba.gd" id="1_oynve"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cabqk"]
+size = Vector2(60, 109)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jkce1"]
+size = Vector2(63, 112.602)
+
+[node name="Goomba" type="CharacterBody2D"]
+script = ExtResource("1_oynve")
+
+[node name="Reswdgswerdg" type="Sprite2D" parent="."]
+position = Vector2(1, -1)
+scale = Vector2(0.279999, 0.279999)
+texture = ExtResource("1_g16gs")
+
+[node name="RightRightRaycast" type="RayCast2D" parent="."]
+position = Vector2(33, 48)
+scale = Vector2(1, 0.989344)
+target_position = Vector2(2, 0)
+
+[node name="RightDownRaycast" type="RayCast2D" parent="."]
+position = Vector2(33, 48)
+scale = Vector2(1, 0.989344)
+target_position = Vector2(0, 39.4201)
+hit_from_inside = true
+
+[node name="LeftLeftRaycast" type="RayCast2D" parent="."]
+position = Vector2(-31, 49)
+scale = Vector2(1, 0.994658)
+target_position = Vector2(-2, 0)
+
+[node name="LeftDownRaycast" type="RayCast2D" parent="."]
+position = Vector2(-31, 49)
+scale = Vector2(1, 0.994658)
+target_position = Vector2(0, 38.2041)
+hit_from_inside = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -1.5)
+scale = Vector2(1, 0.994658)
+shape = SubResource("RectangleShape2D_cabqk")
+
+[node name="Aura" type="Area2D" parent="."]
+position = Vector2(-31, 49)
+scale = Vector2(1, 0.994658)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Aura"]
+position = Vector2(31.5, -50.2685)
+shape = SubResource("RectangleShape2D_jkce1")
+
+[connection signal="body_entered" from="Aura" to="." method="_on_aura_body_entered"]

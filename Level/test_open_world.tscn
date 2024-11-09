@@ -1,16 +1,16 @@
-[gd_scene load_steps=16 format=3 uid="uid://d1kjkl2jsqa1j"]
+[gd_scene load_steps=17 format=3 uid="uid://d1kjkl2jsqa1j"]
 
-[ext_resource type="Shader" path="res://Shaders/blur.gdshader" id="1_of5qh"]
+[ext_resource type="Shader" path="res://Shaders/Blur.gdshader" id="1_of5qh"]
 [ext_resource type="PackedScene" uid="uid://u5vlmp8hm4ku" path="res://Player/player.tscn" id="1_svam2"]
 [ext_resource type="PackedScene" uid="uid://b68p8jegitusu" path="res://Enviorment/DeathSquare/death_square.tscn" id="2_sh6tp"]
 [ext_resource type="Texture2D" uid="uid://cxl5cvsgyxcoe" path="res://Level/TestLevel/princess.png" id="2_wrlyu"]
 [ext_resource type="PackedScene" uid="uid://bmvu0eqsw4qql" path="res://Interactable/Switch/switch.tscn" id="4_2pa1x"]
 [ext_resource type="PackedScene" uid="uid://lpj2ux5e6qek" path="res://Interactable/Door/Door.tscn" id="6_mqqco"]
 [ext_resource type="PackedScene" uid="uid://dp7fxu33gf8m0" path="res://Canvas/vision_effects.tscn" id="6_o2frb"]
-[ext_resource type="PackedScene" uid="uid://cc4ppwhyjy67u" path="res://Interactable/Glasses/Sunglasses/sunglasses_pickup.tscn" id="7_8mvxf"]
 [ext_resource type="PackedScene" uid="uid://qa6itmjrn43y" path="res://Enviorment/Enemy/enemy.tscn" id="8_ovm8l"]
 [ext_resource type="PackedScene" uid="uid://c2c6j0ido1yw4" path="res://Interactable/Glasses/Normal/normal_glasses_pickup.tscn" id="9_0o1u1"]
 [ext_resource type="PackedScene" uid="uid://dn36wd0cgi5j4" path="res://Enviorment/Laser/Laser.tscn" id="10_y6amp"]
+[ext_resource type="PackedScene" uid="uid://cf5674d77sx2n" path="res://Enviorment/Goomba/goomba.tscn" id="11_y8ei8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p2x72"]
 shader = ExtResource("1_of5qh")
@@ -30,6 +30,13 @@ shader_parameter/y_blur_offest = 0.99
 size = Vector2(1527.41, 382.014)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lmnva"]
+shader = ExtResource("1_of5qh")
+shader_parameter/scale = 1.0
+shader_parameter/lod = 0.0
+shader_parameter/x_blur_offest = 0.0
+shader_parameter/y_blur_offest = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jqcd5"]
 shader = ExtResource("1_of5qh")
 shader_parameter/scale = 1.0
 shader_parameter/lod = 0.0
@@ -114,6 +121,19 @@ scale = Vector2(1.08, 8.64)
 color = Color(0.6, 0.6, 0.6, 1)
 
 [node name="VisionEffects" parent="." instance=ExtResource("6_o2frb")]
+visible = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_jqcd5")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="Enemy" parent="." instance=ExtResource("8_ovm8l")]
 position = Vector2(1603, 530)
@@ -126,7 +146,7 @@ position = Vector2(27, 632)
 scale = Vector2(1, -7.28)
 loop_time = 2
 
-[node name="SunglassesPickup" parent="." instance=ExtResource("7_8mvxf")]
-position = Vector2(397, 541)
+[node name="Goomba" parent="." instance=ExtResource("11_y8ei8")]
+position = Vector2(154, 526)
 
 [connection signal="triggered" from="Switch" to="Door" method="_on_triggered"]
