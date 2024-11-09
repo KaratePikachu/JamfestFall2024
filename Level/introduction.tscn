@@ -1,0 +1,182 @@
+[gd_scene load_steps=17 format=3 uid="uid://b88b22toehhyu"]
+
+[ext_resource type="PackedScene" uid="uid://b68p8jegitusu" path="res://Enviorment/DeathSquare/death_square.tscn" id="1_syrov"]
+[ext_resource type="PackedScene" uid="uid://u5vlmp8hm4ku" path="res://Player/player.tscn" id="2_q76co"]
+[ext_resource type="Shader" path="res://Shaders/Blur.gdshader" id="3_bmgtw"]
+[ext_resource type="PackedScene" uid="uid://bmvu0eqsw4qql" path="res://Interactable/Switch/switch.tscn" id="5_lu008"]
+[ext_resource type="PackedScene" uid="uid://lpj2ux5e6qek" path="res://Interactable/Door/Door.tscn" id="6_50eqa"]
+[ext_resource type="PackedScene" uid="uid://dp7fxu33gf8m0" path="res://Canvas/vision_effects.tscn" id="7_087av"]
+[ext_resource type="PackedScene" uid="uid://qa6itmjrn43y" path="res://Enviorment/Enemy/enemy.tscn" id="8_gg0iy"]
+[ext_resource type="PackedScene" uid="uid://c2c6j0ido1yw4" path="res://Interactable/Glasses/Normal/normal_glasses_pickup.tscn" id="9_ca8a4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p2x72"]
+shader = ExtResource("3_bmgtw")
+shader_parameter/scale = 1.0
+shader_parameter/lod = 0.0
+shader_parameter/x_blur_offest = 1.262
+shader_parameter/y_blur_offest = 1.565
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oogge"]
+shader = ExtResource("3_bmgtw")
+shader_parameter/scale = 1.0
+shader_parameter/lod = 0.0
+shader_parameter/x_blur_offest = 1.979
+shader_parameter/y_blur_offest = 0.99
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jqcd5"]
+shader = ExtResource("3_bmgtw")
+shader_parameter/scale = 1.0
+shader_parameter/lod = 0.0
+shader_parameter/x_blur_offest = 0.0
+shader_parameter/y_blur_offest = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jw1re"]
+size = Vector2(1514.68, 382.935)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m28ku"]
+size = Vector2(42.1, 11.7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3pfy2"]
+size = Vector2(346.5, 229)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_163dj"]
+size = Vector2(279, 230)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6yqr0"]
+size = Vector2(273, 43)
+
+[node name="TestOpenWorld" type="Node2D"]
+position = Vector2(-466, -368)
+
+[node name="Spikes" type="Node" parent="."]
+
+[node name="DeathSquare" parent="Spikes" instance=ExtResource("1_syrov")]
+position = Vector2(1294, 215)
+scale = Vector2(2, 2)
+
+[node name="DeathSquare2" parent="Spikes" instance=ExtResource("1_syrov")]
+position = Vector2(1345, 217)
+scale = Vector2(2, 2)
+
+[node name="DeathSquare3" parent="Spikes" instance=ExtResource("1_syrov")]
+position = Vector2(1396, 218)
+scale = Vector2(2, 2)
+
+[node name="DeathSquare" parent="." instance=ExtResource("1_syrov")]
+position = Vector2(243, 295)
+scale = Vector2(0.702462, 37.3872)
+
+[node name="Player" parent="." instance=ExtResource("2_q76co")]
+material = SubResource("ShaderMaterial_p2x72")
+position = Vector2(478, 365)
+scale = Vector2(1.465, 1.465)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+material = SubResource("ShaderMaterial_oogge")
+use_parent_material = true
+position = Vector2(-0.682969, -33.4467)
+
+[node name="Switch" parent="." instance=ExtResource("5_lu008")]
+position = Vector2(1566, 349)
+color = Color(0.6, 0.6, 0.6, 1)
+
+[node name="Door" parent="." instance=ExtResource("6_50eqa")]
+position = Vector2(1892, 231)
+scale = Vector2(1, 4)
+color = Color(1, 0, 0, 1)
+
+[node name="VisionEffects" parent="." instance=ExtResource("7_087av")]
+visible = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_jqcd5")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 127.0
+offset_top = 549.0
+offset_right = 127.0
+offset_bottom = 549.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Enemy" parent="." instance=ExtResource("8_gg0iy")]
+position = Vector2(1124, 442)
+
+[node name="NormalGlassesPickup" parent="." instance=ExtResource("9_ca8a4")]
+position = Vector2(125, 547)
+
+[node name="Floor" type="Node" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Floor"]
+position = Vector2(-532, 242)
+scale = Vector2(1.465, 1.465)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/StaticBody2D"]
+position = Vector2(1042.66, 189.42)
+shape = SubResource("RectangleShape2D_jw1re")
+
+[node name="ColorRect" type="ColorRect" parent="Floor/StaticBody2D"]
+offset_left = 292.15
+offset_top = 3.41297
+offset_right = 332.15
+offset_bottom = 43.413
+scale = Vector2(37.5051, 9.19112)
+metadata/_edit_use_anchors_ = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Floor"]
+position = Vector2(-466, -368)
+scale = Vector2(10, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/StaticBody2D2"]
+position = Vector2(105.65, 55.55)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_m28ku")
+
+[node name="ColorRect" type="ColorRect" parent="Floor/StaticBody2D2"]
+offset_left = 85.0
+offset_top = 50.0
+offset_right = 126.0
+offset_bottom = 62.0
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Floor"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/StaticBody2D3"]
+position = Vector2(1098.75, 134.5)
+shape = SubResource("RectangleShape2D_3pfy2")
+
+[node name="ColorRect" type="ColorRect" parent="Floor/StaticBody2D3"]
+offset_left = 932.0
+offset_top = 23.0
+offset_right = 1264.0
+offset_bottom = 247.0
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Floor"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/StaticBody2D4"]
+position = Vector2(1561, 137)
+shape = SubResource("RectangleShape2D_163dj")
+
+[node name="ColorRect" type="ColorRect" parent="Floor/StaticBody2D4"]
+offset_left = 1424.0
+offset_top = 24.0
+offset_right = 1695.0
+offset_bottom = 249.0
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="Floor"]
+
+[node name="ColorRect" type="ColorRect" parent="Floor/StaticBody2D5"]
+offset_left = 1425.0
+offset_top = -174.0
+offset_right = 1703.0
+offset_bottom = -134.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/StaticBody2D5"]
+position = Vector2(1561.5, -152.5)
+shape = SubResource("RectangleShape2D_6yqr0")
+
+[connection signal="triggered" from="Switch" to="Door" method="_on_triggered"]
