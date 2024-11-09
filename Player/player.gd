@@ -65,6 +65,7 @@ func _input(event: InputEvent) -> void:
 		
 
 func grant_glasses(new_glasses):
+	
 	if !obtained_glasses.has(new_glasses):
 		obtained_glasses.append(new_glasses)
 	else:
@@ -76,13 +77,10 @@ func grant_glasses(new_glasses):
 	
 	
 func switch_glasses(new_glasses):
-	print(new_glasses)
 	glasses_changed.emit(worn_glasses,new_glasses)	
 	
 func _on_glasses_changed(old_glasses: int, new_glasses: int) -> void:
 	self.worn_glasses = new_glasses
-	print("test")
-	print(Glasses.NORMAL)
 	pass # Replace with function body.
 
 func _physics_process(delta):

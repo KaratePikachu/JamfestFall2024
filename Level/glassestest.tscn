@@ -1,0 +1,150 @@
+[gd_scene load_steps=21 format=3 uid="uid://dslhk34jkqehp"]
+
+[ext_resource type="PackedScene" uid="uid://b68p8jegitusu" path="res://Enviorment/DeathSquare/death_square.tscn" id="1_w7orw"]
+[ext_resource type="PackedScene" uid="uid://u5vlmp8hm4ku" path="res://Player/player.tscn" id="2_nafhv"]
+[ext_resource type="Shader" path="res://Shaders/blur.gdshader" id="3_hdps6"]
+[ext_resource type="Texture2D" uid="uid://cxl5cvsgyxcoe" path="res://Level/TestLevel/princess.png" id="4_8l207"]
+[ext_resource type="PackedScene" uid="uid://bmvu0eqsw4qql" path="res://Interactable/Switch/switch.tscn" id="5_buckv"]
+[ext_resource type="PackedScene" uid="uid://lpj2ux5e6qek" path="res://Interactable/Door/Door.tscn" id="6_his76"]
+[ext_resource type="PackedScene" uid="uid://dp7fxu33gf8m0" path="res://Canvas/vision_effects.tscn" id="7_l8130"]
+[ext_resource type="PackedScene" uid="uid://cc4ppwhyjy67u" path="res://Interactable/Glasses/Sunglasses/sunglasses_pickup.tscn" id="9_8pado"]
+[ext_resource type="PackedScene" uid="uid://c0irdu28sl6ah" path="res://Interactable/Glasses/Infared/infared_glasses_pickup.tscn" id="9_vq8gn"]
+[ext_resource type="PackedScene" uid="uid://cku1optjco6t1" path="res://Interactable/Glasses/Smart/smart_glasses_pickup.tscn" id="10_lies1"]
+[ext_resource type="PackedScene" uid="uid://djp7bfajmwpgl" path="res://Interactable/Glasses/Drone/drone_glasses_pickup.tscn" id="10_p3v1i"]
+[ext_resource type="PackedScene" uid="uid://c2c6j0ido1yw4" path="res://Interactable/Glasses/Normal/normal_glasses_pickup.tscn" id="11_uaro2"]
+[ext_resource type="PackedScene" uid="uid://ckq0spk63sqja" path="res://Interactable/Glasses/Lidar/lidar_glasses_pickup.tscn" id="12_wgqg5"]
+[ext_resource type="PackedScene" uid="uid://b1ddculbd8x03" path="res://Interactable/Glasses/Kaleidoscope/kaleidoscope_glasses_pickup.tscn" id="14_ypcft"]
+[ext_resource type="PackedScene" uid="uid://2q73ao7wr7sb" path="res://Interactable/Glasses/Monocle/monocle_glasses_pickup.tscn" id="15_qvcqj"]
+[ext_resource type="PackedScene" uid="uid://h1vg2qyr6ug2" path="res://Objects/Dark Platform/dark_platform.tscn" id="16_l12yt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p2x72"]
+shader = ExtResource("3_hdps6")
+shader_parameter/scale = 1.0
+shader_parameter/lod = 0.0
+shader_parameter/x_blur_offest = 1.262
+shader_parameter/y_blur_offest = 1.565
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oogge"]
+shader = ExtResource("3_hdps6")
+shader_parameter/scale = 1.0
+shader_parameter/lod = 0.0
+shader_parameter/x_blur_offest = 1.979
+shader_parameter/y_blur_offest = 0.99
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jw1re"]
+size = Vector2(1527.41, 382.014)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lmnva"]
+shader = ExtResource("3_hdps6")
+shader_parameter/scale = 1.0
+shader_parameter/lod = 0.0
+shader_parameter/x_blur_offest = 0.0
+shader_parameter/y_blur_offest = 0.0
+
+[node name="TestOpenWorld" type="Node2D"]
+position = Vector2(-466, -368)
+
+[node name="DeathSquare" parent="." instance=ExtResource("1_w7orw")]
+position = Vector2(-8, 557)
+scale = Vector2(0.702462, 37.3872)
+
+[node name="Player" parent="." instance=ExtResource("2_nafhv")]
+material = SubResource("ShaderMaterial_p2x72")
+position = Vector2(484.001, 214.999)
+scale = Vector2(1.465, 1.465)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+material = SubResource("ShaderMaterial_oogge")
+use_parent_material = true
+position = Vector2(-0.682969, -33.4467)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-66, 610)
+scale = Vector2(1.465, 1.465)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(753.703, 181.007)
+shape = SubResource("RectangleShape2D_jw1re")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
+offset_left = -10.2389
+offset_top = -8.87372
+offset_right = 29.7611
+offset_bottom = 31.1263
+scale = Vector2(37.5051, 9.19112)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="temp" type="Node2D" parent="."]
+
+[node name="Princess" type="Sprite2D" parent="temp"]
+position = Vector2(477, 532)
+rotation = 0.00454109
+scale = Vector2(1.465, 1.465)
+texture = ExtResource("4_8l207")
+
+[node name="Princess2" type="Sprite2D" parent="temp"]
+material = SubResource("ShaderMaterial_lmnva")
+position = Vector2(955, 411)
+scale = Vector2(1.465, 1.465)
+texture = ExtResource("4_8l207")
+
+[node name="Princess3" type="Sprite2D" parent="temp"]
+position = Vector2(1398, 530)
+scale = Vector2(1.465, 1.465)
+texture = ExtResource("4_8l207")
+
+[node name="Princess4" type="Sprite2D" parent="temp"]
+position = Vector2(64, 332)
+scale = Vector2(1.465, 1.465)
+texture = ExtResource("4_8l207")
+
+[node name="Princess5" type="Sprite2D" parent="temp"]
+position = Vector2(1436, 300)
+scale = Vector2(1.465, 1.465)
+texture = ExtResource("4_8l207")
+
+[node name="Princess6" type="Sprite2D" parent="temp"]
+position = Vector2(1993, 508)
+scale = Vector2(1.465, 1.465)
+texture = ExtResource("4_8l207")
+
+[node name="Switch" parent="." instance=ExtResource("5_buckv")]
+position = Vector2(1885, 567)
+color = Color(0.6, 0.6, 0.6, 1)
+
+[node name="Door" parent="." instance=ExtResource("6_his76")]
+position = Vector2(2057, 352)
+scale = Vector2(1.08, 8.64)
+color = Color(1, 0, 0, 1)
+
+[node name="VisionEffects" parent="." instance=ExtResource("7_l8130")]
+
+[node name="SunglassesPickup" parent="." instance=ExtResource("9_8pado")]
+position = Vector2(638, 539)
+
+[node name="InfaredGlassesPickup" parent="." instance=ExtResource("9_vq8gn")]
+position = Vector2(753, 540)
+
+[node name="SmartGlassesPickup" parent="." instance=ExtResource("10_lies1")]
+position = Vector2(860, 535)
+
+[node name="DroneGlassesPickup" parent="." instance=ExtResource("10_p3v1i")]
+position = Vector2(973, 542)
+
+[node name="LidarGlassesPickup" parent="." instance=ExtResource("12_wgqg5")]
+position = Vector2(1089, 539)
+
+[node name="NormalGlassesPickup" parent="." instance=ExtResource("11_uaro2")]
+position = Vector2(1200, 542)
+
+[node name="KaleidoscopeGlassesPickup" parent="." instance=ExtResource("14_ypcft")]
+position = Vector2(1309, 534)
+
+[node name="MonocleGlassesPickup" parent="." instance=ExtResource("15_qvcqj")]
+position = Vector2(1437, 537)
+
+[node name="DarkPlatform" parent="." instance=ExtResource("16_l12yt")]
+position = Vector2(391, 535)
+
+[connection signal="triggered" from="Switch" to="Door" method="_on_triggered"]

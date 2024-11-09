@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2c6j0ido1yw4"]
+[gd_scene load_steps=4 format=3 uid="uid://djp7bfajmwpgl"]
 
 [ext_resource type="PackedScene" uid="uid://u4ayn3q3dre" path="res://Interactable/interactable.tscn" id="1_528r0"]
 [ext_resource type="Script" path="res://Interactable/Glasses/Drone/drone_glasses_pickup.gd" id="2_fj5u6"]

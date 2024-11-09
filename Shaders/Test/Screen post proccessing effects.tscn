@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvref17ru7wft"]
+[gd_scene load_steps=5 format=3 uid="uid://ch3jcnxn5rxvu"]
 
-[ext_resource type="Shader" path="res://Shaders/blur.gdshader" id="1_wryif"]
-[ext_resource type="Shader" path="res://Shaders/tint.gdshader" id="2_61tgl"]
+[ext_resource type="Shader" path="res://Shaders/Blur.gdshader" id="1_wryif"]
+[ext_resource type="Shader" path="res://Shaders/Sunglasses.gdshader" id="2_61tgl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2u8dp"]
 shader = ExtResource("1_wryif")
@@ -28,6 +28,13 @@ grow_vertical = 2
 
 [node name="SunglassesScreen" type="ColorRect" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_phv0s")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
