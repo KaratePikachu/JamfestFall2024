@@ -121,7 +121,6 @@ scale = Vector2(1.08, 8.64)
 color = Color(0.6, 0.6, 0.6, 1)
 
 [node name="VisionEffects" parent="." instance=ExtResource("6_o2frb")]
-visible = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
