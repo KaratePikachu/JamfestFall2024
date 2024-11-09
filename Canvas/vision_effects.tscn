@@ -1,20 +1,55 @@
-[gd_scene load_steps=4 format=3 uid="uid://dp7fxu33gf8m0"]
+[gd_scene load_steps=7 format=3 uid="uid://dp7fxu33gf8m0"]
 
 [ext_resource type="Script" path="res://Canvas/vision_effects.gd" id="1_58afm"]
-[ext_resource type="Shader" path="res://Shaders/Blur.gdshader" id="1_wumsm"]
+[ext_resource type="Shader" path="res://Shaders/blur.gdshader" id="2_72r2q"]
+[ext_resource type="Shader" path="res://Shaders/tint.gdshader" id="3_ng80b"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jqcd5"]
-shader = ExtResource("1_wumsm")
+shader = ExtResource("2_72r2q")
 shader_parameter/scale = 1.0
 shader_parameter/lod = 0.0
-shader_parameter/x_blur_offest = 0.03
-shader_parameter/y_blur_offest = 0.05
+shader_parameter/x_blur_offest = 0.1
+shader_parameter/y_blur_offest = 0.1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s08pi"]
+shader = ExtResource("3_ng80b")
+shader_parameter/sunGlass_color = Color(0, 0, 0, 0.843137)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jpun4"]
+shader = ExtResource("2_72r2q")
+shader_parameter/scale = 1.0
+shader_parameter/lod = 0.0
+shader_parameter/x_blur_offest = 0.02
+shader_parameter/y_blur_offest = 0.02
 
 [node name="VisionEffects" type="CanvasLayer"]
 script = ExtResource("1_58afm")
 
 [node name="Blindness" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_jqcd5")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Sunglasses" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Tint" type="ColorRect" parent="Sunglasses"]
+material = SubResource("ShaderMaterial_s08pi")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Blur" type="ColorRect" parent="Sunglasses"]
+material = SubResource("ShaderMaterial_jpun4")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

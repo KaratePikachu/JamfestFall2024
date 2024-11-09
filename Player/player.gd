@@ -23,13 +23,17 @@ enum Glasses {
 } 
 
 
-static var obtained_glasses = [Glasses.NONE]
+static var obtained_glasses = []
 static var worn_glasses = Glasses.NONE
 
 signal glasses_changed(old_glasses : Glasses, new_glasses : Glasses)
 
 func _init() -> void:
 	instance = self
+	
+func _ready() -> void:
+	grant_glasses(Glasses.NONE)
+	
 
 func _input(event: InputEvent) -> void:
 	var desired_switch = null
@@ -64,7 +68,8 @@ func grant_glasses(new_glasses):
 	if !obtained_glasses.has(new_glasses):
 		obtained_glasses.append(new_glasses)
 	else:
-		printerr("Player: Error! player already has these glasses")
+		printerr("Player: d:
+	instance = selfError! player already has these glasses")
 		
 	
 	switch_glasses(new_glasses)

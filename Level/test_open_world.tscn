@@ -1,31 +1,32 @@
-[gd_scene load_steps=11 format=3 uid="uid://d1kjkl2jsqa1j"]
+[gd_scene load_steps=12 format=3 uid="uid://d1kjkl2jsqa1j"]
 
-[ext_resource type="Shader" path="res://Shaders/Blur.gdshader" id="1_of5qh"]
 [ext_resource type="PackedScene" uid="uid://u5vlmp8hm4ku" path="res://Player/player.tscn" id="1_svam2"]
 [ext_resource type="PackedScene" uid="uid://b68p8jegitusu" path="res://Enviorment/death_square.tscn" id="2_sh6tp"]
 [ext_resource type="Texture2D" uid="uid://cxl5cvsgyxcoe" path="res://Level/TestLevel/princess.png" id="2_wrlyu"]
+[ext_resource type="Shader" path="res://Shaders/blur.gdshader" id="3_d8htp"]
 [ext_resource type="PackedScene" uid="uid://bmvu0eqsw4qql" path="res://Interactable/Switch/switch.tscn" id="4_2pa1x"]
 [ext_resource type="PackedScene" uid="uid://dp7fxu33gf8m0" path="res://Canvas/vision_effects.tscn" id="6_o2frb"]
+[ext_resource type="PackedScene" uid="uid://cc4ppwhyjy67u" path="res://Interactable/Glasses/Sunglasses/sunglasses_pickup.tscn" id="7_8mvxf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jw1re"]
 size = Vector2(1527.41, 382.014)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p2x72"]
-shader = ExtResource("1_of5qh")
+shader = ExtResource("3_d8htp")
 shader_parameter/scale = 1.0
 shader_parameter/lod = 0.0
 shader_parameter/x_blur_offest = 1.262
 shader_parameter/y_blur_offest = 1.565
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oogge"]
-shader = ExtResource("1_of5qh")
+shader = ExtResource("3_d8htp")
 shader_parameter/scale = 1.0
 shader_parameter/lod = 0.0
 shader_parameter/x_blur_offest = 1.979
 shader_parameter/y_blur_offest = 0.99
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lmnva"]
-shader = ExtResource("1_of5qh")
+shader = ExtResource("3_d8htp")
 shader_parameter/scale = 1.0
 shader_parameter/lod = 0.0
 shader_parameter/x_blur_offest = 0.0
@@ -102,3 +103,6 @@ texture = ExtResource("2_wrlyu")
 position = Vector2(993, 529)
 
 [node name="VisionEffects" parent="." instance=ExtResource("6_o2frb")]
+
+[node name="SunglassesPickup" parent="." instance=ExtResource("7_8mvxf")]
+position = Vector2(771, 531)

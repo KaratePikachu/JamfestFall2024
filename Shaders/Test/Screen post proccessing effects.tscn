@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dvref17ru7wft"]
 
-[ext_resource type="Shader" path="res://Shaders/Blur.gdshader" id="1_wryif"]
-[ext_resource type="Shader" path="res://Shaders/Sunglasses.gdshader" id="2_61tgl"]
+[ext_resource type="Shader" path="res://Shaders/blur.gdshader" id="1_wryif"]
+[ext_resource type="Shader" path="res://Shaders/tint.gdshader" id="2_61tgl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2u8dp"]
 shader = ExtResource("1_wryif")
