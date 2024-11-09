@@ -6,6 +6,8 @@ extends Interactable
 @onready var offNode = get_node("Switch").get_child(0)
 @onready var onNode = get_node("Switch").get_child(1)
 
+signal triggered
+
 func _on_ready():
 	$Switch.color = color
 	print("UISH THIS")
@@ -18,4 +20,5 @@ func interact():
 		offNode.visible = false
 		onNode.visible = true
 	status = !status
+	triggered.emit()
 	

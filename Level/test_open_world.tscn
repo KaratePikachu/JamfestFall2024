@@ -1,15 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://d1kjkl2jsqa1j"]
+[gd_scene load_steps=15 format=3 uid="uid://d1kjkl2jsqa1j"]
 
 [ext_resource type="PackedScene" uid="uid://u5vlmp8hm4ku" path="res://Player/player.tscn" id="1_svam2"]
-[ext_resource type="PackedScene" uid="uid://b68p8jegitusu" path="res://Enviorment/death_square.tscn" id="2_sh6tp"]
+[ext_resource type="PackedScene" uid="uid://b68p8jegitusu" path="res://Enviorment/DeathSquare/death_square.tscn" id="2_sh6tp"]
 [ext_resource type="Texture2D" uid="uid://cxl5cvsgyxcoe" path="res://Level/TestLevel/princess.png" id="2_wrlyu"]
 [ext_resource type="Shader" path="res://Shaders/blur.gdshader" id="3_d8htp"]
 [ext_resource type="PackedScene" uid="uid://bmvu0eqsw4qql" path="res://Interactable/Switch/switch.tscn" id="4_2pa1x"]
+[ext_resource type="PackedScene" uid="uid://lpj2ux5e6qek" path="res://Interactable/Door/Door.tscn" id="6_mqqco"]
 [ext_resource type="PackedScene" uid="uid://dp7fxu33gf8m0" path="res://Canvas/vision_effects.tscn" id="6_o2frb"]
-[ext_resource type="PackedScene" uid="uid://cc4ppwhyjy67u" path="res://Interactable/Glasses/Sunglasses/sunglasses_pickup.tscn" id="7_8mvxf"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jw1re"]
-size = Vector2(1527.41, 382.014)
+[ext_resource type="PackedScene" uid="uid://qa6itmjrn43y" path="res://Enviorment/Enemy/enemy.tscn" id="8_ovm8l"]
+[ext_resource type="PackedScene" uid="uid://c2c6j0ido1yw4" path="res://Interactable/Glasses/Normal/normal_glasses_pickup.tscn" id="9_0o1u1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p2x72"]
 shader = ExtResource("3_d8htp")
@@ -25,8 +24,18 @@ shader_parameter/lod = 0.0
 shader_parameter/x_blur_offest = 1.979
 shader_parameter/y_blur_offest = 0.99
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jw1re"]
+size = Vector2(1527.41, 382.014)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lmnva"]
 shader = ExtResource("3_d8htp")
+shader_parameter/scale = 1.0
+shader_parameter/lod = 0.0
+shader_parameter/x_blur_offest = 0.0
+shader_parameter/y_blur_offest = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jqcd5"]
+shader = ExtResource("1_of5qh")
 shader_parameter/scale = 1.0
 shader_parameter/lod = 0.0
 shader_parameter/x_blur_offest = 0.0
@@ -38,6 +47,16 @@ position = Vector2(-466, -368)
 [node name="DeathSquare" parent="." instance=ExtResource("2_sh6tp")]
 position = Vector2(-8, 557)
 scale = Vector2(0.702462, 37.3872)
+
+[node name="Player" parent="." instance=ExtResource("1_svam2")]
+material = SubResource("ShaderMaterial_p2x72")
+position = Vector2(484.001, 214.999)
+scale = Vector2(1.465, 1.465)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+material = SubResource("ShaderMaterial_oogge")
+use_parent_material = true
+position = Vector2(-0.682969, -33.4467)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(-66, 610)
@@ -55,15 +74,6 @@ offset_bottom = 31.1263
 scale = Vector2(37.5051, 9.19112)
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
-
-[node name="Player" parent="StaticBody2D" instance=ExtResource("1_svam2")]
-material = SubResource("ShaderMaterial_p2x72")
-position = Vector2(375.427, -269.625)
-
-[node name="Camera2D" type="Camera2D" parent="StaticBody2D/Player"]
-material = SubResource("ShaderMaterial_oogge")
-use_parent_material = true
-position = Vector2(-0.682969, -33.4467)
 
 [node name="temp" type="Node2D" parent="."]
 
@@ -100,9 +110,33 @@ scale = Vector2(1.465, 1.465)
 texture = ExtResource("2_wrlyu")
 
 [node name="Switch" parent="." instance=ExtResource("4_2pa1x")]
-position = Vector2(993, 529)
+position = Vector2(1885, 567)
+color = Color(0.6, 0.6, 0.6, 1)
+
+[node name="Door" parent="." instance=ExtResource("6_mqqco")]
+position = Vector2(2057, 352)
+scale = Vector2(1.08, 8.64)
+color = Color(1, 0, 0, 1)
 
 [node name="VisionEffects" parent="." instance=ExtResource("6_o2frb")]
+visible = false
 
-[node name="SunglassesPickup" parent="." instance=ExtResource("7_8mvxf")]
-position = Vector2(771, 531)
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_jqcd5")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Enemy" parent="." instance=ExtResource("8_ovm8l")]
+position = Vector2(1023, 545)
+
+[node name="NormalGlassesPickup" parent="." instance=ExtResource("9_0o1u1")]
+position = Vector2(125, 547)
+
+[connection signal="triggered" from="Switch" to="Door" method="_on_triggered"]
