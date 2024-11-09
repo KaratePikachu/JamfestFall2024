@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://cq7qqb2224tf4"]
+
+[ext_resource type="Texture2D" uid="uid://dhlri25ndoed4" path="res://UI/PXL_20241109_180012879.jpg" id="1_01wnj"]
+[ext_resource type="Script" path="res://UI/main_menu.gd" id="1_4wr78"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4wr78")
+
+[node name="Pxl20241109180012879" type="Sprite2D" parent="."]
+position = Vector2(516, 299)
+scale = Vector2(0.411866, 0.341796)
+texture = ExtResource("1_01wnj")
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 306.0
+offset_top = 290.0
+offset_right = 590.0
+offset_bottom = 344.0
+text = "EXIT"
+
+[node name="PlayButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 310.0
+offset_top = 173.0
+offset_right = 626.0
+offset_bottom = 244.0
+text = "PLAY"
+
+[node name="title" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 38.0
+offset_right = 1026.0
+offset_bottom = 192.0
+theme_override_font_sizes/normal_font_size = 51
+text = "20/20 Vision: can't have shit in westcal"
+
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]

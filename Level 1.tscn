@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dywpyq8cenoyx"]
+[gd_scene load_steps=6 format=3 uid="uid://b7i1o85tptcyf"]
 
 [ext_resource type="PackedScene" uid="uid://u5vlmp8hm4ku" path="res://Player/player.tscn" id="1_3wnnw"]
 [ext_resource type="PackedScene" uid="uid://cc4ppwhyjy67u" path="res://Interactable/Glasses/Sunglasses/sunglasses_pickup.tscn" id="2_8wj73"]
