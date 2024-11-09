@@ -40,7 +40,7 @@ shader_parameter/lod = 0.0
 shader_parameter/x_blur_offest = 0.0
 shader_parameter/y_blur_offest = 0.0
 
-[node name="TestOpenWorld" type="Node2D"]
+[node name="TestOpenWorld2" type="Node2D"]
 position = Vector2(-466, -368)
 
 [node name="DeathSquare" parent="." instance=ExtResource("1_w7orw")]
@@ -52,7 +52,7 @@ material = SubResource("ShaderMaterial_p2x72")
 position = Vector2(484.001, 214.999)
 scale = Vector2(1.465, 1.465)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Camera2D2" type="Camera2D" parent="Player"]
 material = SubResource("ShaderMaterial_oogge")
 use_parent_material = true
 position = Vector2(-0.682969, -33.4467)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://d1kjkl2jsqa1j"]
+[gd_scene load_steps=14 format=3 uid="uid://d1kjkl2jsqa1j"]
 
 [ext_resource type="Shader" path="res://Shaders/blur.gdshader" id="1_of5qh"]
 [ext_resource type="PackedScene" uid="uid://u5vlmp8hm4ku" path="res://Player/player.tscn" id="1_svam2"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://cc4ppwhyjy67u" path="res://Interactable/Glasses/Sunglasses/sunglasses_pickup.tscn" id="7_8mvxf"]
 [ext_resource type="PackedScene" uid="uid://qa6itmjrn43y" path="res://Enviorment/Enemy/enemy.tscn" id="8_ovm8l"]
 [ext_resource type="PackedScene" uid="uid://c2c6j0ido1yw4" path="res://Interactable/Glasses/Normal/normal_glasses_pickup.tscn" id="11_3a312"]
-[ext_resource type="PackedScene" uid="uid://djp7bfajmwpgl" path="res://Interactable/Glasses/Drone/drone_glasses_pickup.tscn" id="11_xd1hd"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p2x72"]
 shader = ExtResource("1_of5qh")
@@ -104,15 +103,15 @@ color = Color(1, 0, 0, 1)
 [node name="VisionEffects" parent="." instance=ExtResource("6_o2frb")]
 
 [node name="Enemy" parent="." instance=ExtResource("8_ovm8l")]
-position = Vector2(1249, 549)
+position = Vector2(1023, 545)
 
 [node name="SunglassesPickup" parent="." instance=ExtResource("7_8mvxf")]
-position = Vector2(94, 549)
+position = Vector2(79, 534)
+
+[node name="DroneGlassesPickup" parent="." instance=ExtResource("11_3a312")]
+position = Vector2(547, 543)
 
 [node name="NormalGlassesPickup" parent="." instance=ExtResource("11_3a312")]
-position = Vector2(866, 549)
-
-[node name="DroneGlassesPickup" parent="." instance=ExtResource("11_xd1hd")]
-position = Vector2(520, 543)
+position = Vector2(855, 543)
 
 [connection signal="triggered" from="Switch" to="Door" method="_on_triggered"]

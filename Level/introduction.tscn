@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://b88b22toehhyu"]
+[gd_scene load_steps=20 format=3 uid="uid://b88b22toehhyu"]
 
 [ext_resource type="PackedScene" uid="uid://b68p8jegitusu" path="res://Enviorment/DeathSquare/death_square.tscn" id="1_syrov"]
 [ext_resource type="PackedScene" uid="uid://u5vlmp8hm4ku" path="res://Player/player.tscn" id="2_q76co"]
@@ -17,13 +17,6 @@ shader_parameter/scale = 1.0
 shader_parameter/lod = 0.0
 shader_parameter/x_blur_offest = 1.262
 shader_parameter/y_blur_offest = 1.565
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_oogge"]
-shader = ExtResource("3_bmgtw")
-shader_parameter/scale = 1.0
-shader_parameter/lod = 0.0
-shader_parameter/x_blur_offest = 1.979
-shader_parameter/y_blur_offest = 0.99
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jqcd5"]
 shader = ExtResource("3_bmgtw")
@@ -79,11 +72,6 @@ material = SubResource("ShaderMaterial_p2x72")
 position = Vector2(468, 364)
 scale = Vector2(1.465, 1.465)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-material = SubResource("ShaderMaterial_oogge")
-use_parent_material = true
-position = Vector2(-0.682969, -33.4467)
-
 [node name="Switch" parent="." instance=ExtResource("5_lu008")]
 position = Vector2(1566, 349)
 color = Color(0.6, 0.6, 0.6, 1)
@@ -94,7 +82,6 @@ scale = Vector2(1, 6)
 color = Color(1, 0, 0, 1)
 
 [node name="VisionEffects" parent="." instance=ExtResource("7_087av")]
-visible = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
