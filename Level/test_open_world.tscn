@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://d1kjkl2jsqa1j"]
+[gd_scene load_steps=16 format=3 uid="uid://d1kjkl2jsqa1j"]
 
 [ext_resource type="Shader" path="res://Shaders/blur.gdshader" id="1_of5qh"]
 [ext_resource type="PackedScene" uid="uid://u5vlmp8hm4ku" path="res://Player/player.tscn" id="1_svam2"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cc4ppwhyjy67u" path="res://Interactable/Glasses/Sunglasses/sunglasses_pickup.tscn" id="7_8mvxf"]
 [ext_resource type="PackedScene" uid="uid://qa6itmjrn43y" path="res://Enviorment/Enemy/enemy.tscn" id="8_ovm8l"]
 [ext_resource type="PackedScene" uid="uid://c2c6j0ido1yw4" path="res://Interactable/Glasses/Normal/normal_glasses_pickup.tscn" id="9_0o1u1"]
+[ext_resource type="PackedScene" uid="uid://dn36wd0cgi5j4" path="res://Enviorment/Laser/Laser.tscn" id="10_y6amp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p2x72"]
 shader = ExtResource("1_of5qh")
@@ -44,7 +45,7 @@ scale = Vector2(0.702462, 37.3872)
 
 [node name="Player" parent="." instance=ExtResource("1_svam2")]
 material = SubResource("ShaderMaterial_p2x72")
-position = Vector2(484.001, 214.999)
+position = Vector2(423, 482)
 scale = Vector2(1.465, 1.465)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -110,15 +111,20 @@ color = Color(0.6, 0.6, 0.6, 1)
 [node name="Door" parent="." instance=ExtResource("6_mqqco")]
 position = Vector2(2057, 352)
 scale = Vector2(1.08, 8.64)
-color = Color(1, 0, 0, 1)
+color = Color(0.6, 0.6, 0.6, 1)
 
 [node name="VisionEffects" parent="." instance=ExtResource("6_o2frb")]
 
 [node name="Enemy" parent="." instance=ExtResource("8_ovm8l")]
-position = Vector2(1023, 545)
+position = Vector2(1603, 530)
 
 [node name="NormalGlassesPickup" parent="." instance=ExtResource("9_0o1u1")]
-position = Vector2(125, 547)
+position = Vector2(825, 541)
+
+[node name="Lazer" parent="." instance=ExtResource("10_y6amp")]
+position = Vector2(27, 632)
+scale = Vector2(1, -7.28)
+loop_time = 2
 
 [node name="SunglassesPickup" parent="." instance=ExtResource("7_8mvxf")]
 position = Vector2(397, 541)

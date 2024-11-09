@@ -8,9 +8,8 @@ extends Interactable
 
 signal triggered
 
-func _on_ready():
+func _ready():
 	$Switch.color = color
-	print("UISH THIS")
 
 func interact():
 	if(status):
