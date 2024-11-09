@@ -8,6 +8,9 @@ script = ExtResource("2_7vxng")
 color = Color(0, 0, 0, 1)
 status = false
 
+[node name="Sprite2D" parent="." index="0"]
+texture = null
+
 [node name="Switch" type="ColorRect" parent="." index="2"]
 offset_left = -37.0
 offset_top = -36.0
