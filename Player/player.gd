@@ -35,6 +35,7 @@ func _init() -> void:
 		instance = self
 	
 func _ready() -> void:
+	instance = self
 	grant_glasses(Glasses.NONE)
 	
 

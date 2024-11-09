@@ -104,7 +104,6 @@ color = Color(1, 0, 0, 1)
 
 [node name="Enemy" parent="." instance=ExtResource("8_ovm8l")]
 position = Vector2(1023, 545)
-canSpin = true
 
 [node name="SunglassesPickup" parent="." instance=ExtResource("7_8mvxf")]
 position = Vector2(397, 541)
