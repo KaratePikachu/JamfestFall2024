@@ -26,6 +26,7 @@ shader_parameter/y_blur_offest = 0.02
 script = ExtResource("1_58afm")
 
 [node name="Blindness" type="ColorRect" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_jqcd5")
 anchors_preset = 15
 anchor_right = 1.0
