@@ -1,4 +1,4 @@
 extends GlassesPickup
 
-func glasses_type():
+func glasses_type() -> Player.Glasses:
 	return Player.Glasses.DRONE
