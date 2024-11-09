@@ -1,6 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://g0tbt7n1335p"]
+[gd_scene load_steps=9 format=3 uid="uid://bctlrrfwdo0e4"]
 
-[ext_resource type="PackedScene" uid="uid://bbavkxufca5x2" path="res://Objects/tile_map_layers.tscn" id="1_ckgsx"]
+[ext_resource type="PackedScene" uid="uid://dahe3mxk2aea5" path="res://Objects/tile_map_layers.tscn" id="1_ckgsx"]
 [ext_resource type="PackedScene" uid="uid://u5vlmp8hm4ku" path="res://Player/player.tscn" id="2_1spve"]
 [ext_resource type="Shader" path="res://Shaders/blur.gdshader" id="3_y5n8n"]
 [ext_resource type="PackedScene" uid="uid://dp7fxu33gf8m0" path="res://Canvas/vision_effects.tscn" id="7_ev5ol"]
