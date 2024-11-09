@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dp7fxu33gf8m0"]
+
+[ext_resource type="Script" path="res://Canvas/vision_effects.gd" id="1_58afm"]
+[ext_resource type="Shader" path="res://Shaders/Blur.gdshader" id="1_wumsm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jqcd5"]
+shader = ExtResource("1_wumsm")
+shader_parameter/scale = 1.0
+shader_parameter/lod = 0.0
+shader_parameter/x_blur_offest = 0.03
+shader_parameter/y_blur_offest = 0.05
+
+[node name="VisionEffects" type="CanvasLayer"]
+script = ExtResource("1_58afm")
+
+[node name="Blindness" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_jqcd5")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
