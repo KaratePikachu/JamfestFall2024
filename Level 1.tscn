@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://dywpyq8cenoyx"]
+
+[ext_resource type="PackedScene" uid="uid://u5vlmp8hm4ku" path="res://Player/player.tscn" id="1_3wnnw"]
+[ext_resource type="PackedScene" uid="uid://cc4ppwhyjy67u" path="res://Interactable/Glasses/Sunglasses/sunglasses_pickup.tscn" id="2_8wj73"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_33243"]
+size = Vector2(1961, 255)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n4dw6"]
+size = Vector2(346.5, 178)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_afsjq"]
+size = Vector2(301.625, 259.875)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Level" type="Node" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Level"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D"]
+position = Vector2(930.5, 263.5)
+shape = SubResource("RectangleShape2D_33243")
+
+[node name="ColorRect" type="ColorRect" parent="Level/StaticBody2D"]
+offset_left = -44.0
+offset_top = 139.0
+offset_right = 1908.0
+offset_bottom = 375.0
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Level"]
+position = Vector2(128.934, -990.786)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D2"]
+position = Vector2(407.066, 1048.79)
+shape = SubResource("RectangleShape2D_n4dw6")
+
+[node name="ColorRect" type="ColorRect" parent="Level/StaticBody2D2"]
+offset_left = 241.066
+offset_top = 966.786
+offset_right = 573.066
+offset_bottom = 1129.79
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Level"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D3"]
+position = Vector2(848.188, 19.9375)
+shape = SubResource("RectangleShape2D_afsjq")
+
+[node name="ColorRect" type="ColorRect" parent="Level/StaticBody2D3"]
+offset_left = 704.0
+offset_top = -105.0
+offset_right = 990.0
+offset_bottom = 140.0
+
+[node name="Player" parent="." instance=ExtResource("1_3wnnw")]
+position = Vector2(0, -3)
+
+[node name="SunglassesPickup" parent="." instance=ExtResource("2_8wj73")]
+position = Vector2(204, 102)

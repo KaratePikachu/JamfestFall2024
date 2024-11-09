@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b88b22toehhyu"]
+[gd_scene load_steps=21 format=3 uid="uid://b88b22toehhyu"]
 
 [ext_resource type="PackedScene" uid="uid://b68p8jegitusu" path="res://Enviorment/DeathSquare/death_square.tscn" id="1_syrov"]
 [ext_resource type="PackedScene" uid="uid://u5vlmp8hm4ku" path="res://Player/player.tscn" id="2_q76co"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://dp7fxu33gf8m0" path="res://Canvas/vision_effects.tscn" id="7_087av"]
 [ext_resource type="PackedScene" uid="uid://qa6itmjrn43y" path="res://Enviorment/Enemy/enemy.tscn" id="8_gg0iy"]
 [ext_resource type="PackedScene" uid="uid://c2c6j0ido1yw4" path="res://Interactable/Glasses/Normal/normal_glasses_pickup.tscn" id="9_ca8a4"]
+[ext_resource type="PackedScene" uid="uid://dn36wd0cgi5j4" path="res://Enviorment/Laser/Laser.tscn" id="9_sl1wl"]
+[ext_resource type="PackedScene" uid="uid://cf5674d77sx2n" path="res://Enviorment/Goomba/goomba.tscn" id="10_yrcgl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p2x72"]
 shader = ExtResource("3_bmgtw")
@@ -31,7 +33,7 @@ shader_parameter/x_blur_offest = 0.0
 shader_parameter/y_blur_offest = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jw1re"]
-size = Vector2(1514.68, 382.935)
+size = Vector2(1509.97, 382.935)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m28ku"]
 size = Vector2(42.1, 11.7)
@@ -45,7 +47,13 @@ size = Vector2(279, 230)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6yqr0"]
 size = Vector2(273, 43)
 
-[node name="TestOpenWorld" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f3yf7"]
+size = Vector2(254, 293)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hp62j"]
+size = Vector2(371, 384.5)
+
+[node name="Introduction" type="Node2D"]
 position = Vector2(-466, -368)
 
 [node name="Spikes" type="Node" parent="."]
@@ -68,7 +76,7 @@ scale = Vector2(0.702462, 37.3872)
 
 [node name="Player" parent="." instance=ExtResource("2_q76co")]
 material = SubResource("ShaderMaterial_p2x72")
-position = Vector2(478, 365)
+position = Vector2(467, 360)
 scale = Vector2(1.465, 1.465)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -81,8 +89,8 @@ position = Vector2(1566, 349)
 color = Color(0.6, 0.6, 0.6, 1)
 
 [node name="Door" parent="." instance=ExtResource("6_50eqa")]
-position = Vector2(1892, 231)
-scale = Vector2(1, 4)
+position = Vector2(1889, 144)
+scale = Vector2(1, 6)
 color = Color(1, 0, 0, 1)
 
 [node name="VisionEffects" parent="." instance=ExtResource("7_087av")]
@@ -95,36 +103,34 @@ material = SubResource("ShaderMaterial_jqcd5")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 127.0
-offset_top = 549.0
-offset_right = 127.0
-offset_bottom = 549.0
+offset_left = -2.0
+offset_top = -1.0
+offset_right = -2.0
+offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Enemy" parent="." instance=ExtResource("8_gg0iy")]
-position = Vector2(1124, 442)
-
 [node name="NormalGlassesPickup" parent="." instance=ExtResource("9_ca8a4")]
-position = Vector2(125, 547)
+position = Vector2(756, 549)
 
 [node name="Floor" type="Node" parent="."]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Floor"]
 position = Vector2(-532, 242)
-scale = Vector2(1.465, 1.465)
+scale = Vector2(2, 1.465)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/StaticBody2D"]
-position = Vector2(1042.66, 189.42)
+position = Vector2(976, 186.348)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_jw1re")
 
 [node name="ColorRect" type="ColorRect" parent="Floor/StaticBody2D"]
-offset_left = 292.15
-offset_top = 3.41297
-offset_right = 332.15
-offset_bottom = 43.413
+offset_left = 227.0
+offset_top = -4.09556
+offset_right = 267.0
+offset_bottom = 35.9045
 scale = Vector2(37.5051, 9.19112)
 metadata/_edit_use_anchors_ = true
 
@@ -134,7 +140,6 @@ scale = Vector2(10, 10)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/StaticBody2D2"]
 position = Vector2(105.65, 55.55)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_m28ku")
 
 [node name="ColorRect" type="ColorRect" parent="Floor/StaticBody2D2"]
@@ -170,13 +175,49 @@ offset_bottom = 249.0
 [node name="StaticBody2D5" type="StaticBody2D" parent="Floor"]
 
 [node name="ColorRect" type="ColorRect" parent="Floor/StaticBody2D5"]
-offset_left = 1425.0
-offset_top = -174.0
-offset_right = 1703.0
-offset_bottom = -134.0
+offset_left = 1426.0
+offset_top = -257.0
+offset_right = 1704.0
+offset_bottom = -217.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/StaticBody2D5"]
-position = Vector2(1561.5, -152.5)
+position = Vector2(1560, -235)
 shape = SubResource("RectangleShape2D_6yqr0")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="Floor"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/StaticBody2D6"]
+position = Vector2(2022, 106)
+shape = SubResource("RectangleShape2D_f3yf7")
+
+[node name="ColorRect" type="ColorRect" parent="Floor/StaticBody2D6"]
+offset_left = 1913.0
+offset_top = -38.0
+offset_right = 2129.0
+offset_bottom = 248.0
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="Floor"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/StaticBody2D7"]
+position = Vector2(2447.5, 66)
+shape = SubResource("RectangleShape2D_hp62j")
+
+[node name="ColorRect" type="ColorRect" parent="Floor/StaticBody2D7"]
+offset_left = 2275.0
+offset_top = -123.0
+offset_right = 2631.0
+offset_bottom = 252.0
+
+[node name="Lazer" parent="." instance=ExtResource("9_sl1wl")]
+position = Vector2(2260, 21)
+scale = Vector2(1, 15)
+loop_time = 3
+
+[node name="Enemy2" parent="." instance=ExtResource("8_gg0iy")]
+position = Vector2(2906, 190)
+isSpinning = true
+
+[node name="Goomba" parent="." instance=ExtResource("10_yrcgl")]
+position = Vector2(1149, 453)
 
 [connection signal="triggered" from="Switch" to="Door" method="_on_triggered"]
