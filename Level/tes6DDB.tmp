@@ -104,15 +104,14 @@ color = Color(1, 0, 0, 1)
 
 [node name="Enemy" parent="." instance=ExtResource("8_ovm8l")]
 position = Vector2(1023, 545)
-canSpin = true
 
 [node name="SunglassesPickup" parent="." instance=ExtResource("7_8mvxf")]
-position = Vector2(80, 535)
+position = Vector2(397, 541)
 
 [node name="DroneGlassesPickup" parent="." instance=ExtResource("11_3a312")]
 position = Vector2(547, 543)
 
 [node name="NormalGlassesPickup" parent="." instance=ExtResource("11_3a312")]
-position = Vector2(813, 548)
+position = Vector2(711, 544)
 
 [connection signal="triggered" from="Switch" to="Door" method="_on_triggered"]

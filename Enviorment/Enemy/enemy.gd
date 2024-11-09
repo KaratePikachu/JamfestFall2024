@@ -3,12 +3,15 @@ extends CharacterBody2D
 @export var speed : int = 1000
 @export var jumpHeight : int = 30000
 
-@export var isSpinning : bool = false
+@export var canSpin : bool = false
+@export var timePaused : int = 3
+var isSpinning : bool = true
+var timer : float = 0.0
 
 var dont_fucking_ask : float = 0.0
 
 func _ready() -> void:
-			Player.instance.glasses_changed.connect(_on_glasses_change)
+	Player.instance.glasses_changed.connect(_on_glasses_change)
 	
 func _on_glasses_change(old_glasses: int, new_glasses: int) -> void:
 	if(new_glasses == Player.Glasses.DRONE or new_glasses == Player.Glasses.NORMAL):
@@ -22,11 +25,24 @@ func _on_glasses_change(old_glasses: int, new_glasses: int) -> void:
 		$Sprite.visible = false
 
 func _process(delta: float) -> void:
+	if !canSpin:
+		return
 	if isSpinning:
 		$DetectionCone.scale.x = cos(dont_fucking_ask)
-		if 1 - abs(cos(dont_fucking_ask)) < 0.1:
-			await get_tree().create_timer(5).timeout
-	dont_fucking_ask += 0.01
+
+		dont_fucking_ask += 0.01 + delta
+		print(abs(cos(dont_fucking_ask)))
+		if 1 - abs(cos(dont_fucking_ask)) < 0.0001:
+			isSpinning = false
+			timer = 0.001
+	else:
+		print(timer)
+		timer += delta
+		if timer >= timePaused:
+			isSpinning = true
+			timer = 0.0 
+		
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
