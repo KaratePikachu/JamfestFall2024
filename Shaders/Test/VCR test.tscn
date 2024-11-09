@@ -1,0 +1,79 @@
+[gd_scene load_steps=8 format=3 uid="uid://211fpmpt7lgc"]
+
+[ext_resource type="Texture2D" uid="uid://b4kmo1gwee084" path="res://Shaders/Test/20230708_101806-47f4.jpg" id="1_y85um"]
+[ext_resource type="Shader" path="res://Shaders/Blur.gdshader" id="2_neav7"]
+[ext_resource type="Shader" path="res://Shaders/VCR.gdshader" id="3_q204k"]
+[ext_resource type="Shader" path="res://Shaders/Desaturation.gdshader" id="4_56w21"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jbqip"]
+shader = ExtResource("4_56w21")
+shader_parameter/contrast = 0.7
+shader_parameter/saturation = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a2rgc"]
+shader = ExtResource("2_neav7")
+shader_parameter/scale = 1.0
+shader_parameter/lod = 0.0
+shader_parameter/x_blur_offest = 0.01
+shader_parameter/y_blur_offest = 0.01
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h7oav"]
+shader = ExtResource("3_q204k")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.129
+shader_parameter/scanlines_width = 0.5
+shader_parameter/grille_opacity = 0.128
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = true
+shader_parameter/roll = true
+shader_parameter/roll_speed = 3.0
+shader_parameter/roll_size = 24.467
+shader_parameter/roll_variation = 1.336
+shader_parameter/distort_intensity = 0.033
+shader_parameter/noise_opacity = 0.222
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 4.75e-08
+shader_parameter/brightness = 1.1
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 0.32
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.222
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_y85um")
+
+[node name="Drone" type="CanvasLayer" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Drone"]
+
+[node name="Destauration" type="ColorRect" parent="Drone/CanvasLayer"]
+material = SubResource("ShaderMaterial_jbqip")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="Drone"]
+
+[node name="Blur" type="ColorRect" parent="Drone/CanvasLayer2"]
+material = SubResource("ShaderMaterial_a2rgc")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="Drone"]
+
+[node name="VCR" type="ColorRect" parent="Drone/CanvasLayer3"]
+material = SubResource("ShaderMaterial_h7oav")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
