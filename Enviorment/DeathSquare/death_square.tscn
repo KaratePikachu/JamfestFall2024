@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b68p8jegitusu"]
 
-[ext_resource type="Script" path="res://Enviorment/death_square.gd" id="1_1p08j"]
+[ext_resource type="Script" path="res://Enviorment/DeathSquare/death_square.gd" id="1_1p08j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_guef2"]
 
