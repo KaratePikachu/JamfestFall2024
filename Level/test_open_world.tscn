@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://d1kjkl2jsqa1j"]
+[gd_scene load_steps=15 format=3 uid="uid://d1kjkl2jsqa1j"]
 
 [ext_resource type="Shader" path="res://Shaders/blur.gdshader" id="1_of5qh"]
 [ext_resource type="PackedScene" uid="uid://u5vlmp8hm4ku" path="res://Player/player.tscn" id="1_svam2"]
@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cc4ppwhyjy67u" path="res://Interactable/Glasses/Sunglasses/sunglasses_pickup.tscn" id="7_8mvxf"]
 [ext_resource type="PackedScene" uid="uid://qa6itmjrn43y" path="res://Enviorment/Enemy/enemy.tscn" id="8_ovm8l"]
 [ext_resource type="PackedScene" uid="uid://c2c6j0ido1yw4" path="res://Interactable/Glasses/Normal/normal_glasses_pickup.tscn" id="11_3a312"]
-[ext_resource type="PackedScene" uid="uid://djp7bfajmwpgl" path="res://Interactable/Glasses/Drone/drone_glasses_pickup.tscn" id="11_eiqlw"]
+[ext_resource type="PackedScene" uid="uid://c2c6j0ido1yw4" path="res://Interactable/Glasses/Drone/drone_glasses_pickup.tscn" id="11_eiqlw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p2x72"]
 shader = ExtResource("1_of5qh")
@@ -18,13 +18,6 @@ shader_parameter/scale = 1.0
 shader_parameter/lod = 0.0
 shader_parameter/x_blur_offest = 1.262
 shader_parameter/y_blur_offest = 1.565
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_oogge"]
-shader = ExtResource("1_of5qh")
-shader_parameter/scale = 1.0
-shader_parameter/lod = 0.0
-shader_parameter/x_blur_offest = 1.979
-shader_parameter/y_blur_offest = 0.99
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jw1re"]
 size = Vector2(1527.41, 382.014)
@@ -47,11 +40,6 @@ scale = Vector2(0.702462, 37.3872)
 material = SubResource("ShaderMaterial_p2x72")
 position = Vector2(484.001, 214.999)
 scale = Vector2(1.465, 1.465)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-material = SubResource("ShaderMaterial_oogge")
-use_parent_material = true
-position = Vector2(-0.682969, -33.4467)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(-66, 610)
