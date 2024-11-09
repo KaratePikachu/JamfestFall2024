@@ -1,10 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://dg5173vw2e2km"]
+[gd_scene load_steps=17 format=3 uid="uid://dg5173vw2e2km"]
 
-[ext_resource type="PackedScene" uid="uid://h1vg2qyr6ug2" path="res://Objects/Dark Platform/dark_platform.tscn" id="1_a7ss2"]
+[ext_resource type="PackedScene" path="res://Objects/Dark Platform/dark_platform.tscn" id="1_a7ss2"]
 [ext_resource type="PackedScene" uid="uid://lpj2ux5e6qek" path="res://Interactable/Door/Door.tscn" id="2_dbwsr"]
 [ext_resource type="PackedScene" uid="uid://bmvu0eqsw4qql" path="res://Interactable/Switch/switch.tscn" id="3_jcupn"]
 [ext_resource type="PackedScene" uid="uid://u5vlmp8hm4ku" path="res://Player/player.tscn" id="4_jdhh3"]
-[ext_resource type="Shader" path="res://Shaders/Blur.gdshader" id="5_vol4k"]
 [ext_resource type="PackedScene" uid="uid://cc4ppwhyjy67u" path="res://Interactable/Glasses/Sunglasses/sunglasses_pickup.tscn" id="6_vilyt"]
 [ext_resource type="PackedScene" uid="uid://b68p8jegitusu" path="res://Enviorment/DeathSquare/death_square.tscn" id="7_kgw5k"]
 [ext_resource type="PackedScene" uid="uid://dp7fxu33gf8m0" path="res://Canvas/vision_effects.tscn" id="8_hp6cl"]
@@ -32,13 +31,6 @@ size = Vector2(207, 545)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eabse"]
 size = Vector2(135, 46.5)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_jghdn"]
-shader = ExtResource("5_vol4k")
-shader_parameter/scale = 1.0
-shader_parameter/lod = 0.0
-shader_parameter/x_blur_offest = 1.979
-shader_parameter/y_blur_offest = 0.99
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8wn35"]
 size = Vector2(210, 709.5)
@@ -261,11 +253,6 @@ position = Vector2(2276, -46)
 
 [node name="Player" parent="." instance=ExtResource("4_jdhh3")]
 position = Vector2(-2, -134)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-material = SubResource("ShaderMaterial_jghdn")
-use_parent_material = true
-position = Vector2(-0.682969, -33.4467)
 
 [node name="SunglassesPickup" parent="." instance=ExtResource("6_vilyt")]
 position = Vector2(204, 102)

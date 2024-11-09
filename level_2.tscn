@@ -1,12 +1,12 @@
 [gd_scene load_steps=19 format=3 uid="uid://cgu5b07ehe4ts"]
 
 [ext_resource type="PackedScene" uid="uid://u5vlmp8hm4ku" path="res://Player/player.tscn" id="1_3ypmk"]
-[ext_resource type="PackedScene" uid="uid://h1vg2qyr6ug2" path="res://Objects/Dark Platform/dark_platform.tscn" id="2_jnov8"]
 [ext_resource type="PackedScene" uid="uid://dn36wd0cgi5j4" path="res://Enviorment/Laser/Laser.tscn" id="3_dfuio"]
 [ext_resource type="PackedScene" uid="uid://bmvu0eqsw4qql" path="res://Interactable/Switch/switch.tscn" id="4_oyrt6"]
 [ext_resource type="PackedScene" uid="uid://lpj2ux5e6qek" path="res://Interactable/Door/Door.tscn" id="5_26q2w"]
 [ext_resource type="PackedScene" uid="uid://cf5674d77sx2n" path="res://Enviorment/Goomba/goomba.tscn" id="6_dlfkx"]
 [ext_resource type="PackedScene" uid="uid://c2c6j0ido1yw4" path="res://Interactable/Glasses/Normal/normal_glasses_pickup.tscn" id="7_7xq2u"]
+[ext_resource type="PackedScene" uid="uid://dp7fxu33gf8m0" path="res://Canvas/vision_effects.tscn" id="8_sosbf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_us3du"]
 size = Vector2(4072, 255)
@@ -18,7 +18,7 @@ size = Vector2(242, 368)
 size = Vector2(331, 147.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kf31e"]
-size = Vector2(269, 206)
+size = Vector2(269, 171)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ovrvt"]
 size = Vector2(235, 126)
@@ -85,25 +85,30 @@ offset_top = 15.0
 offset_right = 465.0
 offset_bottom = 159.0
 
-[node name="DarkPlatform" parent="Level" instance=ExtResource("2_jnov8")]
-position = Vector2(782, 182)
-scale = Vector2(4, 2)
-
-[node name="DarkPlatform2" parent="Level" instance=ExtResource("2_jnov8")]
-position = Vector2(2003, -112)
-scale = Vector2(4, 0.5)
-
 [node name="StaticBody2D4" type="StaticBody2D" parent="Level"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D4"]
-position = Vector2(1177.5, 376)
+position = Vector2(1177.5, 393.5)
 shape = SubResource("RectangleShape2D_kf31e")
 
 [node name="ColorRect" type="ColorRect" parent="Level/StaticBody2D4"]
 offset_left = 1050.0
-offset_top = 278.0
+offset_top = 308.0
 offset_right = 1312.0
 offset_bottom = 480.0
+
+[node name="StaticBody2D14" type="StaticBody2D" parent="Level"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D14"]
+position = Vector2(780, 178)
+shape = SubResource("RectangleShape2D_kf31e")
+
+[node name="ColorRect" type="ColorRect" parent="Level/StaticBody2D14"]
+offset_left = 649.0
+offset_top = 94.0
+offset_right = 911.0
+offset_bottom = 266.0
+color = Color(0.00351917, 0.00351917, 0.00351917, 1)
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="Level"]
 
@@ -213,6 +218,19 @@ offset_top = -207.0
 offset_right = 2512.0
 offset_bottom = -167.0
 
+[node name="StaticBody2D15" type="StaticBody2D" parent="Level"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D15"]
+position = Vector2(1986, -105)
+shape = SubResource("RectangleShape2D_dflgx")
+
+[node name="ColorRect" type="ColorRect" parent="Level/StaticBody2D15"]
+offset_left = 1848.0
+offset_top = -127.0
+offset_right = 2109.0
+offset_bottom = -87.0
+color = Color(0.0110876, 0.0110876, 0.0110876, 1)
+
 [node name="Lasers" type="Node" parent="."]
 
 [node name="Lazer" parent="Lasers" instance=ExtResource("3_dfuio")]
@@ -234,7 +252,7 @@ color = Color(0, 0.78852, 0, 1)
 [node name="Enemies" type="Node" parent="."]
 
 [node name="Goomba" parent="Enemies" instance=ExtResource("6_dlfkx")]
-position = Vector2(1175, 226)
+position = Vector2(1175, 251)
 
 [node name="Goomba3" parent="Enemies" instance=ExtResource("6_dlfkx")]
 position = Vector2(2352, 16)
@@ -243,7 +261,9 @@ position = Vector2(2352, 16)
 position = Vector2(1978, -185)
 
 [node name="NormalGlassesPickup" parent="." instance=ExtResource("7_7xq2u")]
-position = Vector2(777, 85)
+position = Vector2(333, -18)
+
+[node name="VisionEffects" parent="." instance=ExtResource("8_sosbf")]
 
 [connection signal="triggered" from="Switch" to="Door" method="_on_switch_triggered"]
 [connection signal="triggered" from="Switch" to="Door" method="_on_triggered"]
