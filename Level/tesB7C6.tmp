@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://qa6itmjrn43y" path="res://Enviorment/Enemy/enemy.tscn" id="8_ovm8l"]
 [ext_resource type="PackedScene" uid="uid://c2c6j0ido1yw4" path="res://Interactable/Glasses/Normal/normal_glasses_pickup.tscn" id="11_3a312"]
 
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p2x72"]
 shader = ExtResource("1_of5qh")
 shader_parameter/scale = 1.0
@@ -107,18 +106,12 @@ color = Color(1, 0, 0, 1)
 position = Vector2(1023, 545)
 
 [node name="SunglassesPickup" parent="." instance=ExtResource("7_8mvxf")]
-
-position = Vector2(397, 541)
+position = Vector2(94, 549)
 
 [node name="DroneGlassesPickup" parent="." instance=ExtResource("11_3a312")]
 position = Vector2(547, 543)
 
-
-
 [node name="NormalGlassesPickup" parent="." instance=ExtResource("11_3a312")]
-position = Vector2(711, 544)
-
-[node name="DroneGlassesPickup" parent="." instance=ExtResource("11_xd1hd")]
-position = Vector2(520, 543)
+position = Vector2(866, 549)
 
 [connection signal="triggered" from="Switch" to="Door" method="_on_triggered"]

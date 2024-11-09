@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dslhk34jkqehp"]
+[gd_scene load_steps=20 format=3 uid="uid://dslhk34jkqehp"]
 
 [ext_resource type="PackedScene" uid="uid://b68p8jegitusu" path="res://Enviorment/DeathSquare/death_square.tscn" id="1_w7orw"]
 [ext_resource type="PackedScene" uid="uid://u5vlmp8hm4ku" path="res://Player/player.tscn" id="2_nafhv"]
@@ -15,7 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://ckq0spk63sqja" path="res://Interactable/Glasses/Lidar/lidar_glasses_pickup.tscn" id="12_wgqg5"]
 [ext_resource type="PackedScene" uid="uid://b1ddculbd8x03" path="res://Interactable/Glasses/Kaleidoscope/kaleidoscope_glasses_pickup.tscn" id="14_ypcft"]
 [ext_resource type="PackedScene" uid="uid://2q73ao7wr7sb" path="res://Interactable/Glasses/Monocle/monocle_glasses_pickup.tscn" id="15_qvcqj"]
-[ext_resource type="PackedScene" uid="uid://h1vg2qyr6ug2" path="res://Objects/Dark Platform/dark_platform.tscn" id="16_l12yt"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p2x72"]
 shader = ExtResource("3_hdps6")
@@ -41,7 +40,7 @@ shader_parameter/lod = 0.0
 shader_parameter/x_blur_offest = 0.0
 shader_parameter/y_blur_offest = 0.0
 
-[node name="TestOpenWorld" type="Node2D"]
+[node name="TestOpenWorld2" type="Node2D"]
 position = Vector2(-466, -368)
 
 [node name="DeathSquare" parent="." instance=ExtResource("1_w7orw")]
@@ -53,7 +52,7 @@ material = SubResource("ShaderMaterial_p2x72")
 position = Vector2(484.001, 214.999)
 scale = Vector2(1.465, 1.465)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Camera2D2" type="Camera2D" parent="Player"]
 material = SubResource("ShaderMaterial_oogge")
 use_parent_material = true
 position = Vector2(-0.682969, -33.4467)
@@ -143,8 +142,5 @@ position = Vector2(1309, 534)
 
 [node name="MonocleGlassesPickup" parent="." instance=ExtResource("15_qvcqj")]
 position = Vector2(1437, 537)
-
-[node name="DarkPlatform" parent="." instance=ExtResource("16_l12yt")]
-position = Vector2(391, 535)
 
 [connection signal="triggered" from="Switch" to="Door" method="_on_triggered"]

@@ -15,7 +15,7 @@ config/description="Example of how to make a kinematic character controller in 2
 CharacterBody2D. The character moves around, is affected by moving
 platforms, can jump through one-way collision platforms, etc."
 config/tags=PackedStringArray("2d", "demo", "official", "physics")
-run/main_scene="res://Level/test_open_world.tscn"
+run/main_scene="res://UI/main_menu.tscn"
 config/features=PackedStringArray("4.3")
 config/icon="res://icon.webp"
 
@@ -33,7 +33,8 @@ folder_colors={
 "res://Interactable/": "red",
 "res://Level/": "green",
 "res://Objects/": "gray",
-"res://Player/": "blue"
+"res://Player/": "blue",
+"res://UI/": "pink"
 }
 
 [input]
@@ -63,6 +64,12 @@ move_right={
 , Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":0,"axis_value":1.0,"script":null)
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":68,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194321,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+move_down={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":83,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194321,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }
 interact={

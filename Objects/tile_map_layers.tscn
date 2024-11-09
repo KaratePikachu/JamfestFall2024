@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=4 uid="uid://bbavkxufca5x2"]
+
+[ext_resource type="TileSet" uid="uid://tgmsxsqnobtv" path="res://Objects/tileset.tres" id="1_4n46j"]
+[ext_resource type="Script" path="res://Objects/tile_visibility.gd" id="1_jvga5"]
+
+[node name="TileMapLayers" type="Node2D"]
+script = ExtResource("1_jvga5")
+
+[node name="NormalTiles" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAOAAoAAAAAAAAAAAAPAAkAAAAAAAAAAAAOAAkAAAAAAAAAAAANAAkAAAAAAAAAAAAMAAkAAAAAAAAAAAALAAkAAAAAAAAAAAAKAAkAAAAAAAAAAAAJAAkAAAAAAAAAAAAIAAkAAAAAAAAAAAAQAAkAAAAAAAAAAAARAAkAAAAAAAAAAAASAAkAAAAAAAAAAAATAAoAAAAAAAAAAAAUAAoAAAAAAAAAAAAVAAoAAAAAAAAAAAASAAoAAAAAAAAAAAARAAoAAAAAAAAAAAAQAAoAAAAAAAAAAAAPAAoAAAAAAAAAAAANAAoAAAAAAAAAAAA=")
+tile_set = ExtResource("1_4n46j")
+
+[node name="DarkTiles" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAATAAkAAAABAAAAAAAUAAkAAAABAAAAAAAVAAkAAAABAAAAAAAWAAkAAAABAAAAAAAXAAkAAAABAAAAAAAYAAkAAAABAAAAAAAZAAkAAAABAAAAAAAaAAkAAAABAAAAAAAbAAkAAAABAAAAAAAbAAoAAAABAAAAAAAaAAoAAAABAAAAAAAZAAoAAAABAAAAAAAYAAoAAAABAAAAAAAXAAoAAAABAAAAAAAWAAoAAAABAAAAAAA=")
+tile_set = ExtResource("1_4n46j")
