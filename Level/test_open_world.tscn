@@ -1,11 +1,40 @@
-[gd_scene load_steps=5 format=3 uid="uid://bubey2aaxawy6"]
+[gd_scene load_steps=10 format=3 uid="uid://bubey2aaxawy6"]
 
+[ext_resource type="Shader" path="res://Shaders/Blur.gdshader" id="1_of5qh"]
 [ext_resource type="PackedScene" uid="uid://u5vlmp8hm4ku" path="res://Player/player.tscn" id="1_svam2"]
 [ext_resource type="PackedScene" uid="uid://b68p8jegitusu" path="res://Enviorment/death_square.tscn" id="2_sh6tp"]
 [ext_resource type="Texture2D" uid="uid://cxl5cvsgyxcoe" path="res://Level/TestLevel/princess.png" id="2_wrlyu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jw1re"]
 size = Vector2(1527.41, 382.014)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p2x72"]
+shader = ExtResource("1_of5qh")
+shader_parameter/scale = 1.0
+shader_parameter/lod = 0.0
+shader_parameter/x_blur_offest = 1.262
+shader_parameter/y_blur_offest = 1.565
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oogge"]
+shader = ExtResource("1_of5qh")
+shader_parameter/scale = 1.0
+shader_parameter/lod = 0.0
+shader_parameter/x_blur_offest = 1.979
+shader_parameter/y_blur_offest = 0.99
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lmnva"]
+shader = ExtResource("1_of5qh")
+shader_parameter/scale = 1.0
+shader_parameter/lod = 0.0
+shader_parameter/x_blur_offest = 0.0
+shader_parameter/y_blur_offest = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jqcd5"]
+shader = ExtResource("1_of5qh")
+shader_parameter/scale = 1.0
+shader_parameter/lod = 0.0
+shader_parameter/x_blur_offest = 0.03
+shader_parameter/y_blur_offest = 0.05
 
 [node name="TestOpenWorld" type="Node2D"]
 position = Vector2(-466, -368)
@@ -29,11 +58,15 @@ offset_right = 29.7611
 offset_bottom = 31.1263
 scale = Vector2(37.5051, 9.19112)
 color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="StaticBody2D" instance=ExtResource("1_svam2")]
+material = SubResource("ShaderMaterial_p2x72")
 position = Vector2(375.427, -269.625)
 
 [node name="Camera2D" type="Camera2D" parent="StaticBody2D/Player"]
+material = SubResource("ShaderMaterial_oogge")
+use_parent_material = true
 position = Vector2(-0.682969, -33.4467)
 
 [node name="temp" type="Node2D" parent="."]
@@ -45,6 +78,7 @@ scale = Vector2(1.465, 1.465)
 texture = ExtResource("2_wrlyu")
 
 [node name="Princess2" type="Sprite2D" parent="temp"]
+material = SubResource("ShaderMaterial_lmnva")
 position = Vector2(955, 411)
 scale = Vector2(1.465, 1.465)
 texture = ExtResource("2_wrlyu")
@@ -68,3 +102,15 @@ texture = ExtResource("2_wrlyu")
 position = Vector2(1993, 508)
 scale = Vector2(1.465, 1.465)
 texture = ExtResource("2_wrlyu")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_jqcd5")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
