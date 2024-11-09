@@ -24,8 +24,8 @@ func _on_glasses_change(old_glasses: int, new_glasses: int) -> void:
 func _process(delta: float) -> void:
 	if isSpinning:
 		$DetectionCone.scale.x = cos(dont_fucking_ask)
-		if 1 - abs(cos(dont_fucking_ask)) < 0.001:
-			await get_tree().create_timer(2).timeout
+		if 1 - abs(cos(dont_fucking_ask)) < 0.1:
+			await get_tree().create_timer(5).timeout
 	dont_fucking_ask += 0.01
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
