@@ -8,7 +8,7 @@ extends CharacterBody2D
 var dont_fucking_ask : float = 0.0
 
 func _ready() -> void:
-	Player.instance.glasses_changed.connect(_on_glasses_change)
+			Player.instance.glasses_changed.connect(_on_glasses_change)
 	
 func _on_glasses_change(old_glasses: int, new_glasses: int) -> void:
 	if(new_glasses == Player.Glasses.DRONE or new_glasses == Player.Glasses.NORMAL):
