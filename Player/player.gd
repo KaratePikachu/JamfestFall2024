@@ -82,6 +82,7 @@ func switch_glasses(new_glasses):
 func _on_glasses_changed(old_glasses: int, new_glasses: int) -> void:
 	self.worn_glasses = new_glasses
 	print("test")
+	print(Glasses.NORMAL)
 	pass # Replace with function body.
 
 func _physics_process(delta):

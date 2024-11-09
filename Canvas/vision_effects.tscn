@@ -99,10 +99,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Drone" type="CanvasLayer" parent="."]
+visible = false
 
-[node name="CanvasLayer" type="CanvasLayer" parent="Drone"]
+[node name="DroneEffectOne" type="CanvasLayer" parent="Drone"]
 
-[node name="Destauration" type="ColorRect" parent="Drone/CanvasLayer"]
+[node name="Destauration" type="ColorRect" parent="Drone/DroneEffectOne"]
 material = SubResource("ShaderMaterial_i3kl3")
 anchors_preset = 15
 anchor_right = 1.0
@@ -111,9 +112,9 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="Drone"]
+[node name="DroneEffectTwo" type="CanvasLayer" parent="Drone"]
 
-[node name="Blur" type="ColorRect" parent="Drone/CanvasLayer2"]
+[node name="Blur" type="ColorRect" parent="Drone/DroneEffectTwo"]
 material = SubResource("ShaderMaterial_fiv3v")
 anchors_preset = 15
 anchor_right = 1.0
@@ -122,9 +123,9 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="CanvasLayer3" type="CanvasLayer" parent="Drone"]
+[node name="DroneEffectThree" type="CanvasLayer" parent="Drone"]
 
-[node name="VCR" type="ColorRect" parent="Drone/CanvasLayer3"]
+[node name="VCR" type="ColorRect" parent="Drone/DroneEffectThree"]
 material = SubResource("ShaderMaterial_brhrr")
 anchors_preset = 15
 anchor_right = 1.0

@@ -14,6 +14,9 @@ func disable_vision():
 	$Blindness.visible = false
 	$Sunglasses.visible = false
 	$Drone.visible = false
+	$Drone/DroneEffectOne.visible = false
+	$Drone/DroneEffectTwo.visible = false
+	$Drone/DroneEffectThree.visible = false
 	
 func enable_vision(glasses : Player.Glasses):
 	if(glasses == Player.Glasses.NONE):
@@ -21,6 +24,10 @@ func enable_vision(glasses : Player.Glasses):
 	elif(glasses == Player.Glasses.SUNGLASSES):
 		$Sunglasses.visible = true
 	elif(glasses == Player.Glasses.DRONE):
+		print("effect one = ", $Drone/DroneEffectOne.visible)
 		$Drone.visible = true
+		$Drone/DroneEffectOne.visible = true
+		$Drone/DroneEffectTwo.visible = true
+		$Drone/DroneEffectThree.visible = true
 	pass
 	
