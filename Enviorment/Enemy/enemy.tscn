@@ -1,5 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://qa6itmjrn43y"]
 
+[ext_resource type="Script" path="res://Enviorment/Enemy/enemy.gd" id="1_2de7v"]
 [ext_resource type="Texture2D" uid="uid://c37suxkugq6n0" path="res://Enviorment/Enemy/jonerrrr.png" id="1_xtwwk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ufkie"]
@@ -13,6 +14,7 @@ b = Vector2(-111.31, 45)
 b = Vector2(-191, -62)
 
 [node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_2de7v")
 
 [node name="Jonerrrr" type="Sprite2D" parent="."]
 scale = Vector2(0.188935, 0.188935)
@@ -22,15 +24,25 @@ texture = ExtResource("1_xtwwk")
 position = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_ufkie")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="DetectionCone" type="Area2D" parent="."]
+visible = false
+collision_layer = 2
+collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-78.69, 0)
-shape = SubResource("SegmentShape2D_rlefm")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("SegmentShape2D_0o2so")
-
-[node name="VisionCone" type="Polygon2D" parent="Area2D"]
+[node name="VisionCone" type="Polygon2D" parent="DetectionCone"]
 color = Color(1, 1, 0, 0.309804)
 polygon = PackedVector2Array(0, -1, -191, -62, -191, 46)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DetectionCone"]
+polygon = PackedVector2Array(-1, 0, -191, -61, -190, 46)
+
+[node name="DeathAura" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathAura"]
+position = Vector2(-0.5, 2)
+shape = SubResource("RectangleShape2D_umrop")
+
+[connection signal="body_entered" from="DetectionCone" to="." method="_on_DetectionCone_body_entered"]
+[connection signal="body_entered" from="DeathAura" to="." method="_on_death_aura_body_entered"]

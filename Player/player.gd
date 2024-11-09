@@ -76,6 +76,7 @@ func switch_glasses(new_glasses):
 	
 func _on_glasses_changed(old_glasses: int, new_glasses: int) -> void:
 	self.worn_glasses = new_glasses
+	print("test")
 	pass # Replace with function body.
 
 func _physics_process(delta):
@@ -101,3 +102,6 @@ func _physics_process(delta):
 	# Check for jumping. is_on_floor() must be called after movement code.
 	if is_on_floor() and Input.is_action_just_pressed(&"jump"):
 		velocity.y = -JUMP_SPEED
+		
+func die() -> void:
+		get_tree().reload_current_scene()
