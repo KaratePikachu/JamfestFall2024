@@ -29,6 +29,7 @@ func _process(delta: float) -> void:
 		return
 	if isSpinning:
 		$DetectionCone.scale.x = cos(dont_fucking_ask)
+
 		dont_fucking_ask += 0.01 + delta
 		print(abs(cos(dont_fucking_ask)))
 		if 1 - abs(cos(dont_fucking_ask)) < 0.0001:
@@ -41,6 +42,7 @@ func _process(delta: float) -> void:
 			isSpinning = true
 			timer = 0.0 
 		
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
