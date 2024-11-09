@@ -4,10 +4,14 @@ extends CharacterBody2D
 @export var direction : int = 1
 @export var speed : int = 80
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
-	#pass # Replace with function body.
+	Player.instance.glasses_changed.connect(_on_glasses_change)
+	
+func _on_glasses_change(old_glasses: int, new_glasses: int) -> void:
+	if(new_glasses == Player.Glasses.INFARED or new_glasses == Player.Glasses.NORMAL or new_glasses == Player.Glasses.DRONE):
+		$Sprite.visible = true
+	else: 
+		$Sprite.visible = false
 	
 func _physics_process(delta: float) -> void:
 	velocity.x = speed * direction
