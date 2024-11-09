@@ -17,3 +17,11 @@ func _on_triggered() -> void:
 		$CollisionArea.set_deferred("disabled", false)
 		
 	
+
+
+func _on_switch_1_triggered():
+	pass # Replace with function body.
+
+
+func _on_switch_2_triggered():
+	pass # Replace with function body.

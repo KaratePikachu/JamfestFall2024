@@ -1,0 +1,356 @@
+[gd_scene load_steps=19 format=3 uid="uid://dg5173vw2e2km"]
+
+[ext_resource type="PackedScene" uid="uid://h1vg2qyr6ug2" path="res://Objects/Dark Platform/dark_platform.tscn" id="1_4vvvl"]
+[ext_resource type="PackedScene" uid="uid://u5vlmp8hm4ku" path="res://Player/player.tscn" id="1_gwptc"]
+[ext_resource type="PackedScene" uid="uid://bmvu0eqsw4qql" path="res://Interactable/Switch/switch.tscn" id="1_lr6km"]
+[ext_resource type="Shader" path="res://Shaders/Blur.gdshader" id="2_6123f"]
+[ext_resource type="PackedScene" uid="uid://cc4ppwhyjy67u" path="res://Interactable/Glasses/Sunglasses/sunglasses_pickup.tscn" id="2_g8pdr"]
+[ext_resource type="PackedScene" uid="uid://lpj2ux5e6qek" path="res://Interactable/Door/Door.tscn" id="2_q3r0c"]
+[ext_resource type="PackedScene" uid="uid://b68p8jegitusu" path="res://Enviorment/DeathSquare/death_square.tscn" id="6_2amlo"]
+[ext_resource type="PackedScene" uid="uid://dp7fxu33gf8m0" path="res://Canvas/vision_effects.tscn" id="8_7los1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_33243"]
+size = Vector2(4072, 255)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n4dw6"]
+size = Vector2(346.5, 178)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_afsjq"]
+size = Vector2(301.625, 259.875)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v4o3c"]
+size = Vector2(267, 260)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jyhkc"]
+size = Vector2(284.5, 145.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1iu5v"]
+size = Vector2(194, 302)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cw3xv"]
+size = Vector2(207, 545)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eabse"]
+size = Vector2(135, 46.5)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jghdn"]
+shader = ExtResource("2_6123f")
+shader_parameter/scale = 1.0
+shader_parameter/lod = 0.0
+shader_parameter/x_blur_offest = 1.979
+shader_parameter/y_blur_offest = 0.99
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8wn35"]
+size = Vector2(210, 709.5)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Level" type="Node" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Level"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D"]
+position = Vector2(1986, 263.5)
+shape = SubResource("RectangleShape2D_33243")
+
+[node name="ColorRect" type="ColorRect" parent="Level/StaticBody2D"]
+offset_left = -44.0
+offset_top = 139.0
+offset_right = 4017.0
+offset_bottom = 375.0
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Level"]
+position = Vector2(128.934, -990.786)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D2"]
+position = Vector2(407.066, 1048.79)
+shape = SubResource("RectangleShape2D_n4dw6")
+
+[node name="ColorRect" type="ColorRect" parent="Level/StaticBody2D2"]
+offset_left = 241.066
+offset_top = 966.786
+offset_right = 573.066
+offset_bottom = 1129.79
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Level"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D3"]
+position = Vector2(848.188, 19.9375)
+shape = SubResource("RectangleShape2D_afsjq")
+
+[node name="ColorRect" type="ColorRect" parent="Level/StaticBody2D3"]
+offset_left = 704.0
+offset_top = -105.0
+offset_right = 990.0
+offset_bottom = 140.0
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Level"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D4"]
+position = Vector2(1345.5, 9)
+shape = SubResource("RectangleShape2D_v4o3c")
+
+[node name="ColorRect" type="ColorRect" parent="Level/StaticBody2D4"]
+offset_left = 1223.0
+offset_top = -112.0
+offset_right = 1467.0
+offset_bottom = 144.0
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="Level"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D6"]
+position = Vector2(1863.75, 61.75)
+shape = SubResource("RectangleShape2D_jyhkc")
+
+[node name="ColorRect" type="ColorRect" parent="Level/StaticBody2D6"]
+offset_left = 1730.0
+offset_top = -5.0
+offset_right = 2000.0
+offset_bottom = 143.0
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="Level"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D8"]
+position = Vector2(2673, -258)
+shape = SubResource("RectangleShape2D_1iu5v")
+
+[node name="ColorRect" type="ColorRect" parent="Level/StaticBody2D8"]
+offset_left = 2589.0
+offset_top = -399.0
+offset_right = 2757.0
+offset_bottom = -98.0
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="Level"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D9"]
+position = Vector2(3084.5, -138.5)
+shape = SubResource("RectangleShape2D_cw3xv")
+
+[node name="ColorRect" type="ColorRect" parent="Level/StaticBody2D9"]
+offset_left = 2995.0
+offset_top = -404.0
+offset_right = 3175.0
+offset_bottom = 137.0
+
+[node name="DarkPlatform" parent="Level" instance=ExtResource("1_4vvvl")]
+position = Vector2(1595, -48)
+scale = Vector2(4.2, 2)
+
+[node name="DarkPlatform2" parent="Level" instance=ExtResource("1_4vvvl")]
+position = Vector2(2283, 66)
+scale = Vector2(4.06295, 2.2668)
+
+[node name="DarkPlatform3" parent="Level" instance=ExtResource("1_4vvvl")]
+position = Vector2(2907, 37)
+scale = Vector2(3, 1)
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="Level"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D5"]
+position = Vector2(2819.5, -114.5)
+shape = SubResource("RectangleShape2D_eabse")
+
+[node name="ColorRect" type="ColorRect" parent="Level/StaticBody2D5"]
+offset_left = 2751.0
+offset_top = -134.0
+offset_right = 2882.0
+offset_bottom = -94.0
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="Level"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D7"]
+position = Vector2(3497, -369)
+shape = SubResource("RectangleShape2D_eabse")
+
+[node name="ColorRect" type="ColorRect" parent="Level/StaticBody2D7"]
+offset_left = 3430.0
+offset_top = -388.0
+offset_right = 3561.0
+offset_bottom = -348.0
+
+[node name="StaticBody2D10" type="StaticBody2D" parent="Level"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D10"]
+position = Vector2(3243, -268)
+shape = SubResource("RectangleShape2D_eabse")
+
+[node name="ColorRect" type="ColorRect" parent="Level/StaticBody2D10"]
+offset_left = 3175.0
+offset_top = -288.0
+offset_right = 3306.0
+offset_bottom = -248.0
+
+[node name="StaticBody2D11" type="StaticBody2D" parent="Level"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D11"]
+position = Vector2(3243, -268)
+shape = SubResource("RectangleShape2D_eabse")
+
+[node name="ColorRect" type="ColorRect" parent="Level/StaticBody2D11"]
+offset_left = 3175.0
+offset_top = -288.0
+offset_right = 3306.0
+offset_bottom = -248.0
+
+[node name="StaticBody2D15" type="StaticBody2D" parent="Level"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D15"]
+position = Vector2(2929, -261)
+shape = SubResource("RectangleShape2D_eabse")
+
+[node name="ColorRect" type="ColorRect" parent="Level/StaticBody2D15"]
+offset_left = 2865.0
+offset_top = -283.0
+offset_right = 2996.0
+offset_bottom = -243.0
+
+[node name="DarkPlatform4" parent="Level" instance=ExtResource("1_4vvvl")]
+position = Vector2(3492, -146)
+scale = Vector2(2.5, 0.75)
+
+[node name="StaticBody2D12" type="StaticBody2D" parent="Level"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D12"]
+position = Vector2(3741, -51)
+shape = SubResource("RectangleShape2D_eabse")
+
+[node name="ColorRect" type="ColorRect" parent="Level/StaticBody2D12"]
+offset_left = 3693.0
+offset_top = -70.0
+offset_right = 3824.0
+offset_bottom = -30.0
+
+[node name="StaticBody2D13" type="StaticBody2D" parent="Level"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D13"]
+position = Vector2(3755, -478)
+shape = SubResource("RectangleShape2D_eabse")
+
+[node name="ColorRect" type="ColorRect" parent="Level/StaticBody2D13"]
+offset_left = 3689.0
+offset_top = -495.0
+offset_right = 3820.0
+offset_bottom = -455.0
+
+[node name="StaticBody2D14" type="StaticBody2D" parent="Level"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D14"]
+position = Vector2(3751, -612)
+shape = SubResource("RectangleShape2D_eabse")
+
+[node name="ColorRect" type="ColorRect" parent="Level/StaticBody2D14"]
+offset_left = 3690.0
+offset_top = -630.0
+offset_right = 3821.0
+offset_bottom = -590.0
+
+[node name="Door2" parent="." instance=ExtResource("2_q3r0c")]
+position = Vector2(3692, -629)
+scale = Vector2(1, 4)
+
+[node name="Door1" parent="." instance=ExtResource("2_q3r0c")]
+position = Vector2(2587, -104)
+scale = Vector2(1, 6)
+color = Color(0.235734, 0.696482, 0.375812, 1)
+
+[node name="Switch2" parent="." instance=ExtResource("1_lr6km")]
+position = Vector2(3758, -105)
+
+[node name="Switch1" parent="." instance=ExtResource("1_lr6km")]
+position = Vector2(2276, -46)
+
+[node name="Player" parent="." instance=ExtResource("1_gwptc")]
+position = Vector2(-2, -134)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+material = SubResource("ShaderMaterial_jghdn")
+use_parent_material = true
+position = Vector2(-0.682969, -33.4467)
+
+[node name="SunglassesPickup" parent="." instance=ExtResource("2_g8pdr")]
+position = Vector2(204, 102)
+
+[node name="Spikes" type="Node" parent="."]
+
+[node name="DeathSquare" parent="Spikes" instance=ExtResource("6_2amlo")]
+position = Vector2(1077, 117)
+scale = Vector2(2, 2)
+
+[node name="DeathSquare2" parent="Spikes" instance=ExtResource("6_2amlo")]
+position = Vector2(1133, 116)
+scale = Vector2(2, 2)
+
+[node name="DeathSquare3" parent="Spikes" instance=ExtResource("6_2amlo")]
+position = Vector2(1021, 116)
+scale = Vector2(2, 2)
+
+[node name="DeathSquare4" parent="Spikes" instance=ExtResource("6_2amlo")]
+position = Vector2(1186, 115)
+scale = Vector2(2, 2)
+
+[node name="DeathSquare5" parent="Spikes" instance=ExtResource("6_2amlo")]
+position = Vector2(3260, 113)
+scale = Vector2(2, 2)
+
+[node name="DeathSquare6" parent="Spikes" instance=ExtResource("6_2amlo")]
+position = Vector2(3316, 112)
+scale = Vector2(2, 2)
+
+[node name="DeathSquare7" parent="Spikes" instance=ExtResource("6_2amlo")]
+position = Vector2(3204, 112)
+scale = Vector2(2, 2)
+
+[node name="DeathSquare8" parent="Spikes" instance=ExtResource("6_2amlo")]
+position = Vector2(3369, 113)
+scale = Vector2(2, 2)
+
+[node name="DeathSquare9" parent="Spikes" instance=ExtResource("6_2amlo")]
+position = Vector2(3476, 113)
+scale = Vector2(2, 2)
+
+[node name="DeathSquare10" parent="Spikes" instance=ExtResource("6_2amlo")]
+position = Vector2(3532, 112)
+scale = Vector2(2, 2)
+
+[node name="DeathSquare11" parent="Spikes" instance=ExtResource("6_2amlo")]
+position = Vector2(3420, 112)
+scale = Vector2(2, 2)
+
+[node name="DeathSquare12" parent="Spikes" instance=ExtResource("6_2amlo")]
+position = Vector2(3585, 113)
+scale = Vector2(2, 2)
+
+[node name="DeathSquare13" parent="Spikes" instance=ExtResource("6_2amlo")]
+position = Vector2(3692, 115)
+scale = Vector2(2, 2)
+
+[node name="DeathSquare14" parent="Spikes" instance=ExtResource("6_2amlo")]
+position = Vector2(3748, 114)
+scale = Vector2(2, 2)
+
+[node name="DeathSquare15" parent="Spikes" instance=ExtResource("6_2amlo")]
+position = Vector2(3636, 114)
+scale = Vector2(2, 2)
+
+[node name="DeathSquare16" parent="Spikes" instance=ExtResource("6_2amlo")]
+position = Vector2(3801, 115)
+scale = Vector2(2, 2)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3915, -214)
+shape = SubResource("RectangleShape2D_8wn35")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 3820.0
+offset_top = -635.0
+offset_right = 4017.0
+offset_bottom = 144.0
+
+[node name="VisionEffects" parent="." instance=ExtResource("8_7los1")]
+
+[connection signal="triggered" from="Switch2" to="Door2" method="_on_triggered"]
+[connection signal="triggered" from="Switch2" to="Door2" method="_on_switch_2_triggered"]
+[connection signal="triggered" from="Switch1" to="Door1" method="_on_switch_1_triggered"]
+[connection signal="triggered" from="Switch1" to="Door1" method="_on_triggered"]
