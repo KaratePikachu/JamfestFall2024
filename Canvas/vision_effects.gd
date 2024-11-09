@@ -1,9 +1,21 @@
 extends CanvasLayer
 
-#
-## Called when the node enters the scene tree for the first time.
-#func _init() -> void:
-	#Player.instance.connect("glasses_changed", )
-	#
-#func change_vi	sion_effect() -> void:
+
+# Called when the node enters the scene tree for the first time.
+func _init() -> void:
+	#Player.instance.bind_glasses_changed(self,"change_vision_effect")
+	Player.instance.connect("glasses_changed", Callable(self, "change_vision_effect"))
+	
+func change_vision_effect(old_glasses : Player.Glasses, new_glasses : Player.Glasses) -> void:
+	disable_vision()
+	enable_vision(new_glasses)
+	
+func disable_vision():
+	$Blindness.visible = false
+	
+func enable_vision(glasses : Player.Glasses):
+	if(glasses == Player.Glasses.NONE):
+		$Blindness.visible = true
+			
+	pass
 	

@@ -59,7 +59,7 @@ func _input(event: InputEvent) -> void:
 		switch_glasses(desired_switch)
 		
 		
-	
+
 func grant_glasses(new_glasses):
 	if !obtained_glasses.has(new_glasses):
 		obtained_glasses.append(new_glasses)
