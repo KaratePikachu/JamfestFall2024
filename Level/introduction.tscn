@@ -94,7 +94,6 @@ scale = Vector2(1, 6)
 color = Color(1, 0, 0, 1)
 
 [node name="VisionEffects" parent="." instance=ExtResource("7_087av")]
-visible = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

@@ -1,0 +1,249 @@
+[gd_scene load_steps=19 format=3 uid="uid://cgu5b07ehe4ts"]
+
+[ext_resource type="PackedScene" uid="uid://u5vlmp8hm4ku" path="res://Player/player.tscn" id="1_3ypmk"]
+[ext_resource type="PackedScene" uid="uid://h1vg2qyr6ug2" path="res://Objects/Dark Platform/dark_platform.tscn" id="2_jnov8"]
+[ext_resource type="PackedScene" uid="uid://dn36wd0cgi5j4" path="res://Enviorment/Laser/Laser.tscn" id="3_dfuio"]
+[ext_resource type="PackedScene" uid="uid://bmvu0eqsw4qql" path="res://Interactable/Switch/switch.tscn" id="4_oyrt6"]
+[ext_resource type="PackedScene" uid="uid://lpj2ux5e6qek" path="res://Interactable/Door/Door.tscn" id="5_26q2w"]
+[ext_resource type="PackedScene" uid="uid://cf5674d77sx2n" path="res://Enviorment/Goomba/goomba.tscn" id="6_dlfkx"]
+[ext_resource type="PackedScene" uid="uid://c2c6j0ido1yw4" path="res://Interactable/Glasses/Normal/normal_glasses_pickup.tscn" id="7_7xq2u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_us3du"]
+size = Vector2(4072, 255)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ftyc4"]
+size = Vector2(242, 368)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yhdad"]
+size = Vector2(331, 147.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kf31e"]
+size = Vector2(269, 206)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ovrvt"]
+size = Vector2(235, 126)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j7wcf"]
+size = Vector2(231, 225)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6vnpj"]
+size = Vector2(287, 418)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8bg7n"]
+size = Vector2(131.375, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hpq3t"]
+size = Vector2(251, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1717n"]
+size = Vector2(52.5, 227)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dflgx"]
+size = Vector2(284, 37)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_3ypmk")]
+position = Vector2(-1, -3)
+
+[node name="Level" type="Node" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Level"]
+position = Vector2(4, 11)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D"]
+position = Vector2(1922, 582)
+shape = SubResource("RectangleShape2D_us3du")
+
+[node name="ColorRect" type="ColorRect" parent="Level/StaticBody2D"]
+offset_left = -100.0
+offset_top = 467.0
+offset_right = 3961.0
+offset_bottom = 703.0
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Level"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D2"]
+position = Vector2(25, 297)
+shape = SubResource("RectangleShape2D_ftyc4")
+
+[node name="ColorRect" type="ColorRect" parent="Level/StaticBody2D2"]
+offset_left = -91.0
+offset_top = 112.0
+offset_right = 140.0
+offset_bottom = 487.0
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Level"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D3"]
+position = Vector2(301.5, 86.25)
+shape = SubResource("RectangleShape2D_yhdad")
+
+[node name="ColorRect" type="ColorRect" parent="Level/StaticBody2D3"]
+offset_left = 135.0
+offset_top = 15.0
+offset_right = 465.0
+offset_bottom = 159.0
+
+[node name="DarkPlatform" parent="Level" instance=ExtResource("2_jnov8")]
+position = Vector2(782, 182)
+scale = Vector2(4, 2)
+
+[node name="DarkPlatform2" parent="Level" instance=ExtResource("2_jnov8")]
+position = Vector2(2003, -112)
+scale = Vector2(4, 0.5)
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Level"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D4"]
+position = Vector2(1177.5, 376)
+shape = SubResource("RectangleShape2D_kf31e")
+
+[node name="ColorRect" type="ColorRect" parent="Level/StaticBody2D4"]
+offset_left = 1050.0
+offset_top = 278.0
+offset_right = 1312.0
+offset_bottom = 480.0
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="Level"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D5"]
+position = Vector2(1424, 436)
+shape = SubResource("RectangleShape2D_ovrvt")
+
+[node name="ColorRect" type="ColorRect" parent="Level/StaticBody2D5"]
+offset_left = 1310.0
+offset_top = 380.0
+offset_right = 1535.0
+offset_bottom = 493.0
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="Level"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D6"]
+position = Vector2(1885, 180)
+shape = SubResource("RectangleShape2D_j7wcf")
+
+[node name="ColorRect" type="ColorRect" parent="Level/StaticBody2D6"]
+offset_left = 1781.0
+offset_top = 72.0
+offset_right = 1996.0
+offset_bottom = 287.0
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="Level"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D7"]
+position = Vector2(2384, 275)
+shape = SubResource("RectangleShape2D_6vnpj")
+
+[node name="ColorRect" type="ColorRect" parent="Level/StaticBody2D7"]
+offset_left = 2245.0
+offset_top = 75.0
+offset_right = 2526.0
+offset_bottom = 475.0
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="Level"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D8"]
+position = Vector2(2205.69, 340)
+shape = SubResource("RectangleShape2D_8bg7n")
+
+[node name="ColorRect" type="ColorRect" parent="Level/StaticBody2D8"]
+offset_left = 2139.0
+offset_top = 306.0
+offset_right = 2243.0
+offset_bottom = 369.0
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="Level"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D9"]
+position = Vector2(2057.88, 196)
+shape = SubResource("RectangleShape2D_8bg7n")
+
+[node name="ColorRect" type="ColorRect" parent="Level/StaticBody2D9"]
+offset_left = 1996.0
+offset_top = 167.0
+offset_right = 2116.0
+offset_bottom = 230.0
+
+[node name="StaticBody2D10" type="StaticBody2D" parent="Level"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D10"]
+position = Vector2(1635.5, -29)
+shape = SubResource("RectangleShape2D_hpq3t")
+
+[node name="ColorRect" type="ColorRect" parent="Level/StaticBody2D10"]
+offset_left = 1509.0
+offset_top = -53.0
+offset_right = 1759.0
+offset_bottom = -6.0
+
+[node name="StaticBody2D12" type="StaticBody2D" parent="Level"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D12"]
+position = Vector2(1634, -213)
+shape = SubResource("RectangleShape2D_hpq3t")
+
+[node name="ColorRect" type="ColorRect" parent="Level/StaticBody2D12"]
+offset_left = 1507.0
+offset_top = -235.0
+offset_right = 1757.0
+offset_bottom = -188.0
+
+[node name="StaticBody2D11" type="StaticBody2D" parent="Level"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D11"]
+position = Vector2(1530.25, -119)
+shape = SubResource("RectangleShape2D_1717n")
+
+[node name="ColorRect" type="ColorRect" parent="Level/StaticBody2D11"]
+offset_left = 1509.0
+offset_top = -233.0
+offset_right = 1549.0
+offset_bottom = -11.0
+
+[node name="StaticBody2D13" type="StaticBody2D" parent="Level"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D13"]
+position = Vector2(2380, -186.5)
+shape = SubResource("RectangleShape2D_dflgx")
+
+[node name="ColorRect" type="ColorRect" parent="Level/StaticBody2D13"]
+offset_left = 2251.0
+offset_top = -207.0
+offset_right = 2512.0
+offset_bottom = -167.0
+
+[node name="Lasers" type="Node" parent="."]
+
+[node name="Lazer" parent="Lasers" instance=ExtResource("3_dfuio")]
+position = Vector2(1625, -3)
+scale = Vector2(1, 12)
+
+[node name="Lazer3" parent="Lasers" instance=ExtResource("3_dfuio")]
+position = Vector2(1997, 248)
+scale = Vector2(6, 1)
+
+[node name="Switch" parent="." instance=ExtResource("4_oyrt6")]
+position = Vector2(2477, 34)
+
+[node name="Door" parent="." instance=ExtResource("5_26q2w")]
+position = Vector2(1725, -191)
+scale = Vector2(1, 4)
+color = Color(0, 0.78852, 0, 1)
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Goomba" parent="Enemies" instance=ExtResource("6_dlfkx")]
+position = Vector2(1175, 226)
+
+[node name="Goomba3" parent="Enemies" instance=ExtResource("6_dlfkx")]
+position = Vector2(2352, 16)
+
+[node name="Goomba4" parent="Enemies" instance=ExtResource("6_dlfkx")]
+position = Vector2(1978, -185)
+
+[node name="NormalGlassesPickup" parent="." instance=ExtResource("7_7xq2u")]
+position = Vector2(777, 85)
+
+[connection signal="triggered" from="Switch" to="Door" method="_on_switch_triggered"]
+[connection signal="triggered" from="Switch" to="Door" method="_on_triggered"]

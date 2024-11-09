@@ -25,3 +25,7 @@ func _on_switch_1_triggered():
 
 func _on_switch_2_triggered():
 	pass # Replace with function body.
+
+
+func _on_switch_triggered():
+	pass # Replace with function body.
