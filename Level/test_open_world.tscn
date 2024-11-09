@@ -101,4 +101,4 @@ texture = ExtResource("2_wrlyu")
 [node name="Switch" parent="." instance=ExtResource("4_2pa1x")]
 position = Vector2(993, 529)
 
-[node name="CanvasLayer" parent="." instance=ExtResource("6_o2frb")]
+[node name="VisionEffects" parent="." instance=ExtResource("6_o2frb")]
