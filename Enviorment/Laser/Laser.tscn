@@ -10,16 +10,15 @@ collision_layer = 255
 collision_mask = 255
 script = ExtResource("1_cjqm3")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.492082, 8.36272e-07, 3.36915e-07, 1)
+
 [node name="Shape" type="CollisionShape2D" parent="."]
 position = Vector2(20.5, 20)
 shape = SubResource("RectangleShape2D_ghtnr")
-
-[node name="ColorRect" type="ColorRect" parent="Shape"]
-offset_left = -20.5
-offset_top = -20.0
-offset_right = 19.5
-offset_bottom = 20.0
-color = Color(0.492082, 8.36272e-07, 3.36915e-07, 1)
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
