@@ -23,14 +23,14 @@ layout_mode = 0
 offset_left = 17.0
 offset_top = 19.0
 offset_right = 57.0
-offset_bottom = 59.0
+offset_bottom = 37.0
 color = Color(1, 0, 0, 1)
 
 [node name="On" type="ColorRect" parent="Switch" index="1"]
 visible = false
 layout_mode = 0
 offset_left = 16.0
-offset_top = 18.0
+offset_top = 43.0
 offset_right = 56.0
 offset_bottom = 58.0
 color = Color(0, 1, 0, 1)
