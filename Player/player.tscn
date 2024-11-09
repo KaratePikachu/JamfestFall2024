@@ -23,4 +23,6 @@ shape = SubResource("CircleShape2D_q0k8u")
 position = Vector2(-1, 0)
 texture = ExtResource("3_wcmay")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+
 [connection signal="glasses_changed" from="." to="." method="_on_glasses_changed"]
