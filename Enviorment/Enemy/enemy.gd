@@ -27,33 +27,19 @@ func _on_glasses_change(old_glasses: int, new_glasses: int) -> void:
 func _process(delta: float) -> void:
 	if !canSpin:
 		return
-	if timer == 0.0:
-		isSpinning = true
-	print("DOING THINGS")
 	if isSpinning:
 		$DetectionCone.scale.x = cos(dont_fucking_ask)
 		dont_fucking_ask += 0.01 + delta
-		print("SPINNING")
 		print(abs(cos(dont_fucking_ask)))
 		if 1 - abs(cos(dont_fucking_ask)) < 0.0001:
 			isSpinning = false
 			timer = 0.001
 	else:
-		print("NOT SPINNING")
 		print(timer)
 		timer += delta
 		if timer >= timePaused:
-			print("FLIPPED")
 			isSpinning = true
 			timer = 0.0 
-			
-	print("---------------------------")
-		
-	
-	
-	
-	if 1 - abs(cos(dont_fucking_ask)) < 0.01:
-		isSpinning = false
 		
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

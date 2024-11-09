@@ -107,12 +107,12 @@ position = Vector2(1023, 545)
 canSpin = true
 
 [node name="SunglassesPickup" parent="." instance=ExtResource("7_8mvxf")]
-position = Vector2(397, 541)
+position = Vector2(80, 535)
 
 [node name="DroneGlassesPickup" parent="." instance=ExtResource("11_3a312")]
 position = Vector2(547, 543)
 
 [node name="NormalGlassesPickup" parent="." instance=ExtResource("11_3a312")]
-position = Vector2(711, 544)
+position = Vector2(813, 548)
 
 [connection signal="triggered" from="Switch" to="Door" method="_on_triggered"]
