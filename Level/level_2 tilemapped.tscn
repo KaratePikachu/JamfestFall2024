@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bbvpyqfw7gn1j" path="res://Level/level_3 tileMapped.tscn" id="11_4nxeo"]
 [ext_resource type="PackedScene" uid="uid://c0irdu28sl6ah" path="res://Interactable/Glasses/Infared/infared_glasses_pickup.tscn" id="11_dh5lf"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 
 [node name="TileMapLayers" parent="." instance=ExtResource("1_iw8wq")]
 
@@ -38,6 +38,7 @@ scale = Vector2(6, 1)
 
 [node name="Switch" parent="." instance=ExtResource("3_lj1mh")]
 position = Vector2(2477, 34)
+toggled = false
 
 [node name="Door" parent="." instance=ExtResource("4_0aw52")]
 position = Vector2(1725, -230)

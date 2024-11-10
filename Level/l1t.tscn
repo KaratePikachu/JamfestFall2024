@@ -19,7 +19,7 @@ shader_parameter/lod = 0.0
 shader_parameter/x_blur_offest = 1.979
 shader_parameter/y_blur_offest = 0.99
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 
 [node name="Door2" parent="." instance=ExtResource("1_n15bx")]
 position = Vector2(3692, -629)
@@ -32,9 +32,11 @@ color = Color(0.235734, 0.696482, 0.375812, 1)
 
 [node name="Switch2" parent="." instance=ExtResource("2_2wdbt")]
 position = Vector2(3758, -105)
+toggled = false
 
 [node name="Switch1" parent="." instance=ExtResource("2_2wdbt")]
 position = Vector2(2276, -46)
+toggled = false
 
 [node name="Player" parent="." instance=ExtResource("3_t6c1r")]
 position = Vector2(-2, -134)
@@ -132,7 +134,7 @@ tile_set = ExtResource("8_g8dob")
 position = Vector2(3896, -563)
 scene_name = ExtResource("10_4misl")
 
-[connection signal="triggered" from="Switch2" to="Door2" method="_on_switch_2_triggered"]
 [connection signal="triggered" from="Switch2" to="Door2" method="_on_triggered"]
+[connection signal="triggered" from="Switch2" to="Door2" method="_on_switch_2_triggered"]
 [connection signal="triggered" from="Switch1" to="Door1" method="_on_switch_1_triggered"]
 [connection signal="triggered" from="Switch1" to="Door1" method="_on_triggered"]
