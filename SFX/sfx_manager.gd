@@ -27,17 +27,17 @@ var glasses_pick_up_file = "glasses_pick_up.ogg"
 @onready var glasses_pick_up = $glasses_pick_up
 
 func _ready() -> void:
-	bgm.stream = AudioStreamOggVorbis.load_from_file(sound_loc + bgm_file)
-	death.stream = AudioStreamOggVorbis.load_from_file(sound_loc + death_file)
-	glasses_break.stream = AudioStreamOggVorbis.load_from_file(sound_loc + glasses_break_file)
-	ir.stream = AudioStreamOggVorbis.load_from_file(sound_loc + ir_file)
-	jump.stream = AudioStreamOggVorbis.load_from_file(sound_loc + jump_file)
-	land.stream = AudioStreamOggVorbis.load_from_file(sound_loc + land_file)
-	menu_click.stream = AudioStreamOggVorbis.load_from_file(sound_loc + menu_click_file)
-	switch.stream = AudioStreamOggVorbis.load_from_file(sound_loc + switch_file)
-	walking.stream = AudioStreamOggVorbis.load_from_file(sound_loc + walking_file)
-	drone.stream = AudioStreamOggVorbis.load_from_file(sound_loc + drone_file)
-	glasses_pick_up.stream = AudioStreamOggVorbis.load_from_file(sound_loc + glasses_pick_up_file)
+	#bgm.stream = AudioStreamOggVorbis.load_from_file(sound_loc + bgm_file)
+	#death.stream = AudioStreamOggVorbis.load_from_file(sound_loc + death_file)
+	#glasses_break.stream = AudioStreamOggVorbis.load_from_file(sound_loc + glasses_break_file)
+	#ir.stream = AudioStreamOggVorbis.load_from_file(sound_loc + ir_file)
+	#jump.stream = AudioStreamOggVorbis.load_from_file(sound_loc + jump_file)
+	#land.stream = AudioStreamOggVorbis.load_from_file(sound_loc + land_file)
+	#menu_click.stream = AudioStreamOggVorbis.load_from_file(sound_loc + menu_click_file)
+	#switch.stream = AudioStreamOggVorbis.load_from_file(sound_loc + switch_file)
+	#walking.stream = AudioStreamOggVorbis.load_from_file(sound_loc + walking_file)
+	#drone.stream = AudioStreamOggVorbis.load_from_file(sound_loc + drone_file)
+	#glasses_pick_up.stream = AudioStreamOggVorbis.load_from_file(sound_loc + glasses_pick_up_file)
 
 	bgm.volume_db = -9.0
 	walking.volume_db = -5.0
