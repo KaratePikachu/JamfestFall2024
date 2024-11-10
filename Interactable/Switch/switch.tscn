@@ -7,7 +7,6 @@
 
 [node name="Switch" instance=ExtResource("1_ek0vl")]
 script = ExtResource("2_7vxng")
-color = Color(0, 0, 0, 1)
 toggled = false
 
 [node name="Sprite2D" parent="." index="0"]

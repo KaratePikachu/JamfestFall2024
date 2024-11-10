@@ -1,6 +1,5 @@
 extends Interactable
 
-@export var color : Color = Color(0,0,0)
 @export var toggled : bool = false
 
 signal triggered

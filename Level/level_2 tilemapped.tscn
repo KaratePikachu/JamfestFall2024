@@ -38,7 +38,6 @@ scale = Vector2(6, 1)
 
 [node name="Switch" parent="." instance=ExtResource("3_lj1mh")]
 position = Vector2(2477, 34)
-toggled = false
 
 [node name="Door" parent="." instance=ExtResource("4_0aw52")]
 position = Vector2(1725, -230)
@@ -67,5 +66,5 @@ position = Vector2(319, -32)
 [node name="Player" parent="." instance=ExtResource("1_srbwn")]
 position = Vector2(-1, -3)
 
-[connection signal="triggered" from="Switch" to="Door" method="_on_triggered"]
 [connection signal="triggered" from="Switch" to="Door" method="_on_switch_triggered"]
+[connection signal="triggered" from="Switch" to="Door" method="_on_triggered"]
