@@ -13,12 +13,7 @@ script = ExtResource("1_hov6w")
 position = Vector2(15.5, 20)
 shape = SubResource("RectangleShape2D_xhvvb")
 
-[node name="DoorSprite" type="ColorRect" parent="."]
-visible = false
-offset_right = 32.0
-offset_bottom = 41.0
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="DoorSprite" type="Sprite2D" parent="."]
 position = Vector2(16, 20.5)
 scale = Vector2(1, 0.320313)
 texture = ExtResource("2_sp2g7")
