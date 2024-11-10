@@ -1,4 +1,6 @@
-[gd_scene load_steps=13 format=4 uid="uid://c41bf4ogpo863"]
+
+[gd_scene load_steps=13 format=4 uid="uid://o0dsn0fxeeve"]
+
 
 [ext_resource type="PackedScene" uid="uid://lpj2ux5e6qek" path="res://Interactable/Door/Door.tscn" id="1_n15bx"]
 [ext_resource type="PackedScene" uid="uid://bmvu0eqsw4qql" path="res://Interactable/Switch/switch.tscn" id="2_2wdbt"]
@@ -132,7 +134,9 @@ tile_set = ExtResource("8_g8dob")
 position = Vector2(3896, -563)
 scene_name = ExtResource("10_4misl")
 
-[connection signal="triggered" from="Switch2" to="Door2" method="_on_switch_2_triggered"]
+
 [connection signal="triggered" from="Switch2" to="Door2" method="_on_triggered"]
-[connection signal="triggered" from="Switch1" to="Door1" method="_on_switch_1_triggered"]
+[connection signal="triggered" from="Switch2" to="Door2" method="_on_switch_2_triggered"]
+
 [connection signal="triggered" from="Switch1" to="Door1" method="_on_triggered"]
+[connection signal="triggered" from="Switch1" to="Door1" method="_on_switch_1_triggered"]

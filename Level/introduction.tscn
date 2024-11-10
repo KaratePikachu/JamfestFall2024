@@ -12,7 +12,9 @@
 [ext_resource type="TileSet" uid="uid://dcc3nrrdg01tm" path="res://Objects/tileset.tres" id="11_1wx7c"]
 [ext_resource type="PackedScene" uid="uid://diroxtluegurn" path="res://Objects/tile_map_layers.tscn" id="11_v3t6o"]
 [ext_resource type="PackedScene" uid="uid://mhre4wt3fwb8" path="res://Enviorment/SceneChange/scene_transition.tscn" id="12_2wb1o"]
-[ext_resource type="PackedScene" uid="uid://c41bf4ogpo863" path="res://Level/level_1_tilemapped.tscn" id="12_gkxs0"]
+
+[ext_resource type="PackedScene" uid="uid://o0dsn0fxeeve" path="res://Level/level_1_tilemapped.tscn" id="12_gkxs0"]
+
 [ext_resource type="PackedScene" uid="uid://dw1di6bneq8on" path="res://Enviorment/TextPopup/TextPopup.tscn" id="14_irc5d"]
 [ext_resource type="PackedScene" uid="uid://mxhsaam4gug" path="res://Enviorment/ForcedGlassesChange/glasses_change.tscn" id="15_3dak2"]
 
@@ -106,25 +108,26 @@ offset_right = 955.0
 offset_bottom = 16.0
 text = "Character trips forward and falls, breaking glasses on the ground after falling and becoming blind as a result, the charactert then walks into the scene transitiion and into level 1"
 
-[node name="TextBoxes" type="Node" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
 
-[node name="TextPopup" parent="TextBoxes" instance=ExtResource("14_irc5d")]
+[node name="TextPopup" parent="CanvasLayer" instance=ExtResource("14_irc5d")]
 position = Vector2(-6, 220)
 text = "Go to the glasses and press \"E\" to pick them up!"
 
-[node name="TextPopup2" parent="TextBoxes" instance=ExtResource("14_irc5d")]
+[node name="TextPopup2" parent="CanvasLayer" instance=ExtResource("14_irc5d")]
 position = Vector2(292, 222)
 text = "Watch out for the goomba!"
 
-[node name="TextPopup3" parent="TextBoxes" instance=ExtResource("14_irc5d")]
+[node name="TextPopup3" parent="CanvasLayer" instance=ExtResource("14_irc5d")]
 position = Vector2(1006, 8)
 text = "Press \"E\" to open the door!"
 
-[node name="TextPopup4" parent="TextBoxes" instance=ExtResource("14_irc5d")]
+[node name="TextPopup4" parent="CanvasLayer" instance=ExtResource("14_irc5d")]
 position = Vector2(1531, 2)
 text = "Time the jump! Lazers are hard to see sometimes"
 
-[node name="TextPopup5" parent="TextBoxes" instance=ExtResource("14_irc5d")]
+[node name="TextPopup5" parent="CanvasLayer" instance=ExtResource("14_irc5d")]
 position = Vector2(1930, -42)
 text = "Guard! Watch out!"
 
