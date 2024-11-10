@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://c41bf4ogpo863"]
+[gd_scene load_steps=15 format=4 uid="uid://c41bf4ogpo863"]
 
 [ext_resource type="PackedScene" uid="uid://lpj2ux5e6qek" path="res://Interactable/Door/Door.tscn" id="1_n15bx"]
 [ext_resource type="PackedScene" uid="uid://bmvu0eqsw4qql" path="res://Interactable/Switch/switch.tscn" id="2_2wdbt"]
@@ -11,6 +11,8 @@
 [ext_resource type="TileSet" uid="uid://dcc3nrrdg01tm" path="res://Objects/tileset.tres" id="8_g8dob"]
 [ext_resource type="PackedScene" uid="uid://mhre4wt3fwb8" path="res://Enviorment/SceneChange/scene_transition.tscn" id="9_qfxnd"]
 [ext_resource type="PackedScene" uid="uid://dtl1rrgehyumx" path="res://Level/level_2 tilemapped.tscn" id="10_4misl"]
+[ext_resource type="PackedScene" uid="uid://dw1di6bneq8on" path="res://Enviorment/TextPopup/TextPopup.tscn" id="12_n42ab"]
+[ext_resource type="PackedScene" uid="uid://c2c6j0ido1yw4" path="res://Interactable/Glasses/Normal/normal_glasses_pickup.tscn" id="13_ox345"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jghdn"]
 shader = ExtResource("4_uhjqc")
@@ -132,7 +134,19 @@ position = Vector2(-20, 9)
 tile_map_data = PackedByteArray("AAATAAkAAAABAAAAAAAUAAkAAAABAAAAAAAVAAkAAAABAAAAAAAWAAkAAAABAAAAAAAXAAkAAAABAAAAAAAYAAkAAAABAAAAAAAZAAkAAAABAAAAAAAaAAkAAAABAAAAAAAbAAkAAAABAAAAAAAbAAoAAAABAAAAAAAaAAoAAAABAAAAAAAZAAoAAAABAAAAAAAYAAoAAAABAAAAAAAXAAoAAAABAAAAAAAWAAoAAAABAAAAAAAvAAAAAAABAAAAAAAwAAAAAAABAAAAAAAxAAAAAAABAAAAAAAyAAAAAAABAAAAAAAzAAAAAAABAAAAAAA0AAAAAAABAAAAAAA1AAAAAAABAAAAAAA2AAAAAAABAAAAAAA2AP//AAABAAAAAAA2AP7/AAABAAAAAAA2AP3/AAABAAAAAAA2APz/AAABAAAAAAA1APz/AAABAAAAAAA0APz/AAABAAAAAAAzAPz/AAABAAAAAAAyAPz/AAABAAAAAAAxAPz/AAABAAAAAAAwAPz/AAABAAAAAAAvAPz/AAABAAAAAAAvAP3/AAABAAAAAAAvAP7/AAABAAAAAAAvAP//AAABAAAAAAAwAP//AAABAAAAAAAxAP//AAABAAAAAAAyAP//AAABAAAAAAAzAP//AAABAAAAAAA0AP//AAABAAAAAAA1AP//AAABAAAAAAA1AP7/AAABAAAAAAA0AP7/AAABAAAAAAAzAP7/AAABAAAAAAAyAP7/AAABAAAAAAAxAP7/AAABAAAAAAAwAP7/AAABAAAAAAAwAP3/AAABAAAAAAAxAP3/AAABAAAAAAAyAP3/AAABAAAAAAAzAP3/AAABAAAAAAA0AP3/AAABAAAAAAA1AP3/AAABAAAAAABEAP//AAABAAAAAABFAP//AAABAAAAAABGAP//AAABAAAAAABHAP//AAABAAAAAABIAP//AAABAAAAAABJAP//AAABAAAAAABKAP//AAABAAAAAABLAP//AAABAAAAAABLAAAAAAABAAAAAABLAAEAAAABAAAAAABLAAIAAAABAAAAAABLAAMAAAABAAAAAABKAAMAAAABAAAAAABJAAMAAAABAAAAAABIAAMAAAABAAAAAABHAAMAAAABAAAAAABGAAMAAAABAAAAAABFAAMAAAABAAAAAABEAAMAAAABAAAAAABEAAIAAAABAAAAAABEAAEAAAABAAAAAABEAAAAAAABAAAAAABFAAAAAAABAAAAAABGAAAAAAABAAAAAABHAAAAAAABAAAAAABIAAAAAAABAAAAAABJAAAAAAABAAAAAABKAAAAAAABAAAAAABKAAEAAAABAAAAAABJAAEAAAABAAAAAABIAAEAAAABAAAAAABHAAEAAAABAAAAAABGAAEAAAABAAAAAABFAAEAAAABAAAAAABGAAIAAAABAAAAAABHAAIAAAABAAAAAABIAAIAAAABAAAAAABJAAIAAAABAAAAAABKAAIAAAABAAAAAABFAAIAAAABAAAAAABrAPr/AAABAAAAAABsAPr/AAABAAAAAABtAPr/AAABAAAAAABuAPr/AAABAAAAAABvAPr/AAABAAAAAABwAPr/AAABAAAAAABwAPv/AAABAAAAAABvAPv/AAABAAAAAABuAPv/AAABAAAAAABtAPv/AAABAAAAAABsAPv/AAABAAAAAABrAPv/AAABAAAAAABdAAAAAAABAAAAAABcAAAAAAABAAAAAABbAAAAAAABAAAAAABaAAAAAAABAAAAAABaAAEAAAABAAAAAABbAAEAAAABAAAAAABcAAEAAAABAAAAAABdAAEAAAABAAAAAAA=")
 tile_set = ExtResource("8_g8dob")
 
-[connection signal="triggered" from="Switch2" to="Door2" method="_on_switch_2_triggered"]
-[connection signal="triggered" from="Switch2" to="Door2" method="_on_triggered"]
-[connection signal="triggered" from="Switch1" to="Door1" method="_on_switch_1_triggered"]
-[connection signal="triggered" from="Switch1" to="Door1" method="_on_triggered"]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextPopup" parent="CanvasLayer" instance=ExtResource("12_n42ab")]
+position = Vector2(311, 113)
+monitoring = false
+text = "You got the sunglasses! The Sunglasses allow you to see but make some objects too dark to detect. "
+
+[node name="TextPopup2" parent="CanvasLayer" instance=ExtResource("12_n42ab")]
+position = Vector2(3779, -526)
+text = "You got the screwdriver! You still have 2 more items to find"
+
+[node name="NormalGlassesPickup" parent="." instance=ExtResource("13_ox345")]
+position = Vector2(528, -51)
+
+[connection signal="triggered" from="Switch2" to="Door2" method="_on_switch_triggered"]
+[connection signal="triggered" from="Switch1" to="Door1" method="_on_switch_triggered"]
