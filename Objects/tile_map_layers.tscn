@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://diroxtluegurn"]
+[gd_scene load_steps=2 format=3 uid="uid://diroxtluegurn"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="Script" path="res://Objects/tile_visibility.gd" id="1_jvga5"]
+
+[node name="TileMapLayers" type="Node2D"]
+script = ExtResource("1_jvga5")
