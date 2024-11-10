@@ -126,9 +126,9 @@ func _physics_process(delta):
 		
 		#State Machine. It does magic.
 		if !is_on_floor() && velocity.y < 0:
-			$AnimPlayer.play("drone_jump")
+			_run_jump_animation($GuySprite.flip_h)
 		elif !is_on_floor() && velocity.y >= -10:
-			$AnimPlayer.play("drone_fall")
+			_run_fall_animation($GuySprite.flip_h)
 		elif abs(velocity.x) >= 10:
 			_run_run_animation(velocity.x >= 10)
 		else:
@@ -143,6 +143,10 @@ func die() -> void:
 	switch_glasses(Glasses.NONE)
 	get_tree().reload_current_scene()
 	
+	
+	
+# HELPER FUNCTIONS!!!!!!!!!!
+
 func _run_run_animation(going_left:bool) -> void:
 	$GuySprite.flip_h = going_left
 
@@ -178,12 +182,27 @@ func _run_jump_animation(going_left:bool) -> void:
 
 	match worn_glasses:
 		Glasses.DRONE:
-			$AnimPlayer.play("drone_idle")
+			$AnimPlayer.play("drone_jump")
 		Glasses.INFARED:
-			$AnimPlayer.play("infared_idle")
+			$AnimPlayer.play("infared_jump")
 		Glasses.NONE:
-			$AnimPlayer.play("no_glasses_idle")
+			$AnimPlayer.play("no_glasses_jump")
 		Glasses.NORMAL:
-			$AnimPlayer.play("normal_idle")
+			$AnimPlayer.play("normal_jump")
 		Glasses.SUNGLASSES:
-			$AnimPlayer.play("sunglasses_idle")
+			$AnimPlayer.play("sunglasses_jump")
+			
+func _run_fall_animation(going_left:bool) -> void:
+	$GuySprite.flip_h = going_left
+
+	match worn_glasses:
+		Glasses.DRONE:
+			$AnimPlayer.play("drone_fall")
+		Glasses.INFARED:
+			$AnimPlayer.play("infared_fall")
+		Glasses.NONE:
+			$AnimPlayer.play("no_glasses_fall")
+		Glasses.NORMAL:
+			$AnimPlayer.play("normal_fall")
+		Glasses.SUNGLASSES:
+			$AnimPlayer.play("sunglasses_fall")
