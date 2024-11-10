@@ -8,13 +8,18 @@
 [ext_resource type="Texture2D" uid="uid://cjnelsdbpjyb3" path="res://UI/NormalBackdrop.png" id="6_gdua1"]
 [ext_resource type="Texture2D" uid="uid://dsivdgffxlsqu" path="res://UI/SunglassesBackdrop.png" id="7_061g1"]
 [ext_resource type="Texture2D" uid="uid://cxdylvcfw4cqw" path="res://UI/InfraredBackdrop.png" id="8_1n8wk"]
+[ext_resource type="Shader" path="res://Shaders/newBlur.gdshader" id="6_honmd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xn0ab"]
+shader = ExtResource("6_honmd")
+shader_parameter/lod = 5.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jqcd5"]
 shader = ExtResource("5_rd0rx")
 shader_parameter/scale = 1.0
-shader_parameter/lod = 0.0
-shader_parameter/x_blur_offest = 0.06
-shader_parameter/y_blur_offest = 0.08
+shader_parameter/lod = 5.0
+shader_parameter/x_blur_offest = 0.04
+shader_parameter/y_blur_offest = 0.04
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_s08pi"]
 shader = ExtResource("3_ng80b")
@@ -23,9 +28,13 @@ shader_parameter/sunGlass_color = Color(0, 0, 0, 0.843137)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jpun4"]
 shader = ExtResource("5_rd0rx")
 shader_parameter/scale = 1.0
-shader_parameter/lod = 0.0
-shader_parameter/x_blur_offest = 0.015
-shader_parameter/y_blur_offest = 0.02
+shader_parameter/lod = 1.0
+shader_parameter/x_blur_offest = 0.01
+shader_parameter/y_blur_offest = 0.015
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r1mt3"]
+shader = ExtResource("6_honmd")
+shader_parameter/lod = 0.75
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_72xkf"]
 shader = ExtResource("4_61ghd")
@@ -35,7 +44,7 @@ shader_parameter/saturation = 0.3
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fyk8k"]
 shader = ExtResource("5_rd0rx")
 shader_parameter/scale = 1.0
-shader_parameter/lod = 0.0
+shader_parameter/lod = 0.1
 shader_parameter/x_blur_offest = 0.0
 shader_parameter/y_blur_offest = 0.0
 
@@ -67,6 +76,21 @@ shader_parameter/vignette_opacity = 0.222
 script = ExtResource("1_58afm")
 
 [node name="Blindness" type="CanvasLayer" parent="."]
+
+[node name="BlurTwo" type="CanvasLayer" parent="Blindness"]
+
+[node name="newBlur" type="ColorRect" parent="Blindness/BlurTwo"]
+visible = false
+material = SubResource("ShaderMaterial_xn0ab")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BlurOne" type="CanvasLayer" parent="Blindness"]
+
+[node name="blur" type="ColorRect" parent="Blindness/BlurOne"]
 visible = false
 
 [node name="Blur" type="ColorRect" parent="Blindness"]
@@ -80,9 +104,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Sunglasses" type="CanvasLayer" parent="."]
-visible = false
 
-[node name="Tint" type="ColorRect" parent="Sunglasses"]
+[node name="Tint_layer" type="CanvasLayer" parent="Sunglasses"]
+
+[node name="Tint" type="ColorRect" parent="Sunglasses/Tint_layer"]
+visible = false
 material = SubResource("ShaderMaterial_s08pi")
 anchors_preset = 15
 anchor_right = 1.0
@@ -92,7 +118,10 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Blur" type="ColorRect" parent="Sunglasses"]
+[node name="BlurOne" type="CanvasLayer" parent="Sunglasses"]
+
+[node name="Blur" type="ColorRect" parent="Sunglasses/BlurOne"]
+visible = false
 material = SubResource("ShaderMaterial_jpun4")
 anchors_preset = 15
 anchor_right = 1.0
@@ -101,6 +130,17 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="BlurTwo" type="CanvasLayer" parent="Sunglasses"]
+
+[node name="newBlur" type="ColorRect" parent="Sunglasses/BlurTwo"]
+visible = false
+material = SubResource("ShaderMaterial_r1mt3")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Drone" type="CanvasLayer" parent="."]
 visible = false
