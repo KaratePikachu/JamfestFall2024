@@ -13,10 +13,9 @@ status = false
 [node name="Sprite2D" parent="." index="0"]
 texture = null
 
-[node name="Switch" type="Node" parent="." index="2"]
+[node name="Switch" type="Node2D" parent="." index="2"]
 
 [node name="off" type="Sprite2D" parent="Switch" index="0"]
-position = Vector2(3, -20)
 texture = ExtResource("3_uy067")
 
 [node name="on" type="Sprite2D" parent="Switch" index="1"]
