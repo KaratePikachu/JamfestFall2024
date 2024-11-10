@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=4 uid="uid://bbvpyqfw7gn1j"]
+[gd_scene load_steps=14 format=4 uid="uid://bbvpyqfw7gn1j"]
 
 [ext_resource type="PackedScene" uid="uid://u5vlmp8hm4ku" path="res://Player/player.tscn" id="1_fg3qq"]
 [ext_resource type="PackedScene" uid="uid://djp7bfajmwpgl" path="res://Interactable/Glasses/Drone/drone_glasses_pickup.tscn" id="2_qq4mh"]
 [ext_resource type="PackedScene" uid="uid://dn36wd0cgi5j4" path="res://Enviorment/Laser/Laser.tscn" id="3_6hv3y"]
 [ext_resource type="PackedScene" uid="uid://b68p8jegitusu" path="res://Enviorment/DeathSquare/death_square.tscn" id="4_avt5q"]
+[ext_resource type="PackedScene" uid="uid://dw1di6bneq8on" path="res://Enviorment/TextPopup/TextPopup.tscn" id="4_ayfch"]
 [ext_resource type="PackedScene" uid="uid://qa6itmjrn43y" path="res://Enviorment/Enemy/enemy.tscn" id="5_txodr"]
 [ext_resource type="PackedScene" uid="uid://bmvu0eqsw4qql" path="res://Interactable/Switch/switch.tscn" id="6_mvjhb"]
 [ext_resource type="PackedScene" uid="uid://lpj2ux5e6qek" path="res://Interactable/Door/Door.tscn" id="7_iw4ej"]
@@ -52,6 +53,14 @@ scale = Vector2(0.5, 0.5)
 position = Vector2(2161, -170)
 scale = Vector2(0.5, 0.5)
 
+[node name="TextPopup" parent="Enemies" instance=ExtResource("4_ayfch")]
+position = Vector2(213, 125)
+text = "You found the Drone Goggles. These alllow you to summon a drone to see the level. "
+
+[node name="TextPopup2" parent="Enemies" instance=ExtResource("4_ayfch")]
+position = Vector2(2582, -306)
+text = "You found the frames! Now you can fix your glasses!"
+
 [node name="Switch" parent="." instance=ExtResource("6_mvjhb")]
 position = Vector2(919, -56)
 
@@ -72,11 +81,12 @@ tile_map_data = PackedByteArray("AAAWAPj/AAABAAAAAAAXAPj/AAABAAAAAAAYAPj/AAABAAA
 tile_set = ExtResource("12_hf35i")
 
 [node name="SceneTransition" parent="." instance=ExtResource("13_rxni0")]
-position = Vector2(2629, -354)
+position = Vector2(2684, -351)
 scene_name = ExtResource("14_ep8us")
 
 [node name="Player" parent="." instance=ExtResource("1_fg3qq")]
 position = Vector2(0, -4)
+worn_glasses = null
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 16
