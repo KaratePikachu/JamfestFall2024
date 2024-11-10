@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://0a53jrrrx60m"]
+[gd_scene load_steps=6 format=3 uid="uid://cn1m8upukx5ck"]
 
 [ext_resource type="Texture2D" uid="uid://cxl5cvsgyxcoe" path="res://Level/TestLevel/princess.png" id="1_o8yd7"]
 [ext_resource type="PackedScene" uid="uid://u5vlmp8hm4ku" path="res://Player/player.tscn" id="1_q25xq"]

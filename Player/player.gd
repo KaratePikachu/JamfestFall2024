@@ -101,10 +101,7 @@ func _physics_process(delta):
 			$Camera2D.position.x -= CAMERA_SPEED
 
 		$Camera2D.position.y = -300
-		
 		$Camera2D.zoom = Vector2(0.95, 0.95)
-		
-		
 		
 	else:
 		# Horizontal movement code. First, get the player's input.
@@ -120,23 +117,23 @@ func _physics_process(delta):
 
 		# Vertical movement code. Apply gravity.
 		velocity.y += gravity * delta
-		
-		print(velocity.x)
-		
-		if velocity.x >= 10:
-			_run_run_animation(true)
-		elif velocity.x >= 0:
-			_run_idle_animation($GuySprite.flip_h)
-			
-		if velocity.x <= -10:
-			_run_run_animation(false)
-		elif velocity.x < 0:
-			_run_idle_animation($GuySprite.flip_h)
 
 		# Move based on the velocity and snap to the ground.
 		# TODO: This information should be set to the CharacterBody properties instead of arguments: snap, Vector2.DOWN, Vector2.UP
 		# TODO: Rename velocity to linear_velocity in the rest of the script.
 		move_and_slide()
+
+		
+		#State Machine. It does magic.
+		if !is_on_floor() && velocity.y < 0:
+			$AnimPlayer.play("drone_jump")
+		elif !is_on_floor() && velocity.y >= -10:
+			$AnimPlayer.play("drone_fall")
+		elif abs(velocity.x) >= 10:
+			_run_run_animation(velocity.x >= 10)
+		else:
+			_run_idle_animation($GuySprite.flip_h)
+		
 
 		# Check for jumping. is_on_floor() must be called after movement code.
 		if is_on_floor() and Input.is_action_just_pressed(&"jump"):
