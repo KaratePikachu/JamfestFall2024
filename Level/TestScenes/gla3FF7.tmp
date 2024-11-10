@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dslhk34jkqehp"]
+[gd_scene load_steps=20 format=3 uid="uid://dslhk34jkqehp"]
 
 [ext_resource type="PackedScene" uid="uid://b68p8jegitusu" path="res://Enviorment/DeathSquare/death_square.tscn" id="1_w7orw"]
 [ext_resource type="PackedScene" uid="uid://u5vlmp8hm4ku" path="res://Player/player.tscn" id="2_nafhv"]
@@ -9,8 +9,26 @@
 [ext_resource type="PackedScene" uid="uid://dp7fxu33gf8m0" path="res://Canvas/vision_effects.tscn" id="7_l8130"]
 [ext_resource type="PackedScene" uid="uid://cc4ppwhyjy67u" path="res://Interactable/Glasses/Sunglasses/sunglasses_pickup.tscn" id="9_8pado"]
 [ext_resource type="PackedScene" uid="uid://c0irdu28sl6ah" path="res://Interactable/Glasses/Infared/infared_glasses_pickup.tscn" id="9_vq8gn"]
+[ext_resource type="PackedScene" uid="uid://cku1optjco6t1" path="res://Interactable/Glasses/Smart/smart_glasses_pickup.tscn" id="10_lies1"]
 [ext_resource type="PackedScene" uid="uid://djp7bfajmwpgl" path="res://Interactable/Glasses/Drone/drone_glasses_pickup.tscn" id="10_p3v1i"]
 [ext_resource type="PackedScene" uid="uid://c2c6j0ido1yw4" path="res://Interactable/Glasses/Normal/normal_glasses_pickup.tscn" id="11_uaro2"]
+[ext_resource type="PackedScene" uid="uid://ckq0spk63sqja" path="res://Interactable/Glasses/Lidar/lidar_glasses_pickup.tscn" id="12_wgqg5"]
+[ext_resource type="PackedScene" uid="uid://b1ddculbd8x03" path="res://Interactable/Glasses/Kaleidoscope/kaleidoscope_glasses_pickup.tscn" id="14_ypcft"]
+[ext_resource type="PackedScene" uid="uid://2q73ao7wr7sb" path="res://Interactable/Glasses/Monocle/monocle_glasses_pickup.tscn" id="15_qvcqj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p2x72"]
+shader = ExtResource("3_hdps6")
+shader_parameter/scale = 1.0
+shader_parameter/lod = 0.0
+shader_parameter/x_blur_offest = 1.262
+shader_parameter/y_blur_offest = 1.565
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oogge"]
+shader = ExtResource("3_hdps6")
+shader_parameter/scale = 1.0
+shader_parameter/lod = 0.0
+shader_parameter/x_blur_offest = 1.979
+shader_parameter/y_blur_offest = 0.99
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jw1re"]
 size = Vector2(1527.41, 382.014)
@@ -22,19 +40,22 @@ shader_parameter/lod = 0.0
 shader_parameter/x_blur_offest = 0.0
 shader_parameter/y_blur_offest = 0.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_p2x72"]
-shader = ExtResource("3_hdps6")
-shader_parameter/scale = 1.0
-shader_parameter/lod = 0.0
-shader_parameter/x_blur_offest = 1.262
-shader_parameter/y_blur_offest = 1.565
-
 [node name="TestOpenWorld2" type="Node2D"]
 position = Vector2(-466, -368)
 
 [node name="DeathSquare" parent="." instance=ExtResource("1_w7orw")]
 position = Vector2(-8, 557)
 scale = Vector2(0.702462, 37.3872)
+
+[node name="Player" parent="." instance=ExtResource("2_nafhv")]
+material = SubResource("ShaderMaterial_p2x72")
+position = Vector2(484.001, 214.999)
+scale = Vector2(1.465, 1.465)
+
+[node name="Camera2D2" type="Camera2D" parent="Player"]
+material = SubResource("ShaderMaterial_oogge")
+use_parent_material = true
+position = Vector2(-0.682969, -33.4467)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(-66, 610)
@@ -97,7 +118,6 @@ scale = Vector2(1.08, 8.64)
 color = Color(1, 0, 0, 1)
 
 [node name="VisionEffects" parent="." instance=ExtResource("7_l8130")]
-visible = false
 
 [node name="SunglassesPickup" parent="." instance=ExtResource("9_8pado")]
 position = Vector2(638, 539)
@@ -105,15 +125,22 @@ position = Vector2(638, 539)
 [node name="InfaredGlassesPickup" parent="." instance=ExtResource("9_vq8gn")]
 position = Vector2(753, 540)
 
+[node name="SmartGlassesPickup" parent="." instance=ExtResource("10_lies1")]
+position = Vector2(860, 535)
+
 [node name="DroneGlassesPickup" parent="." instance=ExtResource("10_p3v1i")]
 position = Vector2(973, 542)
+
+[node name="LidarGlassesPickup" parent="." instance=ExtResource("12_wgqg5")]
+position = Vector2(1089, 539)
 
 [node name="NormalGlassesPickup" parent="." instance=ExtResource("11_uaro2")]
 position = Vector2(1200, 542)
 
-[node name="Player" parent="." instance=ExtResource("2_nafhv")]
-material = SubResource("ShaderMaterial_p2x72")
-position = Vector2(484.001, 214.999)
-scale = Vector2(1.465, 1.465)
+[node name="KaleidoscopeGlassesPickup" parent="." instance=ExtResource("14_ypcft")]
+position = Vector2(1309, 534)
+
+[node name="MonocleGlassesPickup" parent="." instance=ExtResource("15_qvcqj")]
+position = Vector2(1437, 537)
 
 [connection signal="triggered" from="Switch" to="Door" method="_on_triggered"]

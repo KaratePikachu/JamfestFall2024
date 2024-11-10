@@ -17,9 +17,6 @@
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_fg3qq")]
-position = Vector2(0, -4)
-
 [node name="DroneGlassesPickup" parent="." instance=ExtResource("2_qq4mh")]
 position = Vector2(213, 80)
 
@@ -94,5 +91,10 @@ tile_set = ExtResource("12_hf35i")
 position = Vector2(2629, -354)
 scene_name = ExtResource("14_ep8us")
 
-[connection signal="triggered" from="Switch" to="Door" method="_on_triggered"]
+
+
+[node name="Player" parent="." instance=ExtResource("1_fg3qq")]
+position = Vector2(0, -4)
+
 [connection signal="triggered" from="Switch" to="Door" method="_on_switch_triggered"]
+

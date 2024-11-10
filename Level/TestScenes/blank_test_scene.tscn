@@ -1,15 +1,15 @@
 [gd_scene load_steps=7 format=3 uid="uid://cn1m8upukx5ck"]
 
-[ext_resource type="Texture2D" uid="uid://cxl5cvsgyxcoe" path="res://Level/TestLevel/princess.png" id="1_o8yd7"]
-[ext_resource type="PackedScene" uid="uid://u5vlmp8hm4ku" path="res://Player/player.tscn" id="1_q25xq"]
-[ext_resource type="Shader" path="res://Shaders/Blur.gdshader" id="2_ishof"]
-[ext_resource type="PackedScene" uid="uid://dw1di6bneq8on" path="res://Enviorment/TextPopup/TextPopup.tscn" id="4_gy3vl"]
+[ext_resource type="Texture2D" uid="uid://cxl5cvsgyxcoe" path="res://Level/TestLevel/princess.png" id="1_mvlpv"]
+[ext_resource type="PackedScene" uid="uid://u5vlmp8hm4ku" path="res://Player/player.tscn" id="2_hv0ta"]
+[ext_resource type="Shader" path="res://Shaders/Blur.gdshader" id="3_ad8yh"]
+[ext_resource type="PackedScene" uid="uid://dw1di6bneq8on" path="res://Enviorment/TextPopup/TextPopup.tscn" id="4_g4pkx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_icl00"]
 size = Vector2(1014, 340)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_37a7t"]
-shader = ExtResource("2_ishof")
+shader = ExtResource("3_ad8yh")
 shader_parameter/scale = 1.0
 shader_parameter/lod = 0.0
 shader_parameter/x_blur_offest = 1.262
@@ -32,39 +32,36 @@ color = Color(0, 0, 0, 1)
 
 [node name="Princess" type="Sprite2D" parent="floor"]
 position = Vector2(326, 146)
-texture = ExtResource("1_o8yd7")
+texture = ExtResource("1_mvlpv")
 
 [node name="Princess2" type="Sprite2D" parent="floor"]
 position = Vector2(-97, 301)
-texture = ExtResource("1_o8yd7")
+texture = ExtResource("1_mvlpv")
 
 [node name="Princess3" type="Sprite2D" parent="floor"]
 position = Vector2(9, 178)
-texture = ExtResource("1_o8yd7")
+texture = ExtResource("1_mvlpv")
 
 [node name="Princess4" type="Sprite2D" parent="floor"]
 position = Vector2(569, 254)
-texture = ExtResource("1_o8yd7")
+texture = ExtResource("1_mvlpv")
 
 [node name="Princess5" type="Sprite2D" parent="floor"]
 position = Vector2(867, 128)
-texture = ExtResource("1_o8yd7")
+texture = ExtResource("1_mvlpv")
 
 [node name="Princess6" type="Sprite2D" parent="floor"]
 position = Vector2(948, 293)
-texture = ExtResource("1_o8yd7")
+texture = ExtResource("1_mvlpv")
 
 [node name="Princess7" type="Sprite2D" parent="floor"]
 position = Vector2(566, 81)
-texture = ExtResource("1_o8yd7")
+texture = ExtResource("1_mvlpv")
 
-[node name="Player" parent="." instance=ExtResource("1_q25xq")]
+[node name="Player" parent="." instance=ExtResource("2_hv0ta")]
 material = SubResource("ShaderMaterial_37a7t")
 position = Vector2(176, 225)
 scale = Vector2(1.465, 1.465)
 
-[node name="TextPopup" parent="." instance=ExtResource("4_gy3vl")]
+[node name="TextPopup" parent="." instance=ExtResource("4_g4pkx")]
 position = Vector2(373, 321)
-collision_layer = 2
-collision_mask = 2
-text = "THIS IS A TEST! WOOOOOOOOOOOOOOOO"

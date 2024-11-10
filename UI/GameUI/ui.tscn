@@ -1,0 +1,59 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbut5fa7klmy4"]
+
+[ext_resource type="Script" path="res://UI/GameUI/ui.gd" id="1_s4yvp"]
+
+[node name="Ui" type="Control"]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_s4yvp")
+
+[node name="Hotbar" type="Node" parent="."]
+
+[node name="1" type="Button" parent="Hotbar"]
+visible = false
+offset_left = 414.0
+offset_top = 479.0
+offset_right = 540.0
+offset_bottom = 510.0
+text = "SUNGLASSES: 2"
+
+[node name="0" type="Button" parent="Hotbar"]
+visible = false
+offset_left = 428.0
+offset_top = 479.0
+offset_right = 527.0
+offset_bottom = 510.0
+text = "UNEQUIP: 1"
+
+[node name="2" type="Button" parent="Hotbar"]
+visible = false
+offset_left = 430.0
+offset_top = 479.0
+offset_right = 524.0
+offset_bottom = 510.0
+text = "INFARED: 3"
+
+[node name="4" type="Button" parent="Hotbar"]
+visible = false
+offset_right = 96.0
+offset_bottom = 31.0
+text = "NORMAL: 5"
+
+[node name="3" type="Button" parent="Hotbar"]
+visible = false
+offset_right = 82.0
+offset_bottom = 31.0
+text = "DRONE: 4"
+
+[node name="CenterContainer" type="HBoxContainer" parent="Hotbar"]
+offset_left = 60.0
+offset_top = 443.0
+offset_right = 867.0
+offset_bottom = 541.0
+alignment = 1

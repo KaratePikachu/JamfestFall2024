@@ -17,10 +17,9 @@ enum Glasses {
 	NONE,
 	SUNGLASSES,
 	INFARED,
-	SMART,
 	DRONE,
-	LIDAR,
 	NORMAL,
+	LIDAR,
 	KALEIDOSCOPE,
 	MONOCLE
 } 
@@ -47,8 +46,6 @@ func _input(event: InputEvent) -> void:
 		desired_switch = Glasses.SUNGLASSES
 	elif event.is_action_pressed("equip_infared"):
 		desired_switch = Glasses.INFARED
-	elif event.is_action_pressed("equip_smart"):
-		desired_switch = Glasses.SMART
 	elif event.is_action_pressed("equip_drone"):
 		desired_switch = Glasses.DRONE
 	elif event.is_action_pressed("equip_lidar"):
