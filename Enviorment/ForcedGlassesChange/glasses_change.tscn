@@ -1,12 +1,14 @@
 [gd_scene load_steps=3 format=3 uid="uid://mxhsaam4gug"]
 
-[ext_resource type="Script" path="res://Enviorment/TextPopup/text_popup.gd" id="1_42xcp"]
+[ext_resource type="Script" path="res://Enviorment/ForcedGlassesChange/glasses_change.gd" id="1_6no0g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_saw3m"]
 size = Vector2(31.25, 35)
 
 [node name="GlassesChange" type="Area2D"]
-script = ExtResource("1_42xcp")
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_6no0g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)

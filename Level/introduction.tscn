@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://b88b22toehhyu"]
+[gd_scene load_steps=18 format=4 uid="uid://b88b22toehhyu"]
 
 [ext_resource type="PackedScene" uid="uid://b68p8jegitusu" path="res://Enviorment/DeathSquare/death_square.tscn" id="1_syrov"]
 [ext_resource type="PackedScene" uid="uid://u5vlmp8hm4ku" path="res://Player/player.tscn" id="2_q76co"]
@@ -11,8 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://dn36wd0cgi5j4" path="res://Enviorment/Laser/Laser.tscn" id="9_sl1wl"]
 [ext_resource type="PackedScene" uid="uid://cf5674d77sx2n" path="res://Enviorment/Goomba/goomba.tscn" id="10_yrcgl"]
 [ext_resource type="TileSet" uid="uid://dcc3nrrdg01tm" path="res://Objects/tileset.tres" id="11_1wx7c"]
-[ext_resource type="PackedScene" uid="uid://mhre4wt3fwb8" path="res://scene_transition.tscn" id="12_2wb1o"]
+[ext_resource type="PackedScene" uid="uid://mhre4wt3fwb8" path="res://Enviorment/SceneChange/scene_transition.tscn" id="12_2wb1o"]
 [ext_resource type="PackedScene" uid="uid://c41bf4ogpo863" path="res://Level/l1t.tscn" id="12_gkxs0"]
+[ext_resource type="PackedScene" uid="uid://dw1di6bneq8on" path="res://Enviorment/TextPopup/TextPopup.tscn" id="14_irc5d"]
+[ext_resource type="PackedScene" uid="uid://mxhsaam4gug" path="res://Enviorment/ForcedGlassesChange/glasses_change.tscn" id="15_3dak2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p2x72"]
 shader = ExtResource("3_bmgtw")
@@ -107,7 +109,6 @@ tile_set = ExtResource("11_1wx7c")
 tile_map_data = PackedByteArray("AAATAAkAAAABAAAAAAAUAAkAAAABAAAAAAAVAAkAAAABAAAAAAAWAAkAAAABAAAAAAAXAAkAAAABAAAAAAAYAAkAAAABAAAAAAAZAAkAAAABAAAAAAAaAAkAAAABAAAAAAAbAAkAAAABAAAAAAAbAAoAAAABAAAAAAAaAAoAAAABAAAAAAAZAAoAAAABAAAAAAAYAAoAAAABAAAAAAAXAAoAAAABAAAAAAAWAAoAAAABAAAAAAA=")
 tile_set = ExtResource("11_1wx7c")
 
-
 [node name="SceneTransition" parent="Node" instance=ExtResource("12_2wb1o")]
 position = Vector2(3095, 149)
 script = null
@@ -145,5 +146,31 @@ offset_top = -37.0
 offset_right = 955.0
 offset_bottom = 16.0
 text = "Character trips forward and falls, breaking glasses on the ground after falling and becoming blind as a result, the charactert then walks into the scene transitiion and into level 1"
+
+[node name="TextBoxes" type="Node" parent="."]
+
+[node name="TextPopup" parent="TextBoxes" instance=ExtResource("14_irc5d")]
+position = Vector2(-6, 220)
+text = "Go to the glasses and press \"E\" to pick them up!"
+
+[node name="TextPopup2" parent="TextBoxes" instance=ExtResource("14_irc5d")]
+position = Vector2(292, 222)
+text = "Watch out for the goomba!"
+
+[node name="TextPopup3" parent="TextBoxes" instance=ExtResource("14_irc5d")]
+position = Vector2(998, -8)
+text = "Press \"E\" to open the door!"
+
+[node name="TextPopup4" parent="TextBoxes" instance=ExtResource("14_irc5d")]
+position = Vector2(1531, 2)
+text = "Time the jump! Lazers are hard to see sometimes"
+
+[node name="TextPopup5" parent="TextBoxes" instance=ExtResource("14_irc5d")]
+position = Vector2(1930, -42)
+text = "Guard! Watch out!"
+
+[node name="GlassesChange" parent="." instance=ExtResource("15_3dak2")]
+position = Vector2(466, 474)
+forced = 4
 
 [connection signal="triggered" from="Switch" to="Door" method="_on_triggered"]

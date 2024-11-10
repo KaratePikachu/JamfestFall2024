@@ -65,5 +65,3 @@ scale = Vector2(1.465, 1.465)
 
 [node name="TextPopup" parent="." instance=ExtResource("4_g4pkx")]
 position = Vector2(373, 321)
-collision_layer = 2
-collision_mask = 2
