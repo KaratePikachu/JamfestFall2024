@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://c41bf4ogpo863"]
+[gd_scene load_steps=15 format=4 uid="uid://c41bf4ogpo863"]
 
 [ext_resource type="PackedScene" uid="uid://lpj2ux5e6qek" path="res://Interactable/Door/Door.tscn" id="1_n15bx"]
 [ext_resource type="PackedScene" uid="uid://bmvu0eqsw4qql" path="res://Interactable/Switch/switch.tscn" id="2_2wdbt"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dp7fxu33gf8m0" path="res://Canvas/vision_effects.tscn" id="7_3pqk2"]
 [ext_resource type="Script" path="res://Objects/tile_visibility.gd" id="8_2in74"]
 [ext_resource type="TileSet" uid="uid://dcc3nrrdg01tm" path="res://Objects/tileset.tres" id="8_g8dob"]
+[ext_resource type="Texture2D" uid="uid://daju6am7mxdu5" path="res://Interactable/end pickups/Screwdriver.png" id="9_24o2c"]
 [ext_resource type="PackedScene" uid="uid://mhre4wt3fwb8" path="res://Enviorment/SceneChange/scene_transition.tscn" id="9_qfxnd"]
 [ext_resource type="PackedScene" uid="uid://dtl1rrgehyumx" path="res://Level/level_2 tilemapped.tscn" id="10_4misl"]
 [ext_resource type="PackedScene" uid="uid://dw1di6bneq8on" path="res://Enviorment/TextPopup/TextPopup.tscn" id="12_n42ab"]
@@ -59,6 +60,11 @@ scale = Vector2(31.7199, -1.76793)
 [node name="SceneTransition" parent="." instance=ExtResource("9_qfxnd")]
 position = Vector2(3896, -563)
 scene_name = ExtResource("10_4misl")
+
+[node name="Sprite2D2" type="Sprite2D" parent="SceneTransition"]
+position = Vector2(0, 20)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_24o2c")
 
 [node name="Tilemap" type="Node" parent="."]
 script = ExtResource("8_2in74")

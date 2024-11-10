@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://dtl1rrgehyumx"]
+[gd_scene load_steps=14 format=4 uid="uid://dtl1rrgehyumx"]
 
 [ext_resource type="PackedScene" uid="uid://diroxtluegurn" path="res://Objects/tile_map_layers.tscn" id="1_iw8wq"]
 [ext_resource type="PackedScene" uid="uid://u5vlmp8hm4ku" path="res://Player/player.tscn" id="1_srbwn"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b68p8jegitusu" path="res://Enviorment/DeathSquare/death_square.tscn" id="5_4f2yv"]
 [ext_resource type="PackedScene" uid="uid://cf5674d77sx2n" path="res://Enviorment/Goomba/goomba.tscn" id="5_5sy5p"]
 [ext_resource type="PackedScene" uid="uid://dp7fxu33gf8m0" path="res://Canvas/vision_effects.tscn" id="7_hjpto"]
+[ext_resource type="Texture2D" uid="uid://bq46uody2moij" path="res://Interactable/end pickups/Toolbox.png" id="9_xgfgg"]
 [ext_resource type="PackedScene" uid="uid://mhre4wt3fwb8" path="res://Enviorment/SceneChange/scene_transition.tscn" id="10_7odqu"]
 [ext_resource type="PackedScene" uid="uid://bbvpyqfw7gn1j" path="res://Level/level_3 tileMapped.tscn" id="11_4nxeo"]
 [ext_resource type="PackedScene" uid="uid://c0irdu28sl6ah" path="res://Interactable/Glasses/Infared/infared_glasses_pickup.tscn" id="11_dh5lf"]
@@ -59,6 +60,11 @@ scale = Vector2(1, 1.00872)
 [node name="SceneTransition" parent="Text & Triggers" instance=ExtResource("10_7odqu")]
 position = Vector2(2384, -288)
 scene_name = ExtResource("11_4nxeo")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Text & Triggers/SceneTransition"]
+position = Vector2(0, 20)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_xgfgg")
 
 [node name="VisionEffects" parent="." instance=ExtResource("7_hjpto")]
 
