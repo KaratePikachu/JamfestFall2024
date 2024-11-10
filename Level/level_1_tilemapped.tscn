@@ -143,11 +143,11 @@ position = Vector2(324, 146)
 text = "You got the sunglasses! The Sunglasses allow you to see but make some objects too dark to detect. "
 
 [node name="TextPopup3" parent="CanvasLayer" instance=ExtResource("12_n42ab")]
-position = Vector2(17, 143)
+position = Vector2(-7, -31)
 text = "I broke my glasses, looks like I have to find the tools to fix them. "
 
 [node name="TextPopup4" parent="CanvasLayer" instance=ExtResource("12_n42ab")]
-position = Vector2(17, 143)
+position = Vector2(111, 139)
 text = "I have to find a screw"
 
 [node name="TextPopup2" parent="CanvasLayer" instance=ExtResource("12_n42ab")]
@@ -155,7 +155,7 @@ position = Vector2(3779, -526)
 text = "You got the screwdriver! You still have 2 more items to find"
 
 [node name="SunglassesPickup" parent="CanvasLayer" instance=ExtResource("5_sfhhk")]
-position = Vector2(204, 102)
+position = Vector2(252, 102)
 
 [connection signal="triggered" from="Switch2" to="Door2" method="_on_switch_triggered"]
 [connection signal="triggered" from="Switch1" to="Door1" method="_on_switch_triggered"]
