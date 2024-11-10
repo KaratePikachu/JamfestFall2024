@@ -1,13 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://qa6itmjrn43y"]
+[gd_scene load_steps=4 format=3 uid="uid://qa6itmjrn43y"]
 
 [ext_resource type="Script" path="res://Enviorment/Enemy/enemy.gd" id="1_2de7v"]
-[ext_resource type="Texture2D" uid="uid://c37suxkugq6n0" path="res://Enviorment/Enemy/jonerrrr.png" id="1_xtwwk"]
+[ext_resource type="Texture2D" uid="uid://dg3ruv7lr1a5b" path="res://Enviorment/Enemy/Prototypesecurity.png" id="2_eyteg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ufkie"]
 size = Vector2(105, 91)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_umrop"]
-size = Vector2(117, 104)
 
 [node name="Enemy" type="CharacterBody2D"]
 script = ExtResource("1_2de7v")
@@ -15,7 +12,7 @@ script = ExtResource("1_2de7v")
 [node name="Sprite" type="Sprite2D" parent="."]
 visible = false
 scale = Vector2(0.188935, 0.188935)
-texture = ExtResource("1_xtwwk")
+texture = ExtResource("2_eyteg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 0.5)
@@ -37,9 +34,9 @@ polygon = PackedVector2Array(-1, 0, -191, -61, -190, 46)
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathAura"]
-position = Vector2(-0.5, 2)
-shape = SubResource("RectangleShape2D_umrop")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DeathAura"]
+scale = Vector2(0.188935, 0.188935)
+polygon = PackedVector2Array(109, -84, 109, -82, 99.3, -74, 97.8, -74, 92.9, -65, 91.7, -65, 73, -20.4, 73, -19.5, 53.6, -12, 51, -12, 42.5, -1.39999, -42, -21.6, -42, -22.9, -72, -24.9, -72, -26.1, -117.1, -24, -124.4, -24, -164.4, -8, -167.7, -8, -184.7, 6, -186.9, 6, -209.9, 33, -211.4, 33, -222.4, 62, -223.8, 62, -226.8, 87, -228, 87, -228, 110.3, -224, 124, -224, 127.6, -212, 146.6, -212, 148.8, -181, 183.8, -181, 212.5, -172, 228.4, -172, 231.9, -166, 236.9, -166, 238.7, -153.2, 241, -131.9, 241, -129.9, 238, -128.2, 238, -126, 219.1, -126, 216.5, -117.2, 203.8, -108.8, 203, -105.4, 203, -99, 222.3, -99, 225.9, -93, 230.9, -93, 232.7, -78.2, 235, -75.5, 235, -66.5, 230, -63.9, 230, -65, 205.1, -27.1, 208, -11.8, 208, 24.1, 202, 25, 214.1, 25, 218.5, 33, 233.5, 33, 236.4, 45, 240.4, 45, 242.2, 56.2, 241, 62.6, 241, 72.5, 235, 75.1, 235, 74, 204.9, 74, 197.3, 78, 188.4, 78, 187.2, 85, 184.3, 85.5, 184, 91, 203, 91, 206.6, 107.9, 232, 134, 232, 139, 225, 141.3, 225, 139, 206.8, 139, 194.3, 143, 185.4, 143, 183.8, 149, 189.8, 149, 191.3, 151.5, 192.4, 156.8, 187, 159, 187, 159, 178.5, 147.1, 157.7, 170, 137.9, 181, 135, 182.5, 135, 205, 122.2, 210.3, 121, 217.7, 121, 222.7, 117, 225, 117, 242, 95.7, 242, 77.8, 236, 44.6, 236, 41, 218.7, 27, 218, 26.5, 218, 10.6, 211, -5.39999, 211, -8.2, 201, -13.3, 201, -15.5, 173.1, -9.7, 162.3, -13, 159.3, -13, 150, -33.4, 150, -35.6, 130, -67.7, 130, -69.7, 120, -81.7, 120, -84)
 
 [connection signal="body_entered" from="DetectionCone" to="." method="_on_DetectionCone_body_entered"]
 [connection signal="body_entered" from="DeathAura" to="." method="_on_death_aura_body_entered"]

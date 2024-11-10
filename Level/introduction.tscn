@@ -12,12 +12,9 @@
 [ext_resource type="TileSet" uid="uid://dcc3nrrdg01tm" path="res://Objects/tileset.tres" id="11_1wx7c"]
 [ext_resource type="PackedScene" uid="uid://diroxtluegurn" path="res://Objects/tile_map_layers.tscn" id="11_v3t6o"]
 [ext_resource type="PackedScene" uid="uid://mhre4wt3fwb8" path="res://Enviorment/SceneChange/scene_transition.tscn" id="12_2wb1o"]
-[ext_resource type="PackedScene" path="res://Level/level_1_tilemapped.tscn" id="12_gkxs0"]
+[ext_resource type="PackedScene" uid="uid://c41bf4ogpo863" path="res://Level/level_1_tilemapped.tscn" id="12_gkxs0"]
 [ext_resource type="PackedScene" uid="uid://dw1di6bneq8on" path="res://Enviorment/TextPopup/TextPopup.tscn" id="14_irc5d"]
 [ext_resource type="PackedScene" uid="uid://mxhsaam4gug" path="res://Enviorment/ForcedGlassesChange/glasses_change.tscn" id="15_3dak2"]
-
-
-
 
 [node name="Introduction" type="Node2D"]
 position = Vector2(-466, -368)
@@ -35,7 +32,6 @@ scale = Vector2(2, 2)
 [node name="DeathSquare3" parent="Spikes" instance=ExtResource("1_syrov")]
 position = Vector2(1390, 214)
 scale = Vector2(2, 2)
-
 
 [node name="Door" parent="." instance=ExtResource("6_50eqa")]
 position = Vector2(1879, 37)
@@ -137,11 +133,9 @@ position = Vector2(463, 497)
 forced = 4
 
 [node name="Player" parent="." instance=ExtResource("2_q76co")]
-
 position = Vector2(469, 467)
 
 [node name="Switch" parent="." instance=ExtResource("5_lu008")]
 position = Vector2(1574, 340)
 
 [connection signal="triggered" from="Switch" to="Door" method="_on_switch_triggered"]
-

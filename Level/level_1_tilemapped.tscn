@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://c41bf4ogpo863"]
+[gd_scene load_steps=13 format=4 uid="uid://c41bf4ogpo863"]
 
 [ext_resource type="PackedScene" uid="uid://lpj2ux5e6qek" path="res://Interactable/Door/Door.tscn" id="1_n15bx"]
 [ext_resource type="PackedScene" uid="uid://bmvu0eqsw4qql" path="res://Interactable/Switch/switch.tscn" id="2_2wdbt"]
@@ -11,7 +11,6 @@
 [ext_resource type="TileSet" uid="uid://dcc3nrrdg01tm" path="res://Objects/tileset.tres" id="8_g8dob"]
 [ext_resource type="PackedScene" uid="uid://mhre4wt3fwb8" path="res://Enviorment/SceneChange/scene_transition.tscn" id="9_qfxnd"]
 [ext_resource type="PackedScene" uid="uid://dtl1rrgehyumx" path="res://Level/level_2 tilemapped.tscn" id="10_4misl"]
-[ext_resource type="PackedScene" uid="uid://dw1di6bneq8on" path="res://Enviorment/TextPopup/TextPopup.tscn" id="12_17x41"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jghdn"]
 shader = ExtResource("4_uhjqc")
@@ -33,11 +32,9 @@ color = Color(0.235734, 0.696482, 0.375812, 1)
 
 [node name="Switch2" parent="." instance=ExtResource("2_2wdbt")]
 position = Vector2(3758, -105)
-toggled = false
 
 [node name="Switch1" parent="." instance=ExtResource("2_2wdbt")]
 position = Vector2(2276, -46)
-toggled = false
 
 [node name="Player" parent="." instance=ExtResource("3_t6c1r")]
 position = Vector2(-2, -134)
@@ -135,9 +132,7 @@ tile_set = ExtResource("8_g8dob")
 position = Vector2(3896, -563)
 scene_name = ExtResource("10_4misl")
 
-
-
-[connection signal="triggered" from="Switch2" to="Door2" method="_on_triggered"]
 [connection signal="triggered" from="Switch2" to="Door2" method="_on_switch_2_triggered"]
+[connection signal="triggered" from="Switch2" to="Door2" method="_on_triggered"]
 [connection signal="triggered" from="Switch1" to="Door1" method="_on_switch_1_triggered"]
 [connection signal="triggered" from="Switch1" to="Door1" method="_on_triggered"]
