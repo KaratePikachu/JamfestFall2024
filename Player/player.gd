@@ -6,6 +6,7 @@ const STOP_FORCE = 1800
 const JUMP_SPEED = 1000
 
 const CAMERA_SPEED = 10
+var freecam_pos : Vector2 = Vector2(0,0)
 
 static var instance : Player
 
@@ -26,18 +27,16 @@ enum Glasses {
 
 
 static var obtained_glasses = []
-static var worn_glasses = Glasses.NONE
+@export var worn_glasses = Glasses.NONE
 
 signal glasses_changed(old_glasses : Glasses, new_glasses : Glasses)
 
 func _init() -> void:
-	if(instance == null):
-		instance = self
+	print("yo")
+	instance = self
 	
 func _ready() -> void:
-	instance = self
 	grant_glasses(Glasses.NONE)
-	
 
 func _input(event: InputEvent) -> void:
 	var desired_switch = null
@@ -95,16 +94,14 @@ func _physics_process(delta):
 	if worn_glasses == Glasses.DRONE:
 		var screen_size = get_viewport_rect().size
 		
-		if Input.is_action_pressed("move_right") && $Camera2D.position.x < screen_size.x / 3:
+		if Input.is_action_pressed("move_right"):
 			$Camera2D.position.x += CAMERA_SPEED
-		if Input.is_action_pressed("move_left") && $Camera2D.position.x > -screen_size.x / 3:
+		if Input.is_action_pressed("move_left"):
 			$Camera2D.position.x -= CAMERA_SPEED
-		if Input.is_action_pressed("move_down") && $Camera2D.position.y < screen_size.y / 10:
-			$Camera2D.position.y += CAMERA_SPEED
-		if Input.is_action_pressed("jump") && $Camera2D.position.y > -screen_size.y / 10:
-			$Camera2D.position.y -= CAMERA_SPEED
+
+		$Camera2D.position.y = -300
 		
-		$Camera2D.zoom = Vector2(0.9, 0.9)
+		$Camera2D.zoom = Vector2(0.95, 0.95)
 		
 		
 		
