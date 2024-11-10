@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://d1kjkl2jsqa1j"]
+[gd_scene load_steps=15 format=3 uid="uid://d1kjkl2jsqa1j"]
 
 [ext_resource type="Shader" path="res://Shaders/blur.gdshader" id="1_of5qh"]
 [ext_resource type="PackedScene" uid="uid://u5vlmp8hm4ku" path="res://Player/player.tscn" id="1_svam2"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cc4ppwhyjy67u" path="res://Interactable/Glasses/Sunglasses/sunglasses_pickup.tscn" id="7_8mvxf"]
 [ext_resource type="PackedScene" uid="uid://qa6itmjrn43y" path="res://Enviorment/Enemy/enemy.tscn" id="8_ovm8l"]
 [ext_resource type="PackedScene" uid="uid://c2c6j0ido1yw4" path="res://Interactable/Glasses/Normal/normal_glasses_pickup.tscn" id="11_3a312"]
+[ext_resource type="PackedScene" uid="uid://dw1di6bneq8on" path="res://Enviorment/TextPopup/TextPopup.tscn" id="11_hk1ct"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p2x72"]
 shader = ExtResource("1_of5qh")
@@ -114,5 +115,11 @@ position = Vector2(547, 543)
 
 [node name="NormalGlassesPickup" parent="." instance=ExtResource("11_3a312")]
 position = Vector2(813, 548)
+
+[node name="TextPopup" parent="." instance=ExtResource("11_hk1ct")]
+position = Vector2(215, 570)
+collision_layer = 3
+collision_mask = 3
+text = "WAHHHHHH IM A WINNER"
 
 [connection signal="triggered" from="Switch" to="Door" method="_on_triggered"]

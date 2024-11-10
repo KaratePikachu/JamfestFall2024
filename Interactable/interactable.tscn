@@ -1,18 +1,18 @@
 [gd_scene load_steps=4 format=3 uid="uid://u4ayn3q3dre"]
 
-[ext_resource type="Script" path="res://Interactable/interactable.gd" id="1_rkw8h"]
-[ext_resource type="Texture2D" uid="uid://b6xec1krmix1b" path="res://Interactable/full_heart.png" id="2_w07td"]
+[ext_resource type="Script" path="res://Interactable/interactable.gd" id="1_mwdno"]
+[ext_resource type="Texture2D" uid="uid://b6xec1krmix1b" path="res://Interactable/full_heart.png" id="2_i2g7v"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jwq1a"]
 
 [node name="Interactable" type="Area2D"]
 collision_layer = 4
 collision_mask = 2
-script = ExtResource("1_rkw8h")
+script = ExtResource("1_mwdno")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.185, 0.185)
-texture = ExtResource("2_w07td")
+texture = ExtResource("2_i2g7v")
 offset = Vector2(0, 24.725)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
