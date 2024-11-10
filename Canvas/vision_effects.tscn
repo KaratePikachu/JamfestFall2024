@@ -1,10 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://dp7fxu33gf8m0"]
+[gd_scene load_steps=15 format=3 uid="uid://dp7fxu33gf8m0"]
 
 [ext_resource type="Script" path="res://Canvas/vision_effects.gd" id="1_58afm"]
 [ext_resource type="Shader" path="res://Shaders/tint.gdshader" id="3_ng80b"]
 [ext_resource type="Shader" path="res://Shaders/desaturation.gdshader" id="4_61ghd"]
 [ext_resource type="Shader" path="res://Shaders/blur.gdshader" id="5_rd0rx"]
 [ext_resource type="Shader" path="res://Shaders/VCR.gdshader" id="5_swjpv"]
+[ext_resource type="Texture2D" uid="uid://cjnelsdbpjyb3" path="res://UI/NormalBackdrop.png" id="6_gdua1"]
+[ext_resource type="Texture2D" uid="uid://dsivdgffxlsqu" path="res://UI/SunglassesBackdrop.png" id="7_061g1"]
+[ext_resource type="Texture2D" uid="uid://cxdylvcfw4cqw" path="res://UI/InfraredBackdrop.png" id="8_1n8wk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jqcd5"]
 shader = ExtResource("5_rd0rx")
@@ -60,11 +63,13 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.222
 
-[node name="VisionEffects" type="CanvasLayer"]
+[node name="VisionEffects" type="Node"]
 script = ExtResource("1_58afm")
 
-[node name="Blindness" type="ColorRect" parent="."]
+[node name="Blindness" type="CanvasLayer" parent="."]
 visible = false
+
+[node name="Blur" type="ColorRect" parent="Blindness"]
 material = SubResource("ShaderMaterial_jqcd5")
 anchors_preset = 15
 anchor_right = 1.0
@@ -135,3 +140,19 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="NormalBackdrop" type="Sprite2D" parent="."]
+show_behind_parent = true
+z_index = -10
+position = Vector2(4448.5, -356.5)
+texture = ExtResource("6_gdua1")
+
+[node name="SunglassesBackdrop" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(4448.5, -356.5)
+texture = ExtResource("7_061g1")
+
+[node name="InfraredBackdrop" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(4448.5, -356.5)
+texture = ExtResource("8_1n8wk")
