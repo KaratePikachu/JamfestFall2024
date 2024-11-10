@@ -1,7 +1,6 @@
 extends StaticBody2D
 
 @export var open := false
-@export var color : Color
 
 func _ready() -> void:
 	pass
