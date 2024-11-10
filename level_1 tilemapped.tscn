@@ -102,5 +102,5 @@ scale = Vector2(2, 2)
 
 [connection signal="triggered" from="Switch2" to="Door2" method="_on_triggered"]
 [connection signal="triggered" from="Switch2" to="Door2" method="_on_switch_2_triggered"]
-[connection signal="triggered" from="Switch1" to="Door1" method="_on_switch_1_triggered"]
 [connection signal="triggered" from="Switch1" to="Door1" method="_on_triggered"]
+[connection signal="triggered" from="Switch1" to="Door1" method="_on_switch_1_triggered"]
