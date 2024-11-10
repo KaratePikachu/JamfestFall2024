@@ -93,10 +93,8 @@ position = Vector2(1885, 567)
 [node name="Door" parent="." instance=ExtResource("6_his76")]
 position = Vector2(2057, 352)
 scale = Vector2(1.08, 8.64)
-color = Color(1, 0, 0, 1)
 
 [node name="VisionEffects" parent="." instance=ExtResource("7_l8130")]
-visible = false
 
 [node name="SunglassesPickup" parent="." instance=ExtResource("9_8pado")]
 position = Vector2(638, 539)
