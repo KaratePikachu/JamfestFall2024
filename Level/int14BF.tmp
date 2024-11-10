@@ -12,7 +12,7 @@
 [ext_resource type="TileSet" uid="uid://dcc3nrrdg01tm" path="res://Objects/tileset.tres" id="11_1wx7c"]
 [ext_resource type="PackedScene" uid="uid://diroxtluegurn" path="res://Objects/tile_map_layers.tscn" id="11_v3t6o"]
 [ext_resource type="PackedScene" uid="uid://mhre4wt3fwb8" path="res://Enviorment/SceneChange/scene_transition.tscn" id="12_2wb1o"]
-[ext_resource type="PackedScene" uid="uid://c41bf4ogpo863" path="res://Level/level_1_tilemapped.tscn" id="12_gkxs0"]
+[ext_resource type="PackedScene" uid="uid://o0dsn0fxeeve" path="res://Level/level_1_tilemapped.tscn" id="12_gkxs0"]
 [ext_resource type="PackedScene" uid="uid://dw1di6bneq8on" path="res://Enviorment/TextPopup/TextPopup.tscn" id="14_irc5d"]
 [ext_resource type="PackedScene" uid="uid://mxhsaam4gug" path="res://Enviorment/ForcedGlassesChange/glasses_change.tscn" id="15_3dak2"]
 [ext_resource type="Script" path="res://Level/trip_fall_die.gd" id="16_uuk8s"]
@@ -61,8 +61,7 @@ position = Vector2(1149, 458)
 scale = Vector2(0.7, 0.7)
 
 [node name="SceneTransition" parent="." instance=ExtResource("12_2wb1o")]
-position = Vector2(3369, 644)
-scale = Vector2(5.08, 1)
+position = Vector2(3642, 529)
 scene_name = ExtResource("12_gkxs0")
 
 [node name="TileMapLayers" parent="." instance=ExtResource("11_v3t6o")]
@@ -126,16 +125,12 @@ text = "Time the jump! Lazers are hard to see sometimes"
 position = Vector2(1930, -42)
 text = "Guard! Watch out!"
 
-[node name="trip" parent="CanvasLayer" instance=ExtResource("14_irc5d")]
-position = Vector2(2460, -224)
-text = "oop-"
-
 [node name="GlassesChange" parent="." instance=ExtResource("15_3dak2")]
 position = Vector2(463, 497)
 forced = 4
 
 [node name="Player" parent="." instance=ExtResource("2_q76co")]
-position = Vector2(452, 367)
+position = Vector2(3196, 156)
 
 [node name="Switch" parent="." instance=ExtResource("5_lu008")]
 position = Vector2(1574, 340)
@@ -153,10 +148,5 @@ collision_mask = 2
 position = Vector2(3039.5, 236)
 shape = SubResource("RectangleShape2D_52ayu")
 
-[node name="GlassesChange2" parent="." instance=ExtResource("15_3dak2")]
-position = Vector2(3402, 588)
-scale = Vector2(20.28, 1)
-
 [connection signal="triggered" from="Switch" to="Door" method="_on_switch_triggered"]
 [connection signal="body_entered" from="TripFallDie/Top" to="TripFallDie" method="_on_top_body_entered"]
-[connection signal="body_entered" from="GlassesChange2" to="TripFallDie" method="_on_glasses_change_2_body_entered"]
