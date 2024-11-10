@@ -32,11 +32,11 @@ static var obtained_glasses = []
 signal glasses_changed(old_glasses : Glasses, new_glasses : Glasses)
 
 func _init() -> void:
-	print("yo")
 	instance = self
 	
 func _ready() -> void:
-	grant_glasses(Glasses.NONE)
+	
+	(func(): grant_glasses(Glasses.NONE)).call_deferred()
 
 func _input(event: InputEvent) -> void:
 	var desired_switch = null
@@ -74,13 +74,14 @@ func grant_glasses(new_glasses):
 	else:
 		printerr("Player: d:
 	instance = selfError! player already has these glasses")
-		
+	
 	
 	switch_glasses(new_glasses)
 	
 	
 func switch_glasses(new_glasses):
-	glasses_changed.emit(worn_glasses,new_glasses)	
+	
+	glasses_changed.emit(worn_glasses,new_glasses)
 	
 func _on_glasses_changed(old_glasses: int, new_glasses: int) -> void:
 	if(old_glasses == Glasses.DRONE):
