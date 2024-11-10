@@ -31,12 +31,10 @@ func _process(delta: float) -> void:
 		$DetectionCone.scale.x = cos(dont_fucking_ask)
 
 		dont_fucking_ask += 0.01 + delta
-		print(abs(cos(dont_fucking_ask)))
 		if 1 - abs(cos(dont_fucking_ask)) < 0.0001:
 			isSpinning = false
 			timer = 0.001
 	else:
-		print(timer)
 		timer += delta
 		if timer >= timePaused:
 			isSpinning = true

@@ -1,11 +1,440 @@
-[gd_scene load_steps=5 format=3 uid="uid://u5vlmp8hm4ku"]
+[gd_scene load_steps=69 format=3 uid="uid://u5vlmp8hm4ku"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_mvi1i"]
-[ext_resource type="Texture2D" uid="uid://dfb8rr2fakwgp" path="res://Player/player.png" id="2"]
-[ext_resource type="Texture2D" uid="uid://1ign8s1w414r" path="res://Level/TestLevel/circle.png" id="3_wcmay"]
+[ext_resource type="Texture2D" uid="uid://dm1tbrkmw5nyl" path="res://Player/Assets/Idle/Guy_Idle.png" id="2_54ivu"]
+[ext_resource type="Texture2D" uid="uid://ch3b1ju46smbw" path="res://Player/Assets/Running/No Glasses/Guy_Running1.png" id="2_yhgtl"]
+[ext_resource type="Texture2D" uid="uid://cioeau81sxnei" path="res://Player/Assets/Running/No Glasses/Guy_Running2.png" id="3_x6irn"]
+[ext_resource type="Texture2D" uid="uid://mp2g48kfh6wp" path="res://Player/Assets/Jumping/Drone/Guy_Jump_Drone9.png" id="4_njbn5"]
+[ext_resource type="Texture2D" uid="uid://cv4nlfbs1203f" path="res://Player/Assets/Running/No Glasses/Guy_Running3.png" id="4_u8c8l"]
+[ext_resource type="Texture2D" uid="uid://6we32ab8djhk" path="res://Player/Assets/Running/No Glasses/Guy_Running4.png" id="5_rrt26"]
+[ext_resource type="Texture2D" uid="uid://bx54lkk6fcido" path="res://Player/Assets/Running/Drone/Guy_Run_Drone1.png" id="6_sa2p6"]
+[ext_resource type="Texture2D" uid="uid://v55yy3blbmvi" path="res://Player/Assets/Running/Drone/Guy_Run_Drone2.png" id="7_q5bhr"]
+[ext_resource type="Texture2D" uid="uid://clj64j6h1tk8n" path="res://Player/Assets/Running/Drone/Guy_Run_Drone3.png" id="8_ndkdw"]
+[ext_resource type="Texture2D" uid="uid://dibnsy5kv32y0" path="res://Player/Assets/Running/Drone/Guy_Run_Drone4.png" id="9_pocpl"]
+[ext_resource type="Texture2D" uid="uid://cyy2xwei2qgsd" path="res://Player/Assets/Running/Infared/Guy_Run_Infared1.png" id="10_ip0sa"]
+[ext_resource type="Texture2D" uid="uid://bri625sj0lgqs" path="res://Player/Assets/Running/Infared/Guy_Run_Infared2.png" id="11_s832l"]
+[ext_resource type="Texture2D" uid="uid://n5i7odguf7ax" path="res://Player/Assets/Running/Infared/Guy_Run_Infared3.png" id="12_c62g2"]
+[ext_resource type="Texture2D" uid="uid://cjnt1eoothstt" path="res://Player/Assets/Running/Infared/Guy_Run_Infared4.png" id="13_mrsqj"]
+[ext_resource type="Texture2D" uid="uid://dkpjlt3ktddfu" path="res://Player/Assets/Running/Normal Glasses/Guy_Run_Glasses1.png" id="14_ps6hc"]
+[ext_resource type="Texture2D" uid="uid://dpvshqlxfyr8o" path="res://Player/Assets/Running/Normal Glasses/Guy_Run_Glasses2.png" id="15_egthu"]
+[ext_resource type="Texture2D" uid="uid://b01umgev67b3g" path="res://Player/Assets/Running/Normal Glasses/Guy_Run_Glasses3.png" id="16_m4a8t"]
+[ext_resource type="Texture2D" uid="uid://3dvf7gv74spy" path="res://Player/Assets/Running/Normal Glasses/Guy_Run_Glasses4.png" id="17_uaqg3"]
+[ext_resource type="Texture2D" uid="uid://dn1320m3ov55h" path="res://Player/Assets/Running/Sunglasses/Guy_Run_Sunglasses1.png" id="18_hcpad"]
+[ext_resource type="Texture2D" uid="uid://dxepeprhiedwt" path="res://Player/Assets/Running/Sunglasses/Guy_Run_Sunglasses2.png" id="19_ubn07"]
+[ext_resource type="Texture2D" uid="uid://csvlyb0pqkkiw" path="res://Player/Assets/Running/Sunglasses/Guy_Run_Sunglasses3.png" id="20_5e3qy"]
+[ext_resource type="Texture2D" uid="uid://ygu5v45xbjkf" path="res://Player/Assets/Running/Sunglasses/Guy_Run_Sunglasses4.png" id="21_3xbnn"]
+[ext_resource type="Texture2D" uid="uid://bqhnh3fqko60n" path="res://Player/Assets/Idle/Guy_Idle_Glasses.png" id="23_fualt"]
+[ext_resource type="Texture2D" uid="uid://ynq38hnjki68" path="res://Player/Assets/Idle/Guy_Idle_Infared.png" id="24_xrhj2"]
+[ext_resource type="Texture2D" uid="uid://dsotm6lg8pjip" path="res://Player/Assets/Idle/Guy_Idle_Sunglasses.png" id="25_f3vmr"]
+[ext_resource type="Texture2D" uid="uid://ciyy6y55moqby" path="res://Player/Assets/Jumping/Drone/Guy_Jump_Drone3.png" id="27_lact8"]
+[ext_resource type="Texture2D" uid="uid://l6cf2y4ec8de" path="res://Player/Assets/Jumping/Drone/Guy_Jump_Drone4.png" id="28_dfimh"]
+[ext_resource type="Texture2D" uid="uid://dbirylaporch0" path="res://Player/Assets/Jumping/No Glasses/Guy_Jump8.png" id="29_y3ew5"]
+[ext_resource type="Texture2D" uid="uid://c6rkt52d6s5bv" path="res://Player/Assets/Jumping/No Glasses/Guy_Jump9.png" id="30_oeps8"]
+[ext_resource type="Texture2D" uid="uid://c311rfqmshipc" path="res://Player/Assets/Jumping/Infared/Guy_Jump_Infared8.png" id="31_gemp7"]
+[ext_resource type="Texture2D" uid="uid://bv56s17dvtroa" path="res://Player/Assets/Jumping/Drone/Guy_Jump_Drone8.png" id="32_2q512"]
+[ext_resource type="Texture2D" uid="uid://ljs6jfwnhuo5" path="res://Player/Assets/Jumping/Normal Glasses/Guy_Jump_Glasses8.png" id="32_ttv3t"]
+[ext_resource type="Texture2D" uid="uid://bq3s6y7vggy6b" path="res://Player/Assets/Jumping/Normal Glasses/Guy_Jump_Glasses9.png" id="33_lxe5s"]
+[ext_resource type="Texture2D" uid="uid://bl5bobemdagyl" path="res://Player/Assets/Jumping/Sunglasses/Guy_Jump_Sunglasses8.png" id="34_ea3s4"]
+[ext_resource type="Texture2D" uid="uid://0hhqt58hcs8i" path="res://Player/Assets/Jumping/Sunglasses/Guy_Jump_Sunglasses9.png" id="35_67yxw"]
+[ext_resource type="Texture2D" uid="uid://dofonl8uqmqv3" path="res://Player/Assets/Jumping/No Glasses/Guy_Jump3.png" id="36_j2mln"]
+[ext_resource type="Texture2D" uid="uid://bdmkf8e2fjumm" path="res://Player/Assets/Jumping/Infared/Guy_Jump_Infared3.png" id="37_42snp"]
+[ext_resource type="Texture2D" uid="uid://cqgwbqusqolel" path="res://Player/Assets/Jumping/No Glasses/Guy_Jump4.png" id="37_kuj0e"]
+[ext_resource type="Texture2D" uid="uid://d3gstjdjrug26" path="res://Player/Assets/Jumping/Normal Glasses/Guy_Jump_Glasses3.png" id="38_h8uqo"]
+[ext_resource type="Texture2D" uid="uid://2i0ig7tqvqf2" path="res://Player/Assets/Jumping/Infared/Guy_Jump_Infared4.png" id="38_y1p6k"]
+[ext_resource type="Texture2D" uid="uid://3r2eh408mgd" path="res://Player/Assets/Jumping/Normal Glasses/Guy_Jump_Glasses4.png" id="39_2padi"]
+[ext_resource type="Texture2D" uid="uid://b4dfxovjgolji" path="res://Player/Assets/Jumping/Sunglasses/Guy_Jump_Sunglasses3.png" id="40_3xgd0"]
+[ext_resource type="Texture2D" uid="uid://dnynm5ij7vul2" path="res://Player/Assets/Jumping/Sunglasses/Guy_Jump_Sunglasses4.png" id="41_mrovq"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_q0k8u"]
-radius = 32.368
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aotdq"]
+radius = 30.3156
+height = 99.6844
+
+[sub_resource type="Animation" id="Animation_q31cw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GuySprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_yhgtl")]
+}
+
+[sub_resource type="Animation" id="Animation_34cuf"]
+resource_name = "drone_fall"
+length = 10.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GuySprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("32_2q512"), ExtResource("4_njbn5")]
+}
+
+[sub_resource type="Animation" id="Animation_dlti3"]
+resource_name = "drone_idle"
+length = 0.10001
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GuySprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_54ivu")]
+}
+
+[sub_resource type="Animation" id="Animation_72x68"]
+resource_name = "drone_jump"
+length = 10.0
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GuySprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("27_lact8"), ExtResource("28_dfimh")]
+}
+
+[sub_resource type="Animation" id="Animation_fcbq2"]
+resource_name = "drone_run"
+length = 0.40001
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GuySprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("6_sa2p6"), ExtResource("7_q5bhr"), ExtResource("8_ndkdw"), ExtResource("9_pocpl")]
+}
+
+[sub_resource type="Animation" id="Animation_3kpui"]
+resource_name = "infared_idle"
+length = 0.10001
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GuySprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("24_xrhj2")]
+}
+
+[sub_resource type="Animation" id="Animation_0s0cp"]
+resource_name = "infared_run"
+length = 0.40001
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GuySprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("10_ip0sa"), ExtResource("11_s832l"), ExtResource("12_c62g2"), ExtResource("13_mrsqj")]
+}
+
+[sub_resource type="Animation" id="Animation_k7rne"]
+resource_name = "no_idle"
+length = 0.10001
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GuySprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_54ivu")]
+}
+
+[sub_resource type="Animation" id="Animation_cpr7g"]
+resource_name = "no_glasses_run"
+length = 0.40001
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GuySprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_yhgtl"), ExtResource("3_x6irn"), ExtResource("4_u8c8l"), ExtResource("5_rrt26")]
+}
+
+[sub_resource type="Animation" id="Animation_kkkex"]
+resource_name = "normal_idle"
+length = 0.10001
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GuySprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("23_fualt")]
+}
+
+[sub_resource type="Animation" id="Animation_wegv6"]
+resource_name = "normal_run"
+length = 0.40001
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GuySprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("14_ps6hc"), ExtResource("15_egthu"), ExtResource("16_m4a8t"), ExtResource("17_uaqg3")]
+}
+
+[sub_resource type="Animation" id="Animation_t0p3k"]
+resource_name = "sunglasses_idle"
+length = 0.10001
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GuySprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("25_f3vmr")]
+}
+
+[sub_resource type="Animation" id="Animation_kqk4i"]
+resource_name = "sunglasses_run"
+length = 0.40001
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GuySprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("18_hcpad"), ExtResource("19_ubn07"), ExtResource("20_5e3qy"), ExtResource("21_3xbnn")]
+}
+
+[sub_resource type="Animation" id="Animation_ijxft"]
+resource_name = "no_glasses_fall"
+length = 10.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GuySprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("29_y3ew5"), ExtResource("30_oeps8")]
+}
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2dgm4"]
+load_path = "res://.godot/imported/Guy_Jump_Infared9.png-42fcffbbe7a5e633529b62e45e59a16e.ctex"
+
+[sub_resource type="Animation" id="Animation_rcdxq"]
+resource_name = "infared_fall"
+length = 10.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GuySprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("31_gemp7"), SubResource("CompressedTexture2D_2dgm4")]
+}
+
+[sub_resource type="Animation" id="Animation_0rqlu"]
+resource_name = "normal_fall"
+length = 10.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GuySprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("32_ttv3t"), ExtResource("33_lxe5s")]
+}
+
+[sub_resource type="Animation" id="Animation_8opjj"]
+resource_name = "sunglasses_fall"
+length = 10.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GuySprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("34_ea3s4"), ExtResource("35_67yxw")]
+}
+
+[sub_resource type="Animation" id="Animation_rqfo5"]
+resource_name = "infared_jump"
+length = 10.0
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GuySprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("37_42snp"), ExtResource("38_y1p6k")]
+}
+
+[sub_resource type="Animation" id="Animation_87mq3"]
+resource_name = "no_glasses_jump"
+length = 10.0
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GuySprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("36_j2mln"), ExtResource("37_kuj0e")]
+}
+
+[sub_resource type="Animation" id="Animation_y6wxi"]
+resource_name = "normal_jump"
+length = 10.0
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GuySprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("38_h8uqo"), ExtResource("39_2padi")]
+}
+
+[sub_resource type="Animation" id="Animation_aow8c"]
+resource_name = "sunglasses_jump"
+length = 10.0
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GuySprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("40_3xgd0"), ExtResource("41_mrovq")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pk8gy"]
+_data = {
+"RESET": SubResource("Animation_q31cw"),
+"drone_fall": SubResource("Animation_34cuf"),
+"drone_idle": SubResource("Animation_dlti3"),
+"drone_jump": SubResource("Animation_72x68"),
+"drone_run": SubResource("Animation_fcbq2"),
+"infared_fall": SubResource("Animation_rcdxq"),
+"infared_idle": SubResource("Animation_3kpui"),
+"infared_jump": SubResource("Animation_rqfo5"),
+"infared_run": SubResource("Animation_0s0cp"),
+"no_glasses_fall": SubResource("Animation_ijxft"),
+"no_glasses_idle": SubResource("Animation_k7rne"),
+"no_glasses_jump": SubResource("Animation_87mq3"),
+"no_glasses_run": SubResource("Animation_cpr7g"),
+"normal_fall": SubResource("Animation_0rqlu"),
+"normal_idle": SubResource("Animation_kkkex"),
+"normal_jump": SubResource("Animation_y6wxi"),
+"normal_run": SubResource("Animation_wegv6"),
+"sunglasses_fall": SubResource("Animation_8opjj"),
+"sunglasses_idle": SubResource("Animation_t0p3k"),
+"sunglasses_jump": SubResource("Animation_aow8c"),
+"sunglasses_run": SubResource("Animation_kqk4i")
+}
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(0.9, 0.9)
@@ -13,17 +442,20 @@ collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_mvi1i")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.315559, 0.157784)
-shape = SubResource("CircleShape2D_q0k8u")
+shape = SubResource("CapsuleShape2D_aotdq")
 
-[node name="Circle" type="Sprite2D" parent="."]
-position = Vector2(-1, 0)
-texture = ExtResource("3_wcmay")
+[node name="GuySprite" type="Sprite2D" parent="."]
+position = Vector2(-1.11111, 0)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_yhgtl")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="AnimPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_pk8gy")
+}
 
 [connection signal="glasses_changed" from="." to="." method="_on_glasses_changed"]

@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=3 uid="uid://cn1m8upukx5ck"]
+
+[ext_resource type="Texture2D" uid="uid://cxl5cvsgyxcoe" path="res://Level/TestLevel/princess.png" id="1_o8yd7"]
+[ext_resource type="PackedScene" uid="uid://u5vlmp8hm4ku" path="res://Player/player.tscn" id="1_q25xq"]
+[ext_resource type="Shader" path="res://Shaders/Blur.gdshader" id="2_ishof"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_icl00"]
+size = Vector2(1014, 340)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_37a7t"]
+shader = ExtResource("2_ishof")
+shader_parameter/scale = 1.0
+shader_parameter/lod = 0.0
+shader_parameter/x_blur_offest = 1.262
+shader_parameter/y_blur_offest = 1.565
+
+[node name="BlankTestScene" type="Node2D"]
+
+[node name="floor" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
+position = Vector2(497, 496)
+shape = SubResource("RectangleShape2D_icl00")
+
+[node name="ColorRect" type="ColorRect" parent="floor"]
+offset_left = -167.0
+offset_top = 327.0
+offset_right = 1020.0
+offset_bottom = 662.0
+color = Color(0, 0, 0, 1)
+
+[node name="Princess" type="Sprite2D" parent="floor"]
+position = Vector2(326, 146)
+texture = ExtResource("1_o8yd7")
+
+[node name="Princess2" type="Sprite2D" parent="floor"]
+position = Vector2(-97, 301)
+texture = ExtResource("1_o8yd7")
+
+[node name="Princess3" type="Sprite2D" parent="floor"]
+position = Vector2(9, 178)
+texture = ExtResource("1_o8yd7")
+
+[node name="Princess4" type="Sprite2D" parent="floor"]
+position = Vector2(569, 254)
+texture = ExtResource("1_o8yd7")
+
+[node name="Princess5" type="Sprite2D" parent="floor"]
+position = Vector2(867, 128)
+texture = ExtResource("1_o8yd7")
+
+[node name="Princess6" type="Sprite2D" parent="floor"]
+position = Vector2(948, 293)
+texture = ExtResource("1_o8yd7")
+
+[node name="Princess7" type="Sprite2D" parent="floor"]
+position = Vector2(566, 81)
+texture = ExtResource("1_o8yd7")
+
+[node name="Player" parent="." instance=ExtResource("1_q25xq")]
+material = SubResource("ShaderMaterial_37a7t")
+position = Vector2(176, 225)
+scale = Vector2(1.465, 1.465)

@@ -100,11 +100,11 @@ func _physics_process(delta):
 		if Input.is_action_pressed("move_left"):
 			$Camera2D.global_position.x -= CAMERA_SPEED
 
+
+
 		$Camera2D.global_position.y = -330
 		
 		$Camera2D.zoom = Vector2(0.95, 0.95)
-		
-		
 		
 	else:
 		# Horizontal movement code. First, get the player's input.
@@ -126,6 +126,18 @@ func _physics_process(delta):
 		# TODO: Rename velocity to linear_velocity in the rest of the script.
 		move_and_slide()
 
+		
+		#State Machine. It does magic.
+		if !is_on_floor() && velocity.y < 0:
+			_run_jump_animation($GuySprite.flip_h)
+		elif !is_on_floor() && velocity.y >= -10:
+			_run_fall_animation($GuySprite.flip_h)
+		elif abs(velocity.x) >= 10:
+			_run_run_animation(velocity.x >= 10)
+		else:
+			_run_idle_animation($GuySprite.flip_h)
+		
+
 		# Check for jumping. is_on_floor() must be called after movement code.
 		if is_on_floor() and Input.is_action_just_pressed(&"jump"):
 			velocity.y = -JUMP_SPEED
@@ -133,3 +145,67 @@ func _physics_process(delta):
 func die() -> void:
 	switch_glasses(Glasses.NONE)
 	get_tree().reload_current_scene()
+	
+	
+	
+# HELPER FUNCTIONS!!!!!!!!!!
+
+func _run_run_animation(going_left:bool) -> void:
+	$GuySprite.flip_h = going_left
+
+	match worn_glasses:
+		Glasses.DRONE:
+			$AnimPlayer.play("drone_run")
+		Glasses.INFARED:
+			$AnimPlayer.play("infared_run")
+		Glasses.NONE:
+			$AnimPlayer.play("no_glasses_run")
+		Glasses.NORMAL:
+			$AnimPlayer.play("normal_run")
+		Glasses.SUNGLASSES:
+			$AnimPlayer.play("sunglasses_run")
+
+func _run_idle_animation(going_left:bool) -> void:
+	$GuySprite.flip_h = going_left
+
+	match worn_glasses:
+		Glasses.DRONE:
+			$AnimPlayer.play("drone_idle")
+		Glasses.INFARED:
+			$AnimPlayer.play("infared_idle")
+		Glasses.NONE:
+			$AnimPlayer.play("no_glasses_idle")
+		Glasses.NORMAL:
+			$AnimPlayer.play("normal_idle")
+		Glasses.SUNGLASSES:
+			$AnimPlayer.play("sunglasses_idle")
+
+func _run_jump_animation(going_left:bool) -> void:
+	$GuySprite.flip_h = going_left
+
+	match worn_glasses:
+		Glasses.DRONE:
+			$AnimPlayer.play("drone_jump")
+		Glasses.INFARED:
+			$AnimPlayer.play("infared_jump")
+		Glasses.NONE:
+			$AnimPlayer.play("no_glasses_jump")
+		Glasses.NORMAL:
+			$AnimPlayer.play("normal_jump")
+		Glasses.SUNGLASSES:
+			$AnimPlayer.play("sunglasses_jump")
+			
+func _run_fall_animation(going_left:bool) -> void:
+	$GuySprite.flip_h = going_left
+
+	match worn_glasses:
+		Glasses.DRONE:
+			$AnimPlayer.play("drone_fall")
+		Glasses.INFARED:
+			$AnimPlayer.play("infared_fall")
+		Glasses.NONE:
+			$AnimPlayer.play("no_glasses_fall")
+		Glasses.NORMAL:
+			$AnimPlayer.play("normal_fall")
+		Glasses.SUNGLASSES:
+			$AnimPlayer.play("sunglasses_fall")
