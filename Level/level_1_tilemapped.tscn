@@ -135,10 +135,11 @@ tile_map_data = PackedByteArray("AAATAAkAAAABAAAAAAAUAAkAAAABAAAAAAAVAAkAAAABAAA
 tile_set = ExtResource("8_g8dob")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 16
+follow_viewport_enabled = true
 
 [node name="TextPopup" parent="CanvasLayer" instance=ExtResource("12_n42ab")]
-position = Vector2(311, 113)
-monitoring = false
+position = Vector2(14, 136)
 text = "You got the sunglasses! The Sunglasses allow you to see but make some objects too dark to detect. "
 
 [node name="TextPopup2" parent="CanvasLayer" instance=ExtResource("12_n42ab")]
