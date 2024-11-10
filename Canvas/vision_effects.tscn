@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dp7fxu33gf8m0"]
+[gd_scene load_steps=18 format=3 uid="uid://dp7fxu33gf8m0"]
 
 [ext_resource type="Script" path="res://Canvas/vision_effects.gd" id="1_58afm"]
 [ext_resource type="Shader" path="res://Shaders/tint.gdshader" id="3_ng80b"]
@@ -6,9 +6,9 @@
 [ext_resource type="Shader" path="res://Shaders/blur.gdshader" id="5_rd0rx"]
 [ext_resource type="Shader" path="res://Shaders/VCR.gdshader" id="5_swjpv"]
 [ext_resource type="Texture2D" uid="uid://cjnelsdbpjyb3" path="res://UI/NormalBackdrop.png" id="6_gdua1"]
+[ext_resource type="Shader" path="res://Shaders/newBlur.gdshader" id="6_honmd"]
 [ext_resource type="Texture2D" uid="uid://dsivdgffxlsqu" path="res://UI/SunglassesBackdrop.png" id="7_061g1"]
 [ext_resource type="Texture2D" uid="uid://cxdylvcfw4cqw" path="res://UI/InfraredBackdrop.png" id="8_1n8wk"]
-[ext_resource type="Shader" path="res://Shaders/newBlur.gdshader" id="6_honmd"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xn0ab"]
 shader = ExtResource("6_honmd")
@@ -182,17 +182,20 @@ grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="NormalBackdrop" type="Sprite2D" parent="."]
+visible = false
 show_behind_parent = true
 z_index = -10
 position = Vector2(4448.5, -356.5)
 texture = ExtResource("6_gdua1")
 
 [node name="SunglassesBackdrop" type="Sprite2D" parent="."]
+visible = false
 z_index = -10
 position = Vector2(4448.5, -356.5)
 texture = ExtResource("7_061g1")
 
 [node name="InfraredBackdrop" type="Sprite2D" parent="."]
+visible = false
 z_index = -10
 position = Vector2(4448.5, -356.5)
 texture = ExtResource("8_1n8wk")
