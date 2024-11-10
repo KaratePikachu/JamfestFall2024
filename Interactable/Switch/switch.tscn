@@ -7,18 +7,20 @@
 
 [node name="Switch" instance=ExtResource("1_ek0vl")]
 script = ExtResource("2_7vxng")
-color = Color(0, 0, 0, 1)
-status = false
+toggled = false
 
 [node name="Sprite2D" parent="." index="0"]
 texture = null
 
-[node name="Switch" type="Node2D" parent="." index="2"]
 
-[node name="off" type="Sprite2D" parent="Switch" index="0"]
+[node name="Sprites" type="Node2D" parent="." index="2"]
+
+[node name="Off" type="Sprite2D" parent="Sprites" index="0"]
+position = Vector2(0, -20)
 texture = ExtResource("3_uy067")
 
-[node name="on" type="Sprite2D" parent="Switch" index="1"]
+[node name="On" type="Sprite2D" parent="Sprites" index="1"]
+
 visible = false
 position = Vector2(0, -20)
 texture = ExtResource("4_uobns")

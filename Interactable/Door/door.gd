@@ -6,7 +6,9 @@ extends StaticBody2D
 func _ready() -> void:
 	$DoorSprite.color = color
 # Called when the node enters the scene tree for the first time.
-func _on_triggered() -> void:
+
+
+func _on_switch_triggered() -> void:
 	print("WAHHHHHHHH")
 	open = !open
 	if(open):
@@ -16,16 +18,3 @@ func _on_triggered() -> void:
 		$DoorSprite.self_modulate.a = 1.0
 		$CollisionArea.set_deferred("disabled", false)
 		
-	
-
-
-func _on_switch_1_triggered():
-	pass # Replace with function body.
-
-
-func _on_switch_2_triggered():
-	pass # Replace with function body.
-
-
-func _on_switch_triggered():
-	pass # Replace with function body.

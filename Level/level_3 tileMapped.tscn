@@ -61,7 +61,7 @@ scale = Vector2(0.5, 0.5)
 canSpin = true
 
 [node name="Switch" parent="." instance=ExtResource("6_mvjhb")]
-position = Vector2(917, -71)
+position = Vector2(919, -56)
 
 [node name="Door" parent="." instance=ExtResource("7_iw4ej")]
 position = Vector2(1199, -537)
@@ -87,3 +87,4 @@ scene_name = ExtResource("14_ep8us")
 position = Vector2(0, -4)
 
 [connection signal="triggered" from="Switch" to="Door" method="_on_switch_triggered"]
+[connection signal="triggered" from="Switch" to="Door" method="_on_triggered"]
