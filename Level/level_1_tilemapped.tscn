@@ -46,9 +46,6 @@ material = SubResource("ShaderMaterial_jghdn")
 use_parent_material = true
 position = Vector2(-0.682969, -33.4467)
 
-[node name="SunglassesPickup" parent="." instance=ExtResource("5_sfhhk")]
-position = Vector2(204, 102)
-
 [node name="Spikes" type="Node" parent="."]
 
 [node name="DeathSquare" parent="Spikes" instance=ExtResource("6_yp723")]
@@ -146,7 +143,10 @@ text = "You got the sunglasses! The Sunglasses allow you to see but make some ob
 position = Vector2(3779, -526)
 text = "You got the screwdriver! You still have 2 more items to find"
 
-[node name="NormalGlassesPickup" parent="." instance=ExtResource("13_ox345")]
+[node name="SunglassesPickup" parent="CanvasLayer" instance=ExtResource("5_sfhhk")]
+position = Vector2(204, 102)
+
+[node name="NormalGlassesPickup" parent="CanvasLayer" instance=ExtResource("13_ox345")]
 position = Vector2(528, -51)
 
 [connection signal="triggered" from="Switch2" to="Door2" method="_on_switch_triggered"]
