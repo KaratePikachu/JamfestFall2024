@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://b88b22toehhyu"]
+[gd_scene load_steps=16 format=4 uid="uid://b0h4hj5sa81qx"]
 
 [ext_resource type="PackedScene" uid="uid://b68p8jegitusu" path="res://Enviorment/DeathSquare/death_square.tscn" id="1_syrov"]
 [ext_resource type="PackedScene" uid="uid://u5vlmp8hm4ku" path="res://Player/player.tscn" id="2_q76co"]
@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dn36wd0cgi5j4" path="res://Enviorment/Laser/Laser.tscn" id="9_sl1wl"]
 [ext_resource type="PackedScene" uid="uid://cf5674d77sx2n" path="res://Enviorment/Goomba/goomba.tscn" id="10_yrcgl"]
 [ext_resource type="TileSet" uid="uid://dcc3nrrdg01tm" path="res://Objects/tileset.tres" id="11_1wx7c"]
-[ext_resource type="PackedScene" uid="uid://mhre4wt3fwb8" path="res://scene_transition.tscn" id="12_2wb1o"]
+[ext_resource type="PackedScene" uid="uid://mhre4wt3fwb8" path="res://Enviorment/SceneChange/scene_transition.tscn" id="12_2wb1o"]
 [ext_resource type="PackedScene" uid="uid://c41bf4ogpo863" path="res://Level/l1t.tscn" id="12_gkxs0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p2x72"]
@@ -106,11 +106,6 @@ tile_set = ExtResource("11_1wx7c")
 [node name="DarkTiles" type="TileMapLayer" parent="Node"]
 tile_map_data = PackedByteArray("AAATAAkAAAABAAAAAAAUAAkAAAABAAAAAAAVAAkAAAABAAAAAAAWAAkAAAABAAAAAAAXAAkAAAABAAAAAAAYAAkAAAABAAAAAAAZAAkAAAABAAAAAAAaAAkAAAABAAAAAAAbAAkAAAABAAAAAAAbAAoAAAABAAAAAAAaAAoAAAABAAAAAAAZAAoAAAABAAAAAAAYAAoAAAABAAAAAAAXAAoAAAABAAAAAAAWAAoAAAABAAAAAAA=")
 tile_set = ExtResource("11_1wx7c")
-
-
-[node name="SceneTransition" parent="Node" instance=ExtResource("12_2wb1o")]
-position = Vector2(3095, 149)
-script = null
 
 [node name="Spikes2" type="Node" parent="."]
 
