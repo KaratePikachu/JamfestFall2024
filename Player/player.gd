@@ -32,11 +32,10 @@ static var obtained_glasses = []
 signal glasses_changed(old_glasses : Glasses, new_glasses : Glasses)
 
 func _init() -> void:
-	if(instance == null):
-		instance = self
+	print("yo")
+	instance = self
 	
 func _ready() -> void:
-	instance = self
 	grant_glasses(Glasses.NONE)
 
 func _input(event: InputEvent) -> void:
