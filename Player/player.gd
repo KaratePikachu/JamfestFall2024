@@ -8,6 +8,8 @@ const JUMP_SPEED = 1000
 const CAMERA_SPEED = 10
 var freecam_pos : Vector2 = Vector2(0,0)
 
+var in_anim : bool = false
+
 static var instance : Player
 
 @onready var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -113,7 +115,8 @@ func _physics_process(delta):
 		else:
 			velocity.x += walk * delta
 		# Clamp to the maximum horizontal movement speed.
-		velocity.x = clamp(velocity.x, -WALK_MAX_SPEED, WALK_MAX_SPEED)
+		if !in_anim:
+			velocity.x = clamp(velocity.x, -WALK_MAX_SPEED, WALK_MAX_SPEED)
 
 		# Vertical movement code. Apply gravity.
 		velocity.y += gravity * delta
