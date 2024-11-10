@@ -1,6 +1,4 @@
-
-[gd_scene load_steps=16 format=4 uid="uid://b0h4hj5sa81qx"]
-
+[gd_scene load_steps=18 format=4 uid="uid://b0h4hj5sa81qx"]
 
 [ext_resource type="PackedScene" uid="uid://b68p8jegitusu" path="res://Enviorment/DeathSquare/death_square.tscn" id="1_syrov"]
 [ext_resource type="PackedScene" uid="uid://u5vlmp8hm4ku" path="res://Player/player.tscn" id="2_q76co"]
@@ -55,7 +53,7 @@ position = Vector2(468, 364)
 scale = Vector2(1.465, 1.465)
 
 [node name="Switch" parent="." instance=ExtResource("5_lu008")]
-position = Vector2(1569, 328)
+position = Vector2(616, 560)
 color = Color(0.6, 0.6, 0.6, 1)
 
 [node name="Door" parent="." instance=ExtResource("6_50eqa")]
@@ -111,7 +109,6 @@ tile_set = ExtResource("11_1wx7c")
 tile_map_data = PackedByteArray("AAATAAkAAAABAAAAAAAUAAkAAAABAAAAAAAVAAkAAAABAAAAAAAWAAkAAAABAAAAAAAXAAkAAAABAAAAAAAYAAkAAAABAAAAAAAZAAkAAAABAAAAAAAaAAkAAAABAAAAAAAbAAkAAAABAAAAAAAbAAoAAAABAAAAAAAaAAoAAAABAAAAAAAZAAoAAAABAAAAAAAYAAoAAAABAAAAAAAXAAoAAAABAAAAAAAWAAoAAAABAAAAAAA=")
 tile_set = ExtResource("11_1wx7c")
 
-
 [node name="SceneTransition" parent="Node" instance=ExtResource("12_2wb1o")]
 position = Vector2(3095, 149)
 script = null
@@ -161,7 +158,7 @@ position = Vector2(292, 222)
 text = "Watch out for the goomba!"
 
 [node name="TextPopup3" parent="TextBoxes" instance=ExtResource("14_irc5d")]
-position = Vector2(998, -8)
+position = Vector2(1035, -10)
 text = "Press \"E\" to open the door!"
 
 [node name="TextPopup4" parent="TextBoxes" instance=ExtResource("14_irc5d")]
@@ -173,7 +170,7 @@ position = Vector2(1930, -42)
 text = "Guard! Watch out!"
 
 [node name="GlassesChange" parent="." instance=ExtResource("15_3dak2")]
-position = Vector2(466, 474)
+position = Vector2(463, 497)
 forced = 4
 
 [connection signal="triggered" from="Switch" to="Door" method="_on_triggered"]

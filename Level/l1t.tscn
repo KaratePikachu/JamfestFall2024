@@ -132,7 +132,7 @@ tile_set = ExtResource("8_g8dob")
 position = Vector2(3896, -563)
 scene_name = ExtResource("10_4misl")
 
-[connection signal="triggered" from="Switch2" to="Door2" method="_on_triggered"]
 [connection signal="triggered" from="Switch2" to="Door2" method="_on_switch_2_triggered"]
-[connection signal="triggered" from="Switch1" to="Door1" method="_on_triggered"]
+[connection signal="triggered" from="Switch2" to="Door2" method="_on_triggered"]
 [connection signal="triggered" from="Switch1" to="Door1" method="_on_switch_1_triggered"]
+[connection signal="triggered" from="Switch1" to="Door1" method="_on_triggered"]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bmvu0eqsw4qql"]
+[gd_scene load_steps=5 format=3 uid="uid://bmvu0eqsw4qql"]
 
-[ext_resource type="PackedScene" uid="uid://u4ayn3q3dre" path="res://interactable.tscn" id="1_ek0vl"]
+[ext_resource type="PackedScene" uid="uid://u4ayn3q3dre" path="res://Interactable/interactable.tscn" id="1_ek0vl"]
 [ext_resource type="Script" path="res://Interactable/Switch/switch.gd" id="2_7vxng"]
-
+[ext_resource type="Texture2D" uid="uid://bi37inwqiqi2g" path="res://Interactable/Switch/Switch_Off.png" id="3_uy067"]
+[ext_resource type="Texture2D" uid="uid://cgujbktifs5dp" path="res://Interactable/Switch/Switch_On.png" id="4_uobns"]
 
 [node name="Switch" instance=ExtResource("1_ek0vl")]
 script = ExtResource("2_7vxng")
@@ -12,26 +13,12 @@ status = false
 [node name="Sprite2D" parent="." index="0"]
 texture = null
 
-[node name="Switch" type="ColorRect" parent="." index="2"]
-offset_left = -37.0
-offset_top = -36.0
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(0, 1, 1, 1)
+[node name="Switch" type="Node" parent="." index="2"]
 
-[node name="Off" type="ColorRect" parent="Switch" index="0"]
-layout_mode = 0
-offset_left = 17.0
-offset_top = 19.0
-offset_right = 57.0
-offset_bottom = 37.0
-color = Color(1, 0, 0, 1)
+[node name="off" type="Sprite2D" parent="Switch" index="0"]
+position = Vector2(3, -20)
+texture = ExtResource("3_uy067")
 
-[node name="On" type="ColorRect" parent="Switch" index="1"]
-visible = false
-layout_mode = 0
-offset_left = 16.0
-offset_top = 43.0
-offset_right = 56.0
-offset_bottom = 58.0
-color = Color(0, 1, 0, 1)
+[node name="on" type="Sprite2D" parent="Switch" index="1"]
+position = Vector2(0, -20)
+texture = ExtResource("4_uobns")

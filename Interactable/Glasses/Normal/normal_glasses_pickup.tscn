@@ -1,8 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c2c6j0ido1yw4"]
 
-[ext_resource type="PackedScene" uid="uid://u4ayn3q3dre" path="res://interactable.tscn" id="1_528r0"]
-[ext_resource type="Texture2D" uid="uid://cknv8qqt8usjd" path="res://Interactable/Glasses/Sunglasses/glasses.png" id="3_j2npi"]
-
+[ext_resource type="PackedScene" uid="uid://u4ayn3q3dre" path="res://Interactable/interactable.tscn" id="1_528r0"]
+[ext_resource type="Texture2D" uid="uid://cmcgkbum17jh4" path="res://Interactable/Glasses/Normal/Glasses_Pickup.png" id="2_yfcet"]
 
 [sub_resource type="GDScript" id="GDScript_7xb47"]
 script/source = "extends GlassesPickup
@@ -15,4 +14,4 @@ func glasses_type():
 script = SubResource("GDScript_7xb47")
 
 [node name="Sprite2D" parent="." index="0"]
-texture = ExtResource("3_j2npi")
+texture = ExtResource("2_yfcet")

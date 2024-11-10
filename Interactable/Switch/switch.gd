@@ -9,7 +9,7 @@ extends Interactable
 signal triggered
 
 func _ready():
-	$Switch.color = color
+	pass
 
 func interact():
 	if(status):

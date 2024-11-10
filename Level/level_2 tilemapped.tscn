@@ -66,5 +66,5 @@ position = Vector2(319, -32)
 [node name="Player" parent="." instance=ExtResource("1_srbwn")]
 position = Vector2(-1, -3)
 
-[connection signal="triggered" from="Switch" to="Door" method="_on_switch_triggered"]
 [connection signal="triggered" from="Switch" to="Door" method="_on_triggered"]
+[connection signal="triggered" from="Switch" to="Door" method="_on_switch_triggered"]
