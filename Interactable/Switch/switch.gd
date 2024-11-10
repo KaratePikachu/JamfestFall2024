@@ -8,6 +8,7 @@ func _ready():
 	pass
 
 func interact():
+	SFX.switch.play()
 	if(toggled):
 		$Sprites/On.visible = false
 		$Sprites/Off.visible = true
