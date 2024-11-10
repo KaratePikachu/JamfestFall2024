@@ -85,5 +85,5 @@ follow_viewport_enabled = true
 [node name="DroneGlassesPickup" parent="CanvasLayer" instance=ExtResource("2_qq4mh")]
 position = Vector2(213, 80)
 
-[connection signal="triggered" from="Switch" to="Door" method="_on_switch_triggered"]
 [connection signal="triggered" from="Switch" to="Door" method="_on_triggered"]
+[connection signal="triggered" from="Switch" to="Door" method="_on_switch_triggered"]
