@@ -21,7 +21,7 @@ shader_parameter/sunGlass_color = Color(0, 0, 0, 0.843137)
 shader = ExtResource("5_rd0rx")
 shader_parameter/scale = 1.0
 shader_parameter/lod = 0.0
-shader_parameter/x_blur_offest = 0.02
+shader_parameter/x_blur_offest = 0.015
 shader_parameter/y_blur_offest = 0.02
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_72xkf"]
