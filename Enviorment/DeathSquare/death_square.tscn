@@ -13,6 +13,7 @@ script = ExtResource("1_1p08j")
 shape = SubResource("RectangleShape2D_guef2")
 
 [node name="ColorRect" type="ColorRect" parent="CollisionShape2D"]
+visible = false
 offset_left = -10.0
 offset_top = -10.0
 offset_right = 10.0
