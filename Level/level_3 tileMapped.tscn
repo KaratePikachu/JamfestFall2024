@@ -15,9 +15,6 @@
 
 [node name="Node2D" type="Node2D"]
 
-[node name="DroneGlassesPickup" parent="." instance=ExtResource("2_qq4mh")]
-position = Vector2(213, 80)
-
 [node name="Lazer" parent="." instance=ExtResource("3_6hv3y")]
 position = Vector2(522, -233)
 scale = Vector2(7, 0.25)
@@ -86,5 +83,12 @@ scene_name = ExtResource("14_ep8us")
 [node name="Player" parent="." instance=ExtResource("1_fg3qq")]
 position = Vector2(0, -4)
 
-[connection signal="triggered" from="Switch" to="Door" method="_on_switch_triggered"]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 16
+follow_viewport_enabled = true
+
+[node name="DroneGlassesPickup" parent="CanvasLayer" instance=ExtResource("2_qq4mh")]
+position = Vector2(213, 80)
+
 [connection signal="triggered" from="Switch" to="Door" method="_on_triggered"]
+[connection signal="triggered" from="Switch" to="Door" method="_on_switch_triggered"]

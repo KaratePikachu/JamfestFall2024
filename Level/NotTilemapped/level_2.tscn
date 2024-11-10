@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://c0irdu28sl6ah" path="res://Interactable/Glasses/Infared/infared_glasses_pickup.tscn" id="9_rmhoj"]
 [ext_resource type="PackedScene" uid="uid://cp66orkc1btu1" path="res://Level/NotTilemapped/level_3.tscn" id="9_ygbyg"]
 
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_us3du"]
 size = Vector2(4072, 255)
 
@@ -272,5 +271,5 @@ position = Vector2(299, -32)
 position = Vector2(112, -88)
 scene_name = ExtResource("9_ygbyg")
 
-[connection signal="triggered" from="Switch" to="Door" method="_on_switch_triggered"]
 [connection signal="triggered" from="Switch" to="Door" method="_on_triggered"]
+[connection signal="triggered" from="Switch" to="Door" method="_on_switch_triggered"]
