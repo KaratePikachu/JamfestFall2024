@@ -120,4 +120,13 @@ tile_set = ExtResource("11_1wx7c")
 
 [node name="Spikes2" type="Node" parent="."]
 
+[node name="Cutscene_Trigger" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Cutscene_Trigger"]
+offset_left = 3081.0
+offset_top = 23.0
+offset_right = 3121.0
+offset_bottom = 240.0
+color = Color(1, 0.00392157, 1, 1)
+
 [connection signal="triggered" from="Switch" to="Door" method="_on_triggered"]

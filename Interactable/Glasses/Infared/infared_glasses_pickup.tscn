@@ -1,8 +1,9 @@
 [gd_scene load_steps=4 format=3 uid="uid://c0irdu28sl6ah"]
 
-[ext_resource type="PackedScene" uid="uid://u4ayn3q3dre" path="res://Interactable/interactable.tscn" id="1_jvfm3"]
+[ext_resource type="PackedScene" uid="uid://u4ayn3q3dre" path="res://interactable.tscn" id="1_jvfm3"]
 [ext_resource type="Script" path="res://Interactable/Glasses/Infared/infared_glasses_pickup.gd" id="2_rftdk"]
 [ext_resource type="Texture2D" uid="uid://cknv8qqt8usjd" path="res://Interactable/Glasses/Sunglasses/glasses.png" id="3_stf6w"]
+
 
 [node name="InfaredGlassesPickup" instance=ExtResource("1_jvfm3")]
 script = ExtResource("2_rftdk")

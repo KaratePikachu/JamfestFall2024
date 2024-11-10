@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=3 uid="uid://bmvu0eqsw4qql"]
 
-[ext_resource type="PackedScene" uid="uid://u4ayn3q3dre" path="res://Interactable/interactable.tscn" id="1_ek0vl"]
+[ext_resource type="PackedScene" uid="uid://u4ayn3q3dre" path="res://interactable.tscn" id="1_ek0vl"]
 [ext_resource type="Script" path="res://Interactable/Switch/switch.gd" id="2_7vxng"]
+
 
 [node name="Switch" instance=ExtResource("1_ek0vl")]
 script = ExtResource("2_7vxng")

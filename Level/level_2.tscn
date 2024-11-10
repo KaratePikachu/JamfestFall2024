@@ -1,12 +1,14 @@
-[gd_scene load_steps=19 format=3 uid="uid://cgu5b07ehe4ts"]
+[gd_scene load_steps=21 format=3 uid="uid://cgu5b07ehe4ts"]
 
-[ext_resource type="PackedScene" uid="uid://u5vlmp8hm4ku" path="res://Player/player.tscn" id="1_3ypmk"]
-[ext_resource type="PackedScene" uid="uid://dn36wd0cgi5j4" path="res://Enviorment/Laser/Laser.tscn" id="3_dfuio"]
-[ext_resource type="PackedScene" uid="uid://bmvu0eqsw4qql" path="res://Interactable/Switch/switch.tscn" id="4_oyrt6"]
-[ext_resource type="PackedScene" uid="uid://lpj2ux5e6qek" path="res://Interactable/Door/Door.tscn" id="5_26q2w"]
-[ext_resource type="PackedScene" uid="uid://cf5674d77sx2n" path="res://Enviorment/Goomba/goomba.tscn" id="6_dlfkx"]
-[ext_resource type="PackedScene" uid="uid://c2c6j0ido1yw4" path="res://Interactable/Glasses/Normal/normal_glasses_pickup.tscn" id="7_7xq2u"]
-[ext_resource type="PackedScene" uid="uid://dp7fxu33gf8m0" path="res://Canvas/vision_effects.tscn" id="8_sosbf"]
+[ext_resource type="PackedScene" uid="uid://u5vlmp8hm4ku" path="res://Player/player.tscn" id="1_uiirv"]
+[ext_resource type="PackedScene" uid="uid://dn36wd0cgi5j4" path="res://Enviorment/Laser/Laser.tscn" id="2_4kpc5"]
+[ext_resource type="PackedScene" uid="uid://bmvu0eqsw4qql" path="res://Interactable/Switch/switch.tscn" id="3_typld"]
+[ext_resource type="PackedScene" uid="uid://lpj2ux5e6qek" path="res://Interactable/Door/Door.tscn" id="4_tvs3x"]
+[ext_resource type="PackedScene" uid="uid://cf5674d77sx2n" path="res://Enviorment/Goomba/goomba.tscn" id="5_ud4wt"]
+[ext_resource type="PackedScene" uid="uid://dp7fxu33gf8m0" path="res://Canvas/vision_effects.tscn" id="7_ob2ww"]
+[ext_resource type="PackedScene" uid="uid://dti865vlynmjb" path="res://scene_transition.tscn" id="8_raq4k"]
+[ext_resource type="PackedScene" uid="uid://c0irdu28sl6ah" path="res://Interactable/Glasses/Infared/infared_glasses_pickup.tscn" id="9_rmhoj"]
+[ext_resource type="PackedScene" uid="uid://cp66orkc1btu1" path="res://Level/level_3.tscn" id="9_ygbyg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_us3du"]
 size = Vector2(4072, 255)
@@ -43,7 +45,7 @@ size = Vector2(284, 37)
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_3ypmk")]
+[node name="Player" parent="." instance=ExtResource("1_uiirv")]
 position = Vector2(-1, -3)
 
 [node name="Level" type="Node" parent="."]
@@ -233,37 +235,41 @@ color = Color(0.0110876, 0.0110876, 0.0110876, 1)
 
 [node name="Lasers" type="Node" parent="."]
 
-[node name="Lazer" parent="Lasers" instance=ExtResource("3_dfuio")]
+[node name="Lazer" parent="Lasers" instance=ExtResource("2_4kpc5")]
 position = Vector2(1625, -3)
 scale = Vector2(1, 12)
 
-[node name="Lazer3" parent="Lasers" instance=ExtResource("3_dfuio")]
+[node name="Lazer3" parent="Lasers" instance=ExtResource("2_4kpc5")]
 position = Vector2(1997, 248)
 scale = Vector2(6, 1)
 
-[node name="Switch" parent="." instance=ExtResource("4_oyrt6")]
+[node name="Switch" parent="." instance=ExtResource("3_typld")]
 position = Vector2(2477, 34)
 
-[node name="Door" parent="." instance=ExtResource("5_26q2w")]
+[node name="Door" parent="." instance=ExtResource("4_tvs3x")]
 position = Vector2(1725, -191)
 scale = Vector2(1, 4)
 color = Color(0, 0.78852, 0, 1)
 
 [node name="Enemies" type="Node" parent="."]
 
-[node name="Goomba" parent="Enemies" instance=ExtResource("6_dlfkx")]
+[node name="Goomba" parent="Enemies" instance=ExtResource("5_ud4wt")]
 position = Vector2(1175, 251)
 
-[node name="Goomba3" parent="Enemies" instance=ExtResource("6_dlfkx")]
+[node name="Goomba3" parent="Enemies" instance=ExtResource("5_ud4wt")]
 position = Vector2(2352, 16)
 
-[node name="Goomba4" parent="Enemies" instance=ExtResource("6_dlfkx")]
+[node name="Goomba4" parent="Enemies" instance=ExtResource("5_ud4wt")]
 position = Vector2(1978, -185)
 
-[node name="NormalGlassesPickup" parent="." instance=ExtResource("7_7xq2u")]
-position = Vector2(333, -18)
+[node name="VisionEffects" parent="." instance=ExtResource("7_ob2ww")]
 
-[node name="VisionEffects" parent="." instance=ExtResource("8_sosbf")]
+[node name="InfaredGlassesPickup" parent="." instance=ExtResource("9_rmhoj")]
+position = Vector2(299, -32)
+
+[node name="SceneTransition" parent="." instance=ExtResource("8_raq4k")]
+position = Vector2(112, -88)
+scene_name = ExtResource("9_ygbyg")
 
 [connection signal="triggered" from="Switch" to="Door" method="_on_triggered"]
 [connection signal="triggered" from="Switch" to="Door" method="_on_switch_triggered"]
