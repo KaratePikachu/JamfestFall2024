@@ -91,7 +91,6 @@ loop_time = 3
 [node name="Enemy2" parent="." instance=ExtResource("8_gg0iy")]
 position = Vector2(2906, 212)
 scale = Vector2(0.5, 0.5)
-isSpinning = true
 
 [node name="Goomba" parent="." instance=ExtResource("10_yrcgl")]
 position = Vector2(1149, 458)
