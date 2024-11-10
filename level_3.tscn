@@ -333,36 +333,37 @@ offset_bottom = -44.0
 position = Vector2(746, -465)
 
 [node name="DeathSquare2" parent="DeathSquares" instance=ExtResource("4_y0m14")]
-position = Vector2(767, -246)
-
-[node name="DeathSquare3" parent="DeathSquares" instance=ExtResource("4_y0m14")]
-position = Vector2(2175, -131)
+position = Vector2(794, -247)
 
 [node name="DeathSquare4" parent="DeathSquares" instance=ExtResource("4_y0m14")]
-position = Vector2(2355, -257)
-scale = Vector2(3, 3)
+position = Vector2(2359, -232)
 
 [node name="Enemies" type="Node" parent="."]
 
 [node name="Enemy" parent="Enemies" instance=ExtResource("5_4viwf")]
-position = Vector2(919, -540)
+position = Vector2(871, -541)
 scale = Vector2(0.5, 0.5)
+canSpin = true
 
 [node name="Enemy2" parent="Enemies" instance=ExtResource("5_4viwf")]
 position = Vector2(1333, -430)
 scale = Vector2(0.5, 0.5)
+canSpin = true
 
 [node name="Enemy3" parent="Enemies" instance=ExtResource("5_4viwf")]
 position = Vector2(1321, -122)
 scale = Vector2(0.5, 0.5)
+canSpin = true
 
 [node name="Enemy4" parent="Enemies" instance=ExtResource("5_4viwf")]
 position = Vector2(1323, -269)
 scale = Vector2(0.5, 0.5)
+canSpin = true
 
 [node name="Enemy6" parent="Enemies" instance=ExtResource("5_4viwf")]
-position = Vector2(2106, -165)
+position = Vector2(2161, -170)
 scale = Vector2(0.5, 0.5)
+canSpin = true
 
 [node name="Switch" parent="." instance=ExtResource("6_uxpld")]
 position = Vector2(919, -56)
@@ -379,5 +380,5 @@ position = Vector2(111, 81)
 [node name="SunglassesPickup" parent="." instance=ExtResource("10_wtcdu")]
 position = Vector2(5, 78)
 
-[connection signal="triggered" from="Switch" to="Door" method="_on_switch_triggered"]
 [connection signal="triggered" from="Switch" to="Door" method="_on_triggered"]
+[connection signal="triggered" from="Switch" to="Door" method="_on_switch_triggered"]

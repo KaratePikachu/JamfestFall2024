@@ -265,5 +265,5 @@ position = Vector2(333, -18)
 
 [node name="VisionEffects" parent="." instance=ExtResource("8_sosbf")]
 
-[connection signal="triggered" from="Switch" to="Door" method="_on_switch_triggered"]
 [connection signal="triggered" from="Switch" to="Door" method="_on_triggered"]
+[connection signal="triggered" from="Switch" to="Door" method="_on_switch_triggered"]

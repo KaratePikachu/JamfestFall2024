@@ -122,48 +122,6 @@ offset_top = -404.0
 offset_right = 3175.0
 offset_bottom = 137.0
 
-[node name="DarkPlatform" parent="Level"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(1595, -48)
-scale = Vector2(4.2, 2)
-script = null
-
-[node name="DarkPlatform2" parent="Level"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(2283, 66)
-scale = Vector2(4.06295, 2.2668)
-script = null
-
-[node name="DarkPlatform3" parent="Level"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(2907, 37)
-scale = Vector2(3, 1)
-script = null
-
 [node name="StaticBody2D5" type="StaticBody2D" parent="Level"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D5"]
@@ -223,20 +181,6 @@ offset_left = 2865.0
 offset_top = -283.0
 offset_right = 2996.0
 offset_bottom = -243.0
-
-[node name="DarkPlatform4" parent="Level"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(3492, -146)
-scale = Vector2(2.5, 0.75)
-script = null
 
 [node name="StaticBody2D12" type="StaticBody2D" parent="Level"]
 
@@ -364,5 +308,5 @@ scale = Vector2(2, 2)
 
 [connection signal="triggered" from="Switch2" to="Door2" method="_on_triggered"]
 [connection signal="triggered" from="Switch2" to="Door2" method="_on_switch_2_triggered"]
-[connection signal="triggered" from="Switch1" to="Door1" method="_on_switch_1_triggered"]
 [connection signal="triggered" from="Switch1" to="Door1" method="_on_triggered"]
+[connection signal="triggered" from="Switch1" to="Door1" method="_on_switch_1_triggered"]

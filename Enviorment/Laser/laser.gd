@@ -13,7 +13,7 @@ func _on_body_entered(body: Node2D) -> void:
 		body.set_global_position(Vector2(0,0))
 		
 func _on_glasses_change(old_glasses: int, new_glasses: int) -> void:
-	if(new_glasses == Player.Glasses.INFARED or Player.Glasses.NORMAL):
+	if(new_glasses == Player.Glasses.INFARED or new_glasses == Player.Glasses.NORMAL or new_glasses == Player.Glasses.DRONE):
 		$ColorRect.visible = true
 	else: 
 		$ColorRect.visible = false
