@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpn23ckhfuf8p"]
+
+[ext_resource type="Script" path="res://SFX/sfx_manager.gd" id="1_ebamd"]
+
+[node name="Audio" type="Node"]
+script = ExtResource("1_ebamd")
+
+[node name="bgm" type="AudioStreamPlayer" parent="."]
+
+[node name="death" type="AudioStreamPlayer" parent="."]
+
+[node name="glasses_break" type="AudioStreamPlayer" parent="."]
+
+[node name="ir" type="AudioStreamPlayer" parent="."]
+
+[node name="jump" type="AudioStreamPlayer" parent="."]
+
+[node name="land" type="AudioStreamPlayer" parent="."]
+
+[node name="menu_click" type="AudioStreamPlayer" parent="."]
+
+[node name="switch" type="AudioStreamPlayer" parent="."]
+
+[node name="walking" type="AudioStreamPlayer" parent="."]
+
+[node name="drone" type="AudioStreamPlayer" parent="."]
+
+[node name="glasses_pick_up" type="AudioStreamPlayer" parent="."]

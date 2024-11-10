@@ -81,9 +81,22 @@ func switch_glasses(new_glasses):
 	glasses_changed.emit(worn_glasses,new_glasses)
 	
 func _on_glasses_changed(old_glasses: int, new_glasses: int) -> void:
+	SFX.glasses_pick_up.play(0.5)
 	if(old_glasses == Glasses.DRONE):
 		$Camera2D.position = Vector2(0,0)
 		$Camera2D.zoom = Vector2(1, 1)
+		
+	if old_glasses == Glasses.INFARED:
+		SFX.ir.stop()
+		
+	if new_glasses == Glasses.INFARED:
+		SFX.ir.play()
+		
+	if old_glasses == Glasses.DRONE:
+		SFX.drone.stop()
+		
+	if new_glasses == Glasses.DRONE:
+		SFX.drone.play(1.0)
 	
 	self.worn_glasses = new_glasses
 	pass # Replace with function body.
@@ -133,14 +146,23 @@ func _physics_process(delta):
 			_run_run_animation(velocity.x >= 10)
 		else:
 			_run_idle_animation($GuySprite.flip_h)
+			SFX.walking.stop()
+			
+		
+		if abs(velocity.x) >= 10 && !SFX.walking.playing:
+			SFX.walking.play()
+		
 		
 
 		# Check for jumping. is_on_floor() must be called after movement code.
 		if is_on_floor() and Input.is_action_just_pressed(&"jump"):
+			SFX.jump.play()
 			velocity.y = -JUMP_SPEED
+		
 		
 func die() -> void:
 	switch_glasses(Glasses.NONE)
+	SFX.death.play()
 	get_tree().reload_current_scene()
 	
 	
