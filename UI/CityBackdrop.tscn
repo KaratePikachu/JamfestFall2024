@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dj211b6xrv5uk"]
+
+[ext_resource type="Texture2D" uid="uid://cjnelsdbpjyb3" path="res://UI/NormalBackdrop.png" id="1_rwr4a"]
+
+[node name="CityBackdrop" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_rwr4a")

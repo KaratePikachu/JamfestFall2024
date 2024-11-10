@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" path="res://Enviorment/SceneChange/scene_transition.gd" id="1_8w1qi"]
 
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6phfd"]
 size = Vector2(109, 124)
 
@@ -13,5 +12,7 @@ script = ExtResource("1_8w1qi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_6phfd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -460,6 +460,7 @@ libraries = {
 }
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 10
 
 [node name="Ui" parent="CanvasLayer" instance=ExtResource("3_ldojt")]
 anchors_preset = 4

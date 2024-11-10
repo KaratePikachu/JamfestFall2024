@@ -89,7 +89,6 @@ texture = ExtResource("4_8l207")
 
 [node name="Switch" parent="." instance=ExtResource("5_buckv")]
 position = Vector2(1885, 567)
-color = Color(0.6, 0.6, 0.6, 1)
 
 [node name="Door" parent="." instance=ExtResource("6_his76")]
 position = Vector2(2057, 352)

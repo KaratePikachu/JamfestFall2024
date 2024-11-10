@@ -1,17 +1,25 @@
-[gd_scene load_steps=12 format=3 uid="uid://dp7fxu33gf8m0"]
+[gd_scene load_steps=17 format=3 uid="uid://dp7fxu33gf8m0"]
 
 [ext_resource type="Script" path="res://Canvas/vision_effects.gd" id="1_58afm"]
 [ext_resource type="Shader" path="res://Shaders/tint.gdshader" id="3_ng80b"]
 [ext_resource type="Shader" path="res://Shaders/desaturation.gdshader" id="4_61ghd"]
 [ext_resource type="Shader" path="res://Shaders/blur.gdshader" id="5_rd0rx"]
 [ext_resource type="Shader" path="res://Shaders/VCR.gdshader" id="5_swjpv"]
+[ext_resource type="Texture2D" uid="uid://cjnelsdbpjyb3" path="res://UI/NormalBackdrop.png" id="6_gdua1"]
+[ext_resource type="Shader" path="res://Shaders/newBlur.gdshader" id="6_honmd"]
+[ext_resource type="Texture2D" uid="uid://dsivdgffxlsqu" path="res://UI/SunglassesBackdrop.png" id="7_061g1"]
+[ext_resource type="Texture2D" uid="uid://cxdylvcfw4cqw" path="res://UI/InfraredBackdrop.png" id="8_1n8wk"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_jqcd5"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xn0ab"]
+shader = ExtResource("6_honmd")
+shader_parameter/lod = 5.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1aavn"]
 shader = ExtResource("5_rd0rx")
 shader_parameter/scale = 1.0
 shader_parameter/lod = 0.0
-shader_parameter/x_blur_offest = 0.1
-shader_parameter/y_blur_offest = 0.1
+shader_parameter/x_blur_offest = 0.035
+shader_parameter/y_blur_offest = 0.04
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_s08pi"]
 shader = ExtResource("3_ng80b")
@@ -20,21 +28,18 @@ shader_parameter/sunGlass_color = Color(0, 0, 0, 0.843137)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jpun4"]
 shader = ExtResource("5_rd0rx")
 shader_parameter/scale = 1.0
-shader_parameter/lod = 0.0
-shader_parameter/x_blur_offest = 0.015
-shader_parameter/y_blur_offest = 0.02
+shader_parameter/lod = 1.0
+shader_parameter/x_blur_offest = 0.01
+shader_parameter/y_blur_offest = 0.015
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r1mt3"]
+shader = ExtResource("6_honmd")
+shader_parameter/lod = 0.75
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_72xkf"]
 shader = ExtResource("4_61ghd")
 shader_parameter/contrast = 0.7
 shader_parameter/saturation = 0.3
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_fyk8k"]
-shader = ExtResource("5_rd0rx")
-shader_parameter/scale = 1.0
-shader_parameter/lod = 0.0
-shader_parameter/x_blur_offest = 0.0
-shader_parameter/y_blur_offest = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iu100"]
 shader = ExtResource("5_swjpv")
@@ -60,24 +65,39 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.222
 
-[node name="VisionEffects" type="CanvasLayer"]
+[node name="VisionEffects" type="Node"]
 script = ExtResource("1_58afm")
 
-[node name="Blindness" type="ColorRect" parent="."]
+[node name="Blindness" type="CanvasLayer" parent="."]
+
+[node name="GaussianBlur" type="CanvasLayer" parent="Blindness"]
 visible = false
-material = SubResource("ShaderMaterial_jqcd5")
+
+[node name="gaussianBlur" type="ColorRect" parent="Blindness/GaussianBlur"]
+material = SubResource("ShaderMaterial_xn0ab")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 
-[node name="Sunglasses" type="CanvasLayer" parent="."]
+[node name="DuplicateBlur" type="CanvasLayer" parent="Blindness"]
 visible = false
 
-[node name="Tint" type="ColorRect" parent="Sunglasses"]
+[node name="duplicateBlur" type="ColorRect" parent="Blindness/DuplicateBlur"]
+material = SubResource("ShaderMaterial_1aavn")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sunglasses" type="CanvasLayer" parent="."]
+
+[node name="Tint" type="CanvasLayer" parent="Sunglasses"]
+visible = false
+
+[node name="tint" type="ColorRect" parent="Sunglasses/Tint"]
 material = SubResource("ShaderMaterial_s08pi")
 anchors_preset = 15
 anchor_right = 1.0
@@ -87,7 +107,10 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Blur" type="ColorRect" parent="Sunglasses"]
+[node name="DuplicateBlur" type="CanvasLayer" parent="Sunglasses"]
+visible = false
+
+[node name="duplicateBlur" type="ColorRect" parent="Sunglasses/DuplicateBlur"]
 material = SubResource("ShaderMaterial_jpun4")
 anchors_preset = 15
 anchor_right = 1.0
@@ -97,13 +120,23 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
+[node name="GaussianBlur" type="CanvasLayer" parent="Sunglasses"]
+visible = false
+
+[node name="gaussianBlur" type="ColorRect" parent="Sunglasses/GaussianBlur"]
+material = SubResource("ShaderMaterial_r1mt3")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="Drone" type="CanvasLayer" parent="."]
+
+[node name="Desaturation" type="CanvasLayer" parent="Drone"]
 visible = false
 
-[node name="DroneEffectOne" type="CanvasLayer" parent="Drone"]
-visible = false
-
-[node name="Destauration" type="ColorRect" parent="Drone/DroneEffectOne"]
+[node name="destauration" type="ColorRect" parent="Drone/Desaturation"]
 material = SubResource("ShaderMaterial_72xkf")
 anchors_preset = 15
 anchor_right = 1.0
@@ -112,22 +145,10 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="DroneEffectTwo" type="CanvasLayer" parent="Drone"]
+[node name="VCR" type="CanvasLayer" parent="Drone"]
 visible = false
 
-[node name="Blur" type="ColorRect" parent="Drone/DroneEffectTwo"]
-material = SubResource("ShaderMaterial_fyk8k")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="DroneEffectThree" type="CanvasLayer" parent="Drone"]
-visible = false
-
-[node name="VCR" type="ColorRect" parent="Drone/DroneEffectThree"]
+[node name="vcr" type="ColorRect" parent="Drone/VCR"]
 material = SubResource("ShaderMaterial_iu100")
 anchors_preset = 15
 anchor_right = 1.0
@@ -135,3 +156,22 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="NormalBackdrop" type="Sprite2D" parent="."]
+visible = false
+show_behind_parent = true
+z_index = -10
+position = Vector2(4448.5, -356.5)
+texture = ExtResource("6_gdua1")
+
+[node name="SunglassesBackdrop" type="Sprite2D" parent="."]
+visible = false
+z_index = -10
+position = Vector2(4448.5, -356.5)
+texture = ExtResource("7_061g1")
+
+[node name="InfraredBackdrop" type="Sprite2D" parent="."]
+visible = false
+z_index = -10
+position = Vector2(4448.5, -356.5)
+texture = ExtResource("8_1n8wk")
