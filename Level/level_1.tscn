@@ -187,7 +187,7 @@ offset_bottom = -243.0
 [node name="StaticBody2D12" type="StaticBody2D" parent="Level"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D12"]
-position = Vector2(3741, -51)
+position = Vector2(3760, -51)
 shape = SubResource("RectangleShape2D_eabse")
 
 [node name="ColorRect" type="ColorRect" parent="Level/StaticBody2D12"]
@@ -311,6 +311,9 @@ scale = Vector2(2, 2)
 [node name="SceneTransition" parent="." instance=ExtResource("7_wkr6h")]
 position = Vector2(160, 65)
 scene_name = ExtResource("8_o75xp")
+
+[node name="SceneTransition2" parent="." instance=ExtResource("7_wkr6h")]
+position = Vector2(3776, -547)
 
 [connection signal="triggered" from="Switch2" to="Door2" method="_on_triggered"]
 [connection signal="triggered" from="Switch2" to="Door2" method="_on_switch_2_triggered"]
