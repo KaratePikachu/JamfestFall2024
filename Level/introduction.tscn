@@ -23,47 +23,100 @@ size = Vector2(159, 20)
 [node name="Introduction" type="Node2D"]
 position = Vector2(-466, -368)
 
-[node name="Spikes" type="Node" parent="."]
+[node name="Player" parent="." instance=ExtResource("2_q76co")]
+position = Vector2(467.025, 496.67)
 
-[node name="DeathSquare" parent="Spikes" instance=ExtResource("1_syrov")]
-position = Vector2(1300, 212)
-scale = Vector2(2, 2)
+[node name="Enemies" type="Node" parent="."]
 
-[node name="DeathSquare2" parent="Spikes" instance=ExtResource("1_syrov")]
-position = Vector2(1344, 213)
-scale = Vector2(2, 2)
+[node name="Goomba" parent="Enemies" instance=ExtResource("10_yrcgl")]
+position = Vector2(683, 90)
+scale = Vector2(0.7, 0.7)
 
-[node name="DeathSquare3" parent="Spikes" instance=ExtResource("1_syrov")]
-position = Vector2(1390, 214)
-scale = Vector2(2, 2)
+[node name="Enemy2" parent="Enemies" instance=ExtResource("8_gg0iy")]
+position = Vector2(2440, -156)
+scale = Vector2(0.5, 0.5)
 
-[node name="Door" parent="." instance=ExtResource("6_50eqa")]
-position = Vector2(1879, 37)
-scale = Vector2(1, 8)
-color = Color(1, 0, 0, 1)
+[node name="Objects" type="Node" parent="."]
 
-[node name="VisionEffects" parent="." instance=ExtResource("7_087av")]
+[node name="Spikes1" parent="Objects" instance=ExtResource("1_syrov")]
+position = Vector2(2211, 201)
+scale = Vector2(5.41, 2)
 
-[node name="NormalGlassesPickup" parent="." instance=ExtResource("9_ca8a4")]
-position = Vector2(756, 549)
+[node name="Spikes2" parent="Objects" instance=ExtResource("1_syrov")]
+position = Vector2(1345, 201)
+scale = Vector2(5.895, 2)
 
-[node name="Lazer" parent="." instance=ExtResource("9_sl1wl")]
-position = Vector2(2260, 21)
+[node name="Lazer" parent="Objects" instance=ExtResource("9_sl1wl")]
+position = Vector2(1794, -347)
 scale = Vector2(1, 15)
 loop_time = 3
 
-[node name="Enemy2" parent="." instance=ExtResource("8_gg0iy")]
-position = Vector2(2906, 212)
-scale = Vector2(0.5, 0.5)
+[node name="Door" parent="Objects" instance=ExtResource("6_50eqa")]
+position = Vector2(1413, -331)
+scale = Vector2(1, 8)
+color = Color(1, 0, 0, 1)
 
-[node name="Goomba" parent="." instance=ExtResource("10_yrcgl")]
-position = Vector2(1149, 458)
-scale = Vector2(0.7, 0.7)
+[node name="Switch" parent="Objects" instance=ExtResource("5_lu008")]
+position = Vector2(1108, -28)
 
-[node name="SceneTransition" parent="." instance=ExtResource("12_2wb1o")]
-position = Vector2(3369, 644)
+[node name="Text & Triggers" type="Node" parent="."]
+
+[node name="GlassesChange2" parent="Text & Triggers" instance=ExtResource("15_3dak2")]
+position = Vector2(2936, 220)
+scale = Vector2(20.28, 1)
+
+[node name="GlassesChange" parent="Text & Triggers" instance=ExtResource("15_3dak2")]
+position = Vector2(-3, 129)
+forced = 4
+
+[node name="TripFallDie" type="Node2D" parent="Text & Triggers"]
+script = ExtResource("16_uuk8s")
+
+[node name="Top" type="Area2D" parent="Text & Triggers/TripFallDie"]
+position = Vector2(-466, -368)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Text & Triggers/TripFallDie/Top"]
+position = Vector2(3039.5, 236)
+shape = SubResource("RectangleShape2D_52ayu")
+
+[node name="TextPopups" type="CanvasLayer" parent="Text & Triggers"]
+follow_viewport_enabled = true
+
+[node name="TextPopup" parent="Text & Triggers/TextPopups" instance=ExtResource("14_irc5d")]
+position = Vector2(-6, 220)
+text = "Go to the glasses and press \"E\" to pick them up!"
+
+[node name="TextPopup2" parent="Text & Triggers/TextPopups" instance=ExtResource("14_irc5d")]
+position = Vector2(292, 222)
+text = "Watch out for the goomba!"
+
+[node name="TextPopup3" parent="Text & Triggers/TextPopups" instance=ExtResource("14_irc5d")]
+position = Vector2(1006, 8)
+text = "Press \"E\" to open the door!"
+
+[node name="TextPopup4" parent="Text & Triggers/TextPopups" instance=ExtResource("14_irc5d")]
+position = Vector2(1531, 2)
+text = "Time the jump! Lazers are hard to see sometimes"
+
+[node name="TextPopup5" parent="Text & Triggers/TextPopups" instance=ExtResource("14_irc5d")]
+position = Vector2(1930, -42)
+text = "Guard! Watch out!"
+
+[node name="trip" parent="Text & Triggers/TextPopups" instance=ExtResource("14_irc5d")]
+position = Vector2(2460, -224)
+text = "oop-"
+
+[node name="NormalGlassesPickup" parent="Text & Triggers" instance=ExtResource("9_ca8a4")]
+position = Vector2(290, 181)
+
+[node name="SceneTransition" parent="Text & Triggers" instance=ExtResource("12_2wb1o")]
+position = Vector2(2903, 276)
 scale = Vector2(5.08, 1)
 scene_name = ExtResource("12_gkxs0")
+
+[node name="VisionEffects" parent="." instance=ExtResource("7_087av")]
 
 [node name="TileMapLayers" parent="." instance=ExtResource("11_v3t6o")]
 
@@ -74,89 +127,8 @@ tile_set = ExtResource("11_1wx7c")
 
 [node name="DarkTiles" type="TileMapLayer" parent="TileMapLayers"]
 position = Vector2(466, 368)
-tile_map_data = PackedByteArray("AAATAAkAAAABAAAAAAAUAAkAAAABAAAAAAAVAAkAAAABAAAAAAAWAAkAAAABAAAAAAAXAAkAAAABAAAAAAAYAAkAAAABAAAAAAAZAAkAAAABAAAAAAAaAAkAAAABAAAAAAAbAAkAAAABAAAAAAAbAAoAAAABAAAAAAAaAAoAAAABAAAAAAAZAAoAAAABAAAAAAAYAAoAAAABAAAAAAAXAAoAAAABAAAAAAAWAAoAAAABAAAAAAA=")
 tile_set = ExtResource("11_1wx7c")
 
-[node name="Spikes2" type="Node" parent="."]
-
-[node name="DeathSquare" parent="Spikes2" instance=ExtResource("1_syrov")]
-visible = false
-position = Vector2(-223, -73)
-scale = Vector2(0.702462, 37.3872)
-
-[node name="DeathSquare2" parent="Spikes2" instance=ExtResource("1_syrov")]
-position = Vector2(2160, 215)
-scale = Vector2(2, 2)
-
-[node name="DeathSquare3" parent="Spikes2" instance=ExtResource("1_syrov")]
-position = Vector2(2211, 217)
-scale = Vector2(2, 2)
-
-[node name="DeathSquare4" parent="Spikes2" instance=ExtResource("1_syrov")]
-position = Vector2(2262, 218)
-scale = Vector2(2, 2)
-
-[node name="Label" type="Label" parent="."]
-offset_left = 2671.0
-offset_top = -29.0
-offset_right = 4032.0
-offset_bottom = 24.0
-text = "Character trips forward and falls, breaking glasses on the ground after falling and becoming blind as a result, the charactert then walks into the scene transitiion and into level 1"
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-follow_viewport_enabled = true
-
-[node name="TextPopup" parent="CanvasLayer" instance=ExtResource("14_irc5d")]
-position = Vector2(-6, 220)
-text = "Go to the glasses and press \"E\" to pick them up!"
-
-[node name="TextPopup2" parent="CanvasLayer" instance=ExtResource("14_irc5d")]
-position = Vector2(292, 222)
-text = "Watch out for the goomba!"
-
-[node name="TextPopup3" parent="CanvasLayer" instance=ExtResource("14_irc5d")]
-position = Vector2(1006, 8)
-text = "Press \"E\" to open the door!"
-
-[node name="TextPopup4" parent="CanvasLayer" instance=ExtResource("14_irc5d")]
-position = Vector2(1531, 2)
-text = "Time the jump! Lazers are hard to see sometimes"
-
-[node name="TextPopup5" parent="CanvasLayer" instance=ExtResource("14_irc5d")]
-position = Vector2(1930, -42)
-text = "Guard! Watch out!"
-
-[node name="trip" parent="CanvasLayer" instance=ExtResource("14_irc5d")]
-position = Vector2(2460, -224)
-text = "oop-"
-
-[node name="GlassesChange" parent="." instance=ExtResource("15_3dak2")]
-position = Vector2(463, 497)
-forced = 4
-
-[node name="Player" parent="." instance=ExtResource("2_q76co")]
-position = Vector2(452, 367)
-
-[node name="Switch" parent="." instance=ExtResource("5_lu008")]
-position = Vector2(1574, 340)
-
-[node name="TripFallDie" type="Node2D" parent="."]
-position = Vector2(466, 368)
-script = ExtResource("16_uuk8s")
-
-[node name="Top" type="Area2D" parent="TripFallDie"]
-position = Vector2(-466, -368)
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TripFallDie/Top"]
-position = Vector2(3039.5, 236)
-shape = SubResource("RectangleShape2D_52ayu")
-
-[node name="GlassesChange2" parent="." instance=ExtResource("15_3dak2")]
-position = Vector2(3402, 588)
-scale = Vector2(20.28, 1)
-
-[connection signal="triggered" from="Switch" to="Door" method="_on_switch_triggered"]
-[connection signal="body_entered" from="TripFallDie/Top" to="TripFallDie" method="_on_top_body_entered"]
-[connection signal="body_entered" from="GlassesChange2" to="TripFallDie" method="_on_glasses_change_2_body_entered"]
+[connection signal="triggered" from="Objects/Switch" to="Objects/Door" method="_on_switch_triggered"]
+[connection signal="body_entered" from="Text & Triggers/GlassesChange2" to="Text & Triggers/TripFallDie" method="_on_glasses_change_2_body_entered"]
+[connection signal="body_entered" from="Text & Triggers/TripFallDie/Top" to="Text & Triggers/TripFallDie" method="_on_top_body_entered"]
