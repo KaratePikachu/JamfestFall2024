@@ -128,6 +128,10 @@ tile_set = ExtResource("11_1wx7c")
 position = Vector2(466, 368)
 tile_set = ExtResource("11_1wx7c")
 
+[node name="DeathSquare17" parent="." instance=ExtResource("1_syrov")]
+position = Vector2(2324, 1498)
+scale = Vector2(449.823, 16.101)
+
 [connection signal="triggered" from="Objects/Switch" to="Objects/Door" method="_on_switch_triggered"]
 [connection signal="body_entered" from="Text & Triggers/GlassesChange2" to="Text & Triggers/TripFallDie" method="_on_glasses_change_2_body_entered"]
 [connection signal="body_entered" from="Text & Triggers/TripFallDie/Top" to="Text & Triggers/TripFallDie" method="_on_top_body_entered"]
