@@ -270,5 +270,5 @@ position = Vector2(299, -32)
 position = Vector2(112, -88)
 scene_name = ExtResource("9_ygbyg")
 
-[connection signal="triggered" from="Switch" to="Door" method="_on_triggered"]
 [connection signal="triggered" from="Switch" to="Door" method="_on_switch_triggered"]
+[connection signal="triggered" from="Switch" to="Door" method="_on_triggered"]

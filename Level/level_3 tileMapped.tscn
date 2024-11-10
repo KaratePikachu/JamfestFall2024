@@ -78,9 +78,7 @@ tile_map_data = PackedByteArray("AAApAP3/AAABAAAAAAAqAP3/AAABAAAAAAArAP3/AAABAAA
 tile_set = ExtResource("12_hf35i")
 
 [node name="SceneTransition" parent="." instance=ExtResource("13_rxni0")]
-
 position = Vector2(2633, -386)
-
 scene_name = ExtResource("14_ep8us")
 
 [node name="Player" parent="." instance=ExtResource("1_fg3qq")]
@@ -94,5 +92,5 @@ follow_viewport_enabled = true
 [node name="DroneGlassesPickup" parent="CanvasLayer" instance=ExtResource("2_qq4mh")]
 position = Vector2(213, 80)
 
-[connection signal="triggered" from="Switch" to="Door" method="_on_triggered"]
 [connection signal="triggered" from="Switch" to="Door" method="_on_switch_triggered"]
+[connection signal="triggered" from="Switch" to="Door" method="_on_triggered"]
