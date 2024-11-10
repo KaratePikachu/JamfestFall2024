@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dp7fxu33gf8m0"]
+[gd_scene load_steps=17 format=3 uid="uid://dp7fxu33gf8m0"]
 
 [ext_resource type="Script" path="res://Canvas/vision_effects.gd" id="1_58afm"]
 [ext_resource type="Shader" path="res://Shaders/tint.gdshader" id="3_ng80b"]
@@ -13,6 +13,13 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xn0ab"]
 shader = ExtResource("6_honmd")
 shader_parameter/lod = 5.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1aavn"]
+shader = ExtResource("5_rd0rx")
+shader_parameter/scale = 1.0
+shader_parameter/lod = 0.0
+shader_parameter/x_blur_offest = 0.035
+shader_parameter/y_blur_offest = 0.04
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_s08pi"]
 shader = ExtResource("3_ng80b")
@@ -78,6 +85,12 @@ grow_vertical = 2
 visible = false
 
 [node name="duplicateBlur" type="ColorRect" parent="Blindness/DuplicateBlur"]
+material = SubResource("ShaderMaterial_1aavn")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Sunglasses" type="CanvasLayer" parent="."]
 
