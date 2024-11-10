@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dg3ruv7lr1a5b" path="res://Enviorment/Enemy/Prototypesecurity.png" id="2_16xq2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cabqk"]
-size = Vector2(60, 109)
+size = Vector2(60, 51.9866)
 
 [node name="Goomba" type="CharacterBody2D"]
 script = ExtResource("1_oynve")
@@ -38,7 +38,7 @@ target_position = Vector2(0, 38.2041)
 hit_from_inside = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -1.5)
+position = Vector2(1, 26.8544)
 scale = Vector2(1, 0.994658)
 shape = SubResource("RectangleShape2D_cabqk")
 

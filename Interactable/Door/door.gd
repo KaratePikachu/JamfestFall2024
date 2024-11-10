@@ -4,7 +4,7 @@ extends StaticBody2D
 @export var color : Color
 
 func _ready() -> void:
-	$DoorSprite.color = color
+	pass
 # Called when the node enters the scene tree for the first time.
 
 

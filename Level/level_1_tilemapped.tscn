@@ -140,15 +140,15 @@ follow_viewport_enabled = true
 
 [node name="TextPopup" parent="CanvasLayer" instance=ExtResource("12_n42ab")]
 position = Vector2(324, 146)
-text = "You got the sunglasses! The Sunglasses allow you to see but make some objects too dark to detect. "
+text = "You got the sunglasses! The Sunglasses allow you to see but makes some objects too dark to detect. "
 
 [node name="TextPopup3" parent="CanvasLayer" instance=ExtResource("12_n42ab")]
-position = Vector2(-7, -31)
+position = Vector2(-4, 61)
 text = "I broke my glasses, looks like I have to find the tools to fix them. "
 
 [node name="TextPopup4" parent="CanvasLayer" instance=ExtResource("12_n42ab")]
-position = Vector2(111, 139)
-text = "I have to find a screw"
+position = Vector2(128, 134)
+text = "I have to find a screwdriver."
 
 [node name="TextPopup2" parent="CanvasLayer" instance=ExtResource("12_n42ab")]
 position = Vector2(3779, -526)

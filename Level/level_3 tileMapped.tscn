@@ -35,27 +35,22 @@ position = Vector2(2359, -232)
 [node name="Enemy" parent="Enemies" instance=ExtResource("5_txodr")]
 position = Vector2(871, -541)
 scale = Vector2(0.5, 0.5)
-canSpin = true
 
 [node name="Enemy2" parent="Enemies" instance=ExtResource("5_txodr")]
 position = Vector2(1333, -430)
 scale = Vector2(0.5, 0.5)
-canSpin = true
 
 [node name="Enemy3" parent="Enemies" instance=ExtResource("5_txodr")]
 position = Vector2(1321, -122)
 scale = Vector2(0.5, 0.5)
-canSpin = true
 
 [node name="Enemy4" parent="Enemies" instance=ExtResource("5_txodr")]
 position = Vector2(1323, -269)
 scale = Vector2(0.5, 0.5)
-canSpin = true
 
 [node name="Enemy6" parent="Enemies" instance=ExtResource("5_txodr")]
 position = Vector2(2161, -170)
 scale = Vector2(0.5, 0.5)
-canSpin = true
 
 [node name="Switch" parent="." instance=ExtResource("6_mvjhb")]
 position = Vector2(919, -56)
