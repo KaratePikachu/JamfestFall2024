@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://cleaa823vdq10"]
+[gd_scene load_steps=15 format=4 uid="uid://bbvpyqfw7gn1j"]
 
 [ext_resource type="PackedScene" uid="uid://u5vlmp8hm4ku" path="res://Player/player.tscn" id="1_fg3qq"]
 [ext_resource type="PackedScene" uid="uid://djp7bfajmwpgl" path="res://Interactable/Glasses/Drone/drone_glasses_pickup.tscn" id="2_qq4mh"]
@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://cc4ppwhyjy67u" path="res://Interactable/Glasses/Sunglasses/sunglasses_pickup.tscn" id="10_v58ku"]
 [ext_resource type="PackedScene" uid="uid://diroxtluegurn" path="res://Objects/tile_map_layers.tscn" id="11_ibrxf"]
 [ext_resource type="TileSet" uid="uid://dcc3nrrdg01tm" path="res://Objects/tileset.tres" id="12_hf35i"]
+[ext_resource type="PackedScene" uid="uid://mhre4wt3fwb8" path="res://scene_transition.tscn" id="13_rxni0"]
+[ext_resource type="PackedScene" uid="uid://su3spxsrpglk" path="res://end.tscn" id="14_ep8us"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -88,5 +90,9 @@ tile_set = ExtResource("12_hf35i")
 tile_map_data = PackedByteArray("AAAWAPj/AAABAAAAAAAXAPj/AAABAAAAAAAYAPj/AAABAAAAAAAZAPj/AAABAAAAAAATAPX/AAABAAAAAAASAPX/AAABAAAAAAARAPX/AAABAAAAAAAQAPX/AAABAAAAAAApAP3/AAABAAAAAAAqAP3/AAABAAAAAAArAP3/AAABAAAAAAAsAP3/AAABAAAAAAAtAP3/AAABAAAAAAAoAP3/AAABAAAAAAAoAPn/AAABAAAAAAApAPn/AAABAAAAAAAqAPn/AAABAAAAAAArAPn/AAABAAAAAAAsAPn/AAABAAAAAAAtAPn/AAABAAAAAAAoAPT/AAABAAAAAAApAPT/AAABAAAAAAAqAPT/AAABAAAAAAArAPT/AAABAAAAAAAsAPT/AAABAAAAAAAtAPT/AAABAAAAAAA=")
 tile_set = ExtResource("12_hf35i")
 
-[connection signal="triggered" from="Switch" to="Door" method="_on_triggered"]
+[node name="SceneTransition" parent="." instance=ExtResource("13_rxni0")]
+position = Vector2(2629, -354)
+scene_name = ExtResource("14_ep8us")
+
 [connection signal="triggered" from="Switch" to="Door" method="_on_switch_triggered"]
+[connection signal="triggered" from="Switch" to="Door" method="_on_triggered"]

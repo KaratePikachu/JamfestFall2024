@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://dtl1rrgehyumx"]
+[gd_scene load_steps=12 format=4 uid="uid://dtl1rrgehyumx"]
 
 [ext_resource type="PackedScene" uid="uid://diroxtluegurn" path="res://Objects/tile_map_layers.tscn" id="1_iw8wq"]
 [ext_resource type="PackedScene" uid="uid://u5vlmp8hm4ku" path="res://Player/player.tscn" id="1_srbwn"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://cf5674d77sx2n" path="res://Enviorment/Goomba/goomba.tscn" id="5_5sy5p"]
 [ext_resource type="PackedScene" uid="uid://c2c6j0ido1yw4" path="res://Interactable/Glasses/Normal/normal_glasses_pickup.tscn" id="6_pajr1"]
 [ext_resource type="PackedScene" uid="uid://dp7fxu33gf8m0" path="res://Canvas/vision_effects.tscn" id="7_hjpto"]
+[ext_resource type="PackedScene" uid="uid://mhre4wt3fwb8" path="res://scene_transition.tscn" id="10_7odqu"]
+[ext_resource type="PackedScene" uid="uid://bbvpyqfw7gn1j" path="res://Level/level_3 tileMapped.tscn" id="11_4nxeo"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -41,7 +43,7 @@ scale = Vector2(6, 1)
 position = Vector2(2477, 34)
 
 [node name="Door" parent="." instance=ExtResource("4_0aw52")]
-position = Vector2(1725, -191)
+position = Vector2(1725, -212)
 scale = Vector2(1, 4)
 color = Color(0, 0.78852, 0, 1)
 
@@ -61,5 +63,9 @@ position = Vector2(333, -38)
 
 [node name="VisionEffects" parent="." instance=ExtResource("7_hjpto")]
 
-[connection signal="triggered" from="Switch" to="Door" method="_on_triggered"]
+[node name="SceneTransition" parent="." instance=ExtResource("10_7odqu")]
+position = Vector2(2384, -288)
+scene_name = ExtResource("11_4nxeo")
+
 [connection signal="triggered" from="Switch" to="Door" method="_on_switch_triggered"]
+[connection signal="triggered" from="Switch" to="Door" method="_on_triggered"]

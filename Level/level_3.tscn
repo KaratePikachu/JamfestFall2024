@@ -380,5 +380,5 @@ position = Vector2(111, 81)
 [node name="SunglassesPickup" parent="." instance=ExtResource("10_h7viq")]
 position = Vector2(5, 78)
 
-[connection signal="triggered" from="Switch" to="Door" method="_on_triggered"]
 [connection signal="triggered" from="Switch" to="Door" method="_on_switch_triggered"]
+[connection signal="triggered" from="Switch" to="Door" method="_on_triggered"]
