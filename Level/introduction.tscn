@@ -52,7 +52,7 @@ scale = Vector2(1, 15)
 loop_time = 3
 
 [node name="Door" parent="Objects" instance=ExtResource("6_50eqa")]
-position = Vector2(1413, -289.745)
+position = Vector2(1416, -288)
 scale = Vector2(1, 7.08)
 color = Color(1, 0, 0, 1)
 
@@ -97,7 +97,7 @@ position = Vector2(1006, 8)
 text = "Press \"E\" to open the door!"
 
 [node name="TextPopup4" parent="Text & Triggers/TextPopups" instance=ExtResource("14_irc5d")]
-position = Vector2(1531, 2)
+position = Vector2(1576, -21)
 text = "Time the jump! Lazers are hard to see sometimes"
 
 [node name="TextPopup5" parent="Text & Triggers/TextPopups" instance=ExtResource("14_irc5d")]
