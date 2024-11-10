@@ -32,27 +32,22 @@ position = Vector2(2358, -279)
 [node name="Enemy" parent="Enemies" instance=ExtResource("5_txodr")]
 position = Vector2(871, -635.08)
 scale = Vector2(0.5, 0.5)
-canSpin = true
 
 [node name="Enemy2" parent="Enemies" instance=ExtResource("5_txodr")]
 position = Vector2(1321, -408)
 scale = Vector2(0.5, 0.5)
-canSpin = true
 
 [node name="Enemy3" parent="Enemies" instance=ExtResource("5_txodr")]
 position = Vector2(1321, -122)
 scale = Vector2(0.5, 0.5)
-canSpin = true
 
 [node name="Enemy4" parent="Enemies" instance=ExtResource("5_txodr")]
 position = Vector2(1318, -249)
 scale = Vector2(0.5, 0.5)
-canSpin = true
 
 [node name="Enemy6" parent="Enemies" instance=ExtResource("5_txodr")]
 position = Vector2(2133, -186)
 scale = Vector2(0.5, 0.5)
-canSpin = true
 
 [node name="Switch" parent="." instance=ExtResource("6_mvjhb")]
 position = Vector2(919, -56)
@@ -87,5 +82,5 @@ follow_viewport_enabled = true
 [node name="DroneGlassesPickup" parent="CanvasLayer" instance=ExtResource("2_qq4mh")]
 position = Vector2(213, 80)
 
-[connection signal="triggered" from="Switch" to="Door" method="_on_switch_triggered"]
 [connection signal="triggered" from="Switch" to="Door" method="_on_triggered"]
+[connection signal="triggered" from="Switch" to="Door" method="_on_switch_triggered"]

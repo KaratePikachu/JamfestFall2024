@@ -17,6 +17,10 @@ run/main_scene="res://UI/MainMenu/main_menu.tscn"
 config/features=PackedStringArray("4.3")
 config/icon="res://Player/Assets/Idle/Guy_Idle_Glasses.png"
 
+[autoload]
+
+SFX="*res://SFX/sfx_manager.tscn"
+
 [display]
 
 window/size/viewport_width=960
@@ -32,6 +36,7 @@ folder_colors={
 "res://Level/": "green",
 "res://Objects/": "gray",
 "res://Player/": "blue",
+"res://SFX/": "purple",
 "res://UI/": "pink"
 }
 
