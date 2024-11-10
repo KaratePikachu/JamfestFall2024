@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://dw1di6bneq8on"]
+
+[ext_resource type="Script" path="res://Enviorment/TextPopup/text_popup.gd" id="1_xmils"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_saw3m"]
+size = Vector2(31.25, 35)
+
+[node name="TextPopup" type="Area2D"]
+script = ExtResource("1_xmils")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_saw3m")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -173.0
+offset_top = -360.0
+offset_right = 173.0
+offset_bottom = -1.0
+theme_override_font_sizes/font_size = 22
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+text_overrun_behavior = 1
+visible_characters = 0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
