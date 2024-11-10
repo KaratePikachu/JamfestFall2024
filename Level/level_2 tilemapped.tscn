@@ -7,10 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://bmvu0eqsw4qql" path="res://Interactable/Switch/switch.tscn" id="3_lj1mh"]
 [ext_resource type="PackedScene" uid="uid://lpj2ux5e6qek" path="res://Interactable/Door/Door.tscn" id="4_0aw52"]
 [ext_resource type="PackedScene" uid="uid://cf5674d77sx2n" path="res://Enviorment/Goomba/goomba.tscn" id="5_5sy5p"]
-[ext_resource type="PackedScene" uid="uid://c2c6j0ido1yw4" path="res://Interactable/Glasses/Normal/normal_glasses_pickup.tscn" id="6_pajr1"]
 [ext_resource type="PackedScene" uid="uid://dp7fxu33gf8m0" path="res://Canvas/vision_effects.tscn" id="7_hjpto"]
 [ext_resource type="PackedScene" uid="uid://mhre4wt3fwb8" path="res://scene_transition.tscn" id="10_7odqu"]
 [ext_resource type="PackedScene" uid="uid://bbvpyqfw7gn1j" path="res://Level/level_3 tileMapped.tscn" id="11_4nxeo"]
+[ext_resource type="PackedScene" uid="uid://c0irdu28sl6ah" path="res://Interactable/Glasses/Infared/infared_glasses_pickup.tscn" id="11_dh5lf"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -50,22 +50,19 @@ color = Color(0, 0.78852, 0, 1)
 [node name="Enemies" type="Node" parent="."]
 
 [node name="Goomba" parent="Enemies" instance=ExtResource("5_5sy5p")]
-position = Vector2(1181, 223)
-
-[node name="Goomba3" parent="Enemies" instance=ExtResource("5_5sy5p")]
-position = Vector2(2352, 16)
+position = Vector2(1180, 233)
 
 [node name="Goomba4" parent="Enemies" instance=ExtResource("5_5sy5p")]
 position = Vector2(1978, -185)
-
-[node name="NormalGlassesPickup" parent="." instance=ExtResource("6_pajr1")]
-position = Vector2(333, -38)
 
 [node name="VisionEffects" parent="." instance=ExtResource("7_hjpto")]
 
 [node name="SceneTransition" parent="." instance=ExtResource("10_7odqu")]
 position = Vector2(2384, -288)
 scene_name = ExtResource("11_4nxeo")
+
+[node name="InfaredGlassesPickup" parent="." instance=ExtResource("11_dh5lf")]
+position = Vector2(319, -32)
 
 [connection signal="triggered" from="Switch" to="Door" method="_on_switch_triggered"]
 [connection signal="triggered" from="Switch" to="Door" method="_on_triggered"]

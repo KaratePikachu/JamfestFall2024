@@ -14,7 +14,7 @@ func _on_glasses_change(old_glasses: int, new_glasses: int) -> void:
 		$Sprite.visible = false
 	
 func _physics_process(delta: float) -> void:
-	velocity.x = speed * direction
+	velocity.x = speed * direction * 0.7
 	velocity.y += ProjectSettings.get_setting("physics/2d/default_gravity")
 	move_and_slide()
 	
