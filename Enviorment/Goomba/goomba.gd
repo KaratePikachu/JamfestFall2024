@@ -25,14 +25,18 @@ func _physics_process(delta: float) -> void:
 
 	if !$LeftDownRaycast.is_colliding() && direction == -1:
 			direction = 1;
+			$Sprite.scale.x *= -1
 			
 	if $LeftLeftRaycast.is_colliding() && direction == -1:
 			direction = 1;
+			$Sprite.scale.x *= -1
 			
 	if !$RightDownRaycast.is_colliding() && direction == 1:
 			direction = -1;
+			$Sprite.scale.x *= -1
 	if $RightRightRaycast.is_colliding() && direction == 1:
 			direction = -1;
+			$Sprite.scale.x *= -1
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
