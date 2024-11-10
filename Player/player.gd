@@ -120,6 +120,18 @@ func _physics_process(delta):
 
 		# Vertical movement code. Apply gravity.
 		velocity.y += gravity * delta
+		
+		print(velocity.x)
+		
+		if velocity.x >= 10:
+			_run_run_animation(true)
+		elif velocity.x >= 0:
+			_run_idle_animation($GuySprite.flip_h)
+			
+		if velocity.x <= -10:
+			_run_run_animation(false)
+		elif velocity.x < 0:
+			_run_idle_animation($GuySprite.flip_h)
 
 		# Move based on the velocity and snap to the ground.
 		# TODO: This information should be set to the CharacterBody properties instead of arguments: snap, Vector2.DOWN, Vector2.UP
@@ -133,3 +145,48 @@ func _physics_process(delta):
 func die() -> void:
 	switch_glasses(Glasses.NONE)
 	get_tree().reload_current_scene()
+	
+func _run_run_animation(going_left:bool) -> void:
+	$GuySprite.flip_h = going_left
+
+	match worn_glasses:
+		Glasses.DRONE:
+			$AnimPlayer.play("drone_run")
+		Glasses.INFARED:
+			$AnimPlayer.play("infared_run")
+		Glasses.NONE:
+			$AnimPlayer.play("no_glasses_run")
+		Glasses.NORMAL:
+			$AnimPlayer.play("normal_run")
+		Glasses.SUNGLASSES:
+			$AnimPlayer.play("sunglasses_run")
+
+func _run_idle_animation(going_left:bool) -> void:
+	$GuySprite.flip_h = going_left
+
+	match worn_glasses:
+		Glasses.DRONE:
+			$AnimPlayer.play("drone_idle")
+		Glasses.INFARED:
+			$AnimPlayer.play("infared_idle")
+		Glasses.NONE:
+			$AnimPlayer.play("no_glasses_idle")
+		Glasses.NORMAL:
+			$AnimPlayer.play("normal_idle")
+		Glasses.SUNGLASSES:
+			$AnimPlayer.play("sunglasses_idle")
+
+func _run_jump_animation(going_left:bool) -> void:
+	$GuySprite.flip_h = going_left
+
+	match worn_glasses:
+		Glasses.DRONE:
+			$AnimPlayer.play("drone_idle")
+		Glasses.INFARED:
+			$AnimPlayer.play("infared_idle")
+		Glasses.NONE:
+			$AnimPlayer.play("no_glasses_idle")
+		Glasses.NORMAL:
+			$AnimPlayer.play("normal_idle")
+		Glasses.SUNGLASSES:
+			$AnimPlayer.play("sunglasses_idle")
