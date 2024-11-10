@@ -10,14 +10,12 @@ config_version=5
 
 [application]
 
-config/name="Kinematic Character 2D"
-config/description="Example of how to make a kinematic character controller in 2D using
-CharacterBody2D. The character moves around, is affected by moving
-platforms, can jump through one-way collision platforms, etc."
+config/name="20/20 Vision"
+config/description="game <3"
 config/tags=PackedStringArray("2d", "demo", "official", "physics")
 run/main_scene="res://UI/MainMenu/main_menu.tscn"
 config/features=PackedStringArray("4.3")
-config/icon="res://icon.webp"
+config/icon="res://Player/Assets/Idle/Guy_Idle_Glasses.png"
 
 [display]
 
