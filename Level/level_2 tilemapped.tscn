@@ -38,7 +38,6 @@ scale = Vector2(6, 1)
 [node name="Door" parent="Objects" instance=ExtResource("4_0aw52")]
 position = Vector2(1729, -289)
 scale = Vector2(1, 5.56)
-color = Color(0, 0.78852, 0, 1)
 
 [node name="Switch" parent="Objects" instance=ExtResource("3_lj1mh")]
 position = Vector2(2477, 34)

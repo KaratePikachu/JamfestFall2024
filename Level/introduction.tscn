@@ -55,7 +55,6 @@ loop_time = 3
 [node name="Door" parent="Objects" instance=ExtResource("6_50eqa")]
 position = Vector2(1416, -288)
 scale = Vector2(1, 7.08)
-color = Color(1, 0, 0, 1)
 
 [node name="Switch" parent="Objects" instance=ExtResource("5_lu008")]
 position = Vector2(1108, -28)
