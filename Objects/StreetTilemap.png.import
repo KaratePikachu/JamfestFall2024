@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xwl0bwp5vv6v"
-path="res://.godot/imported/Infaredbackdrop.png-20cbff63132eecb1843033d1e6cf6950.ctex"
+uid="uid://c7vmmeljrqmf2"
+path="res://.godot/imported/StreetTilemap.png-030773766fdf1965819c149c1d5a1392.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Enviorment/Infaredbackdrop.png"
-dest_files=["res://.godot/imported/Infaredbackdrop.png-20cbff63132eecb1843033d1e6cf6950.ctex"]
+source_file="res://Objects/StreetTilemap.png"
+dest_files=["res://.godot/imported/StreetTilemap.png-030773766fdf1965819c149c1d5a1392.ctex"]
 
 [params]
 

@@ -10,8 +10,8 @@
 shader = ExtResource("5_rd0rx")
 shader_parameter/scale = 1.0
 shader_parameter/lod = 0.0
-shader_parameter/x_blur_offest = 0.1
-shader_parameter/y_blur_offest = 0.1
+shader_parameter/x_blur_offest = 0.06
+shader_parameter/y_blur_offest = 0.08
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_s08pi"]
 shader = ExtResource("3_ng80b")
