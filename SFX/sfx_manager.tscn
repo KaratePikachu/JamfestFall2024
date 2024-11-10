@@ -26,3 +26,7 @@ script = ExtResource("1_ebamd")
 [node name="drone" type="AudioStreamPlayer" parent="."]
 
 [node name="glasses_pick_up" type="AudioStreamPlayer" parent="."]
+
+[connection signal="finished" from="bgm" to="." method="_on_bgm_finished"]
+[connection signal="finished" from="walking" to="." method="_on_walking_finished"]
+[connection signal="finished" from="drone" to="." method="_on_drone_finished"]

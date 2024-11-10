@@ -40,7 +40,20 @@ func _ready() -> void:
 	glasses_pick_up.stream = AudioStreamOggVorbis.load_from_file(sound_loc + glasses_pick_up_file)
 
 	bgm.volume_db = -9.0
-	walking.volume_db = -3.0
+	walking.volume_db = -5.0
 	glasses_pick_up.volume_db = 5.0
+	death.volume_db = -5.0
 	
 	bgm.play()
+
+
+func _on_bgm_finished() -> void:
+	bgm.play()
+
+
+func _on_walking_finished() -> void:
+	walking.play()
+
+
+func _on_drone_finished() -> void:
+	drone.play()
