@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Canvas/vision_effects.gd" id="1_58afm"]
 [ext_resource type="Shader" path="res://Shaders/blur.gdshader" id="2_72r2q"]
 [ext_resource type="Shader" path="res://Shaders/tint.gdshader" id="3_ng80b"]
-[ext_resource type="Shader" path="res://Shaders/Desaturation.gdshader" id="4_61ghd"]
-[ext_resource type="Shader" path="res://Shaders/Blur.gdshader" id="5_rd0rx"]
+[ext_resource type="Shader" path="res://Shaders/desaturation.gdshader" id="4_61ghd"]
+[ext_resource type="Shader" path="res://Shaders/blur.gdshader" id="5_rd0rx"]
 [ext_resource type="Shader" path="res://Shaders/VCR.gdshader" id="5_swjpv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jqcd5"]
