@@ -5,9 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://u5vlmp8hm4ku" path="res://Player/player.tscn" id="4_jdhh3"]
 [ext_resource type="PackedScene" uid="uid://cc4ppwhyjy67u" path="res://Interactable/Glasses/Sunglasses/sunglasses_pickup.tscn" id="6_vilyt"]
 [ext_resource type="PackedScene" uid="uid://b68p8jegitusu" path="res://Enviorment/DeathSquare/death_square.tscn" id="7_kgw5k"]
-[ext_resource type="PackedScene" uid="uid://mhre4wt3fwb8" path="res://scene_transition.tscn" id="7_wkr6h"]
+[ext_resource type="PackedScene" uid="uid://mhre4wt3fwb8" path="res://Enviorment/SceneChange/scene_transition.tscn" id="7_wkr6h"]
 [ext_resource type="PackedScene" uid="uid://dp7fxu33gf8m0" path="res://Canvas/vision_effects.tscn" id="8_hp6cl"]
-[ext_resource type="PackedScene" uid="uid://cgu5b07ehe4ts" path="res://Level/level_2.tscn" id="8_o75xp"]
+[ext_resource type="PackedScene" uid="uid://cgu5b07ehe4ts" path="res://Level/NotTilemapped/level_2.tscn" id="8_o75xp"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_33243"]
 size = Vector2(4072, 255)

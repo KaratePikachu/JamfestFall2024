@@ -1,4 +1,4 @@
-class_name TransitionScene extends Area2D
+extends Area2D
 @export var scene_name: PackedScene
 
 func _on_body_entered(body: Node2D):

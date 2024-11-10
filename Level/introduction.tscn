@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://b88b22toehhyu"]
+<<[gd_scene load_steps=15 format=4 uid="uid://b88b22toehhyu"]
 
 [ext_resource type="PackedScene" uid="uid://b68p8jegitusu" path="res://Enviorment/DeathSquare/death_square.tscn" id="1_syrov"]
 [ext_resource type="PackedScene" uid="uid://u5vlmp8hm4ku" path="res://Player/player.tscn" id="2_q76co"]
@@ -63,7 +63,7 @@ color = Color(1, 0, 0, 1)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]>>
 material = SubResource("ShaderMaterial_jqcd5")
 anchors_preset = 15
 anchor_right = 1.0
