@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dti865vlynmjb"]
+
+[ext_resource type="Script" path="res://scene_transition.gd" id="1_8w1qi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6phfd"]
+size = Vector2(109, 124)
+
+[node name="SceneTransition" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_8w1qi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6phfd")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

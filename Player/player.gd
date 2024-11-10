@@ -32,12 +32,11 @@ static var obtained_glasses = []
 signal glasses_changed(old_glasses : Glasses, new_glasses : Glasses)
 
 func _init() -> void:
-	if(instance == null):
-		instance = self
+	instance = self
 	
 func _ready() -> void:
-	instance = self
-	grant_glasses(Glasses.NONE)
+	
+	(func(): grant_glasses(Glasses.NONE)).call_deferred()
 
 func _input(event: InputEvent) -> void:
 	var desired_switch = null
@@ -75,13 +74,14 @@ func grant_glasses(new_glasses):
 	else:
 		printerr("Player: d:
 	instance = selfError! player already has these glasses")
-		
+	
 	
 	switch_glasses(new_glasses)
 	
 	
 func switch_glasses(new_glasses):
-	glasses_changed.emit(worn_glasses,new_glasses)	
+	
+	glasses_changed.emit(worn_glasses,new_glasses)
 	
 func _on_glasses_changed(old_glasses: int, new_glasses: int) -> void:
 	if(old_glasses == Glasses.DRONE):
@@ -96,11 +96,14 @@ func _physics_process(delta):
 		var screen_size = get_viewport_rect().size
 		
 		if Input.is_action_pressed("move_right"):
-			$Camera2D.position.x += CAMERA_SPEED
+			$Camera2D.global_position.x += CAMERA_SPEED
 		if Input.is_action_pressed("move_left"):
-			$Camera2D.position.x -= CAMERA_SPEED
+			$Camera2D.global_position.x -= CAMERA_SPEED
 
-		$Camera2D.position.y = -300
+
+
+		$Camera2D.global_position.y = -330
+		
 		$Camera2D.zoom = Vector2(0.95, 0.95)
 		
 	else:

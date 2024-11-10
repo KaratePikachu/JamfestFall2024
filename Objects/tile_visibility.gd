@@ -2,7 +2,9 @@ extends Node
 
 
 # Called when the node enters the scene tree for the first time.
-func _init() -> void:
+func _ready() -> void:
+	assert($NormalTiles != null, "The TileMapLayers node requires a child TileMapLayer named 'NormalTiles'")
+	assert($DarkTiles != null, "The TileMapLayers node requires a child TileMapLayer named 'DarkTiles'")
 	#Player.instance.bind_glasses_changed(self,"change_vision_effect")
 	#Player.instance.connect("glasses_changed", Callable(self, "change_vision_effect"))
 	Player.instance.glasses_changed.connect(_on_glasses_change)

@@ -1,8 +1,9 @@
 [gd_scene load_steps=4 format=3 uid="uid://cc4ppwhyjy67u"]
 
-[ext_resource type="PackedScene" uid="uid://u4ayn3q3dre" path="res://Interactable/interactable.tscn" id="1_sxe5a"]
+[ext_resource type="PackedScene" uid="uid://u4ayn3q3dre" path="res://interactable.tscn" id="1_sxe5a"]
 [ext_resource type="Script" path="res://Interactable/Glasses/Sunglasses/sunglasses_pickup.gd" id="2_8bfot"]
 [ext_resource type="Texture2D" uid="uid://cknv8qqt8usjd" path="res://Interactable/Glasses/Sunglasses/glasses.png" id="2_l8xby"]
+
 
 [node name="SunglassesPickup" instance=ExtResource("1_sxe5a")]
 script = ExtResource("2_8bfot")
