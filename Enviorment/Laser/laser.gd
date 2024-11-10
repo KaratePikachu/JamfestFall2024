@@ -10,7 +10,7 @@ func _ready() -> void:
 func _on_body_entered(body: Node2D) -> void:
 	print("AAAAAAAAAAAAAAAA")
 	if body is Player:
-		body.set_global_position(Vector2(0,0))
+		body.die()
 		
 func _on_glasses_change(old_glasses: int, new_glasses: int) -> void:
 	if(new_glasses == Player.Glasses.INFARED or new_glasses == Player.Glasses.NORMAL or new_glasses == Player.Glasses.DRONE):

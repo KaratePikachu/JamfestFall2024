@@ -14,4 +14,4 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	print("AAAAAAAAAAAAAAAA")
 	if body is Player:
-		body.set_global_position(Vector2(0,0))
+		body.die()
