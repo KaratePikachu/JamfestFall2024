@@ -1,8 +1,9 @@
-[gd_scene load_steps=69 format=3 uid="uid://u5vlmp8hm4ku"]
+[gd_scene load_steps=70 format=3 uid="uid://u5vlmp8hm4ku"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_mvi1i"]
 [ext_resource type="Texture2D" uid="uid://dm1tbrkmw5nyl" path="res://Player/Assets/Idle/Guy_Idle.png" id="2_54ivu"]
 [ext_resource type="Texture2D" uid="uid://ch3b1ju46smbw" path="res://Player/Assets/Running/No Glasses/Guy_Running1.png" id="2_yhgtl"]
+[ext_resource type="PackedScene" uid="uid://dbut5fa7klmy4" path="res://UI/GameUI/ui.tscn" id="3_ldojt"]
 [ext_resource type="Texture2D" uid="uid://cioeau81sxnei" path="res://Player/Assets/Running/No Glasses/Guy_Running2.png" id="3_x6irn"]
 [ext_resource type="Texture2D" uid="uid://mp2g48kfh6wp" path="res://Player/Assets/Jumping/Drone/Guy_Jump_Drone9.png" id="4_njbn5"]
 [ext_resource type="Texture2D" uid="uid://cv4nlfbs1203f" path="res://Player/Assets/Running/No Glasses/Guy_Running3.png" id="4_u8c8l"]
@@ -457,5 +458,18 @@ texture = ExtResource("2_yhgtl")
 libraries = {
 "": SubResource("AnimationLibrary_pk8gy")
 }
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Ui" parent="CanvasLayer" instance=ExtResource("3_ldojt")]
+anchors_preset = 4
+anchor_left = 0.0
+anchor_top = 0.5
+anchor_right = 0.0
+anchor_bottom = 0.5
+offset_top = -270.0
+offset_bottom = -270.0
+grow_horizontal = 1
+grow_vertical = 2
 
 [connection signal="glasses_changed" from="." to="." method="_on_glasses_changed"]
