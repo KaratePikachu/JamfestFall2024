@@ -9,9 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://b68p8jegitusu" path="res://Enviorment/DeathSquare/death_square.tscn" id="5_4f2yv"]
 [ext_resource type="PackedScene" uid="uid://cf5674d77sx2n" path="res://Enviorment/Goomba/goomba.tscn" id="5_5sy5p"]
 [ext_resource type="PackedScene" uid="uid://dp7fxu33gf8m0" path="res://Canvas/vision_effects.tscn" id="7_hjpto"]
+[ext_resource type="PackedScene" uid="uid://uofbwyeeh4ag" path="res://scene_tran3.tscn" id="8_83ff3"]
 [ext_resource type="Texture2D" uid="uid://ricoajc275f2" path="res://Enviorment/TextPopup/Frame.png" id="9_ao0kk"]
 [ext_resource type="PackedScene" uid="uid://mhre4wt3fwb8" path="res://Enviorment/SceneChange/scene_transition.tscn" id="10_7odqu"]
-[ext_resource type="PackedScene" uid="uid://bbvpyqfw7gn1j" path="res://Level/level_3 tileMapped.tscn" id="11_4nxeo"]
 [ext_resource type="PackedScene" uid="uid://c0irdu28sl6ah" path="res://Interactable/Glasses/Infared/infared_glasses_pickup.tscn" id="11_dh5lf"]
 [ext_resource type="PackedScene" uid="uid://dw1di6bneq8on" path="res://Enviorment/TextPopup/TextPopup.tscn" id="14_c23e8"]
 [ext_resource type="PackedScene" uid="uid://2vflpwr853vc" path="res://UI/timer.tscn" id="15_86mfm"]
@@ -62,7 +62,7 @@ scale = Vector2(1, 1.00872)
 [node name="SceneTransition" parent="Text & Triggers/CanvasLayer" instance=ExtResource("10_7odqu")]
 position = Vector2(2416, -262)
 scale = Vector2(0.5, 0.5)
-scene_name = ExtResource("11_4nxeo")
+scene_name = ExtResource("8_83ff3")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Text & Triggers/CanvasLayer/SceneTransition"]
 position = Vector2(0, 20)
@@ -97,5 +97,5 @@ text = "I found a screwdriver! Now I need new frames  "
 
 [node name="Timer" parent="." instance=ExtResource("15_86mfm")]
 
-[connection signal="triggered" from="Objects/Switch" to="Objects/Door" method="_on_switch_triggered"]
 [connection signal="triggered" from="Objects/Switch" to="Objects/Door" method="_on_triggered"]
+[connection signal="triggered" from="Objects/Switch" to="Objects/Door" method="_on_switch_triggered"]

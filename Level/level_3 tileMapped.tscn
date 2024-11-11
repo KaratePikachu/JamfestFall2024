@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://lpj2ux5e6qek" path="res://Interactable/Door/Door.tscn" id="7_iw4ej"]
 [ext_resource type="Texture2D" uid="uid://rpuxwxmpp1jv" path="res://Objects/SingleSpike.png" id="7_m2k12"]
 [ext_resource type="PackedScene" uid="uid://dp7fxu33gf8m0" path="res://Canvas/vision_effects.tscn" id="8_rdjpi"]
-[ext_resource type="PackedScene" uid="uid://sc34hymnuw3p" path="res://Level/End.tscn" id="10_ujcah"]
+[ext_resource type="PackedScene" uid="uid://b0ao2qxh0iodv" path="res://scene_tran4.tscn" id="11_i7x6q"]
 [ext_resource type="PackedScene" uid="uid://diroxtluegurn" path="res://Objects/tile_map_layers.tscn" id="11_ibrxf"]
 [ext_resource type="TileSet" uid="uid://dcc3nrrdg01tm" path="res://Objects/tileset.tres" id="12_hf35i"]
 [ext_resource type="Texture2D" uid="uid://chqinlwuv26pn" path="res://Interactable/end pickups/Lens.png" id="12_sl47e"]
@@ -91,7 +91,7 @@ position = Vector2(213, 80)
 [node name="SceneTransition" parent="Text & Triggers/CanvasLayer" instance=ExtResource("13_rxni0")]
 position = Vector2(2657, -380)
 scale = Vector2(0.4, 0.4)
-scene_name = ExtResource("10_ujcah")
+scene_name = ExtResource("11_i7x6q")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Text & Triggers/CanvasLayer/SceneTransition"]
 texture = ExtResource("12_sl47e")
@@ -110,5 +110,5 @@ tile_set = ExtResource("12_hf35i")
 
 [node name="Timer" parent="." instance=ExtResource("16_mlw8b")]
 
-[connection signal="triggered" from="Objects/Switch" to="Objects/Door" method="_on_switch_triggered"]
 [connection signal="triggered" from="Objects/Switch" to="Objects/Door" method="_on_triggered"]
+[connection signal="triggered" from="Objects/Switch" to="Objects/Door" method="_on_switch_triggered"]

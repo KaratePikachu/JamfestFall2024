@@ -11,8 +11,8 @@
 [ext_resource type="TileSet" uid="uid://dcc3nrrdg01tm" path="res://Objects/tileset.tres" id="8_g8dob"]
 [ext_resource type="Texture2D" uid="uid://daju6am7mxdu5" path="res://Interactable/end pickups/Screwdriver.png" id="9_24o2c"]
 [ext_resource type="PackedScene" uid="uid://mhre4wt3fwb8" path="res://Enviorment/SceneChange/scene_transition.tscn" id="9_qfxnd"]
-[ext_resource type="PackedScene" uid="uid://dtl1rrgehyumx" path="res://Level/level_2 tilemapped.tscn" id="10_4misl"]
 [ext_resource type="PackedScene" uid="uid://dw1di6bneq8on" path="res://Enviorment/TextPopup/TextPopup.tscn" id="12_n42ab"]
+[ext_resource type="PackedScene" uid="uid://istfso8p2xn2" path="res://scene_tran2.tscn" id="12_vg8ex"]
 [ext_resource type="PackedScene" uid="uid://2vflpwr853vc" path="res://UI/timer.tscn" id="14_voqmn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jghdn"]
@@ -97,7 +97,7 @@ position = Vector2(279, 103)
 [node name="SceneTransition" parent="CanvasLayer" instance=ExtResource("9_qfxnd")]
 position = Vector2(3876, -537)
 scale = Vector2(0.5, 0.5)
-scene_name = ExtResource("10_4misl")
+scene_name = ExtResource("12_vg8ex")
 
 [node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/SceneTransition"]
 position = Vector2(0, 20)
