@@ -19,8 +19,12 @@ func _on_glasses_change(old_glasses: int, new_glasses: int) -> void:
 	else: 
 		$DetectionCone.visible = false
 	
-	if(new_glasses == Player.Glasses.INFARED or new_glasses == Player.Glasses.NORMAL or new_glasses == Player.Glasses.DRONE):
+	if(new_glasses == Player.Glasses.NORMAL or new_glasses == Player.Glasses.DRONE):
 		$Sprite.visible = true
+		$AnimationPlayer.play("idle")
+	elif new_glasses == Player.Glasses.INFARED:
+		$Sprite.visible = true
+		$AnimationPlayer.play("idle_ir")
 	else: 
 		$Sprite.visible = false
 
@@ -34,6 +38,11 @@ func _process(delta: float) -> void:
 		if 1 - abs(cos(dont_fucking_ask)) < 0.0001:
 			isSpinning = false
 			timer = 0.001
+			
+		if $DetectionCone.scale.x < 0:
+			$Sprite.scale.x = 0.189
+		else:
+			$Sprite.scale.x = -0.189
 	else:
 		timer += delta
 		if timer >= timePaused:
@@ -57,6 +66,10 @@ func _on_DetectionCone_body_entered(body: Node2D) -> void:
 		var direction = 1 if body.global_position.x > global_position.x else -1
 		velocity.x = speed * direction
 		velocity.y = jumpHeight
+		if Player.instance.worn_glasses == Player.Glasses.INFARED:
+			$AnimationPlayer.play("pounce_ir")
+		else: 
+			$AnimationPlayer.play("pounce")
 		move_and_slide()
 
 

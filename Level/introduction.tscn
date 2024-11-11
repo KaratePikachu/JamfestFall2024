@@ -24,7 +24,7 @@ size = Vector2(159, 20)
 position = Vector2(-466, -368)
 
 [node name="Player" parent="." instance=ExtResource("2_q76co")]
-position = Vector2(467.025, 496.67)
+position = Vector2(2589, 186)
 
 [node name="Enemies" type="Node" parent="."]
 

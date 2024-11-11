@@ -6,10 +6,16 @@ extends CharacterBody2D
 
 func _ready() -> void:
 	Player.instance.glasses_changed.connect(_on_glasses_change)
+	$AnimationPlayer.play("walk")
 	
 func _on_glasses_change(old_glasses: int, new_glasses: int) -> void:
-	if(new_glasses == Player.Glasses.INFARED or new_glasses == Player.Glasses.NORMAL or new_glasses == Player.Glasses.DRONE):
+	if(new_glasses == Player.Glasses.NORMAL or new_glasses == Player.Glasses.DRONE):
 		$Sprite.visible = true
+		$AnimationPlayer.play("walk")
+		
+	elif new_glasses == Player.Glasses.INFARED:
+		$Sprite.visible = true
+		$AnimationPlayer.play("walk_ir")
 	else: 
 		$Sprite.visible = false
 	
