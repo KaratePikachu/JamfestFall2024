@@ -39,17 +39,17 @@ position = Vector2(2, -23)
 forced = 4
 
 [node name="SceneTransition" parent="." instance=ExtResource("9_i47wn")]
-position = Vector2(3241, -178)
+position = Vector2(3309, -177)
 scene_name = ExtResource("10_n40wk")
 
 [node name="Toolbox" type="Sprite2D" parent="."]
-position = Vector2(3241, -155)
+position = Vector2(3309, -154)
 texture = ExtResource("10_qe5uf")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 3171.0
-offset_top = -271.0
-offset_right = 3323.0
-offset_bottom = -248.0
+offset_left = 3239.0
+offset_top = -270.0
+offset_right = 3391.0
+offset_bottom = -247.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Back To Main Menu"
