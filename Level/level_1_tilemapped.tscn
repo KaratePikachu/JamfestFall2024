@@ -58,16 +58,6 @@ scale = Vector2(31.7199, -1.76793)
 
 [node name="VisionEffects" parent="." instance=ExtResource("7_3pqk2")]
 
-[node name="SceneTransition" parent="." instance=ExtResource("9_qfxnd")]
-position = Vector2(3876, -537)
-scale = Vector2(0.5, 0.5)
-scene_name = ExtResource("10_4misl")
-
-[node name="Sprite2D2" type="Sprite2D" parent="SceneTransition"]
-position = Vector2(0, 20)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("9_24o2c")
-
 [node name="Tilemap" type="Node" parent="."]
 script = ExtResource("8_2in74")
 
@@ -103,6 +93,16 @@ text = "You got the screwdriver! You still have 2 more items to find"
 
 [node name="SunglassesPickup" parent="CanvasLayer" instance=ExtResource("5_sfhhk")]
 position = Vector2(279, 103)
+
+[node name="SceneTransition" parent="CanvasLayer" instance=ExtResource("9_qfxnd")]
+position = Vector2(3876, -537)
+scale = Vector2(0.5, 0.5)
+scene_name = ExtResource("10_4misl")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/SceneTransition"]
+position = Vector2(0, 20)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_24o2c")
 
 [node name="DeathSquare" parent="." instance=ExtResource("6_yp723")]
 position = Vector2(1180, 509)
