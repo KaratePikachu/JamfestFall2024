@@ -20,11 +20,11 @@
 
 [node name="Goomba" parent="Enemies" instance=ExtResource("5_5sy5p")]
 position = Vector2(1195, 250)
-scale = Vector2(1, 0.7)
+scale = Vector2(0.7, 0.7)
 
 [node name="Goomba2" parent="Enemies" instance=ExtResource("5_5sy5p")]
 position = Vector2(1903, 27)
-scale = Vector2(1, 0.7)
+scale = Vector2(0.7, 0.7)
 
 [node name="Objects" type="Node" parent="."]
 
