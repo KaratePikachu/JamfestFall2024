@@ -1,10 +1,105 @@
-[gd_scene load_steps=4 format=3 uid="uid://qa6itmjrn43y"]
+[gd_scene load_steps=15 format=3 uid="uid://qa6itmjrn43y"]
 
 [ext_resource type="Script" path="res://Enviorment/Enemy/enemy.gd" id="1_2de7v"]
-[ext_resource type="Texture2D" uid="uid://dg3ruv7lr1a5b" path="res://Enviorment/Enemy/Prototypesecurity.png" id="2_eyteg"]
+[ext_resource type="Texture2D" uid="uid://dff8jyia8qxot" path="res://Enviorment/Enemy/Assets/Security_Idle.png" id="2_36muc"]
+[ext_resource type="Texture2D" uid="uid://qto6dcpyix3y" path="res://Enviorment/Enemy/Assets/Security_Infared_Idle.png" id="3_i425r"]
+[ext_resource type="Texture2D" uid="uid://1qffhb7fnex" path="res://Enviorment/Enemy/Assets/Security_Jump1.png" id="4_4854o"]
+[ext_resource type="Texture2D" uid="uid://blntf6o3xnush" path="res://Enviorment/Enemy/Assets/Security_Jump2.png" id="5_536ew"]
+[ext_resource type="Texture2D" uid="uid://cvi2j3ph3254q" path="res://Enviorment/Enemy/Assets/Security_Infared_Jump1.png" id="6_ed1mc"]
+[ext_resource type="Texture2D" uid="uid://ddmhqlx4kk8mg" path="res://Enviorment/Enemy/Assets/Security_Infared_Jump2.png" id="7_ktqul"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ufkie"]
 size = Vector2(32, 23)
+
+[sub_resource type="Animation" id="Animation_s1cbm"]
+resource_name = "idle"
+length = 0.0333367
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_36muc")]
+}
+
+[sub_resource type="Animation" id="Animation_rkfxw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_36muc")]
+}
+
+[sub_resource type="Animation" id="Animation_s576w"]
+resource_name = "idle_ir"
+length = 0.0333367
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_i425r")]
+}
+
+[sub_resource type="Animation" id="Animation_cm52d"]
+resource_name = "pounce"
+length = 0.20001
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("4_4854o"), ExtResource("5_536ew")]
+}
+
+[sub_resource type="Animation" id="Animation_r6j6b"]
+resource_name = "pounce_ir"
+length = 0.20001
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("6_ed1mc"), ExtResource("7_ktqul")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h13ik"]
+_data = {
+"RESET": SubResource("Animation_rkfxw"),
+"idle": SubResource("Animation_s1cbm"),
+"idle_ir": SubResource("Animation_s576w"),
+"pounce": SubResource("Animation_cm52d"),
+"pounce_ir": SubResource("Animation_r6j6b")
+}
 
 [node name="Enemy" type="CharacterBody2D"]
 script = ExtResource("1_2de7v")
@@ -13,7 +108,7 @@ canSpin = true
 [node name="Sprite" type="Sprite2D" parent="."]
 visible = false
 scale = Vector2(0.188935, 0.188935)
-texture = ExtResource("2_eyteg")
+texture = ExtResource("2_36muc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 16.5)
@@ -38,6 +133,11 @@ collision_mask = 2
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DeathAura"]
 scale = Vector2(0.188935, 0.188935)
 polygon = PackedVector2Array(109, -84, 109, -82, 99.3, -74, 97.8, -74, 92.9, -65, 91.7, -65, 73, -20.4, 73, -19.5, 53.6, -12, 51, -12, 42.5, -1.39999, -42, -21.6, -42, -22.9, -72, -24.9, -72, -26.1, -117.1, -24, -124.4, -24, -164.4, -8, -167.7, -8, -184.7, 6, -186.9, 6, -209.9, 33, -211.4, 33, -222.4, 62, -223.8, 62, -226.8, 87, -228, 87, -228, 110.3, -224, 124, -224, 127.6, -212, 146.6, -212, 148.8, -181, 183.8, -181, 212.5, -172, 228.4, -172, 231.9, -166, 236.9, -166, 238.7, -153.2, 241, -131.9, 241, -129.9, 238, -128.2, 238, -126, 219.1, -126, 216.5, -117.2, 203.8, -108.8, 203, -105.4, 203, -99, 222.3, -99, 225.9, -93, 230.9, -93, 232.7, -78.2, 235, -75.5, 235, -66.5, 230, -63.9, 230, -65, 205.1, -27.1, 208, -11.8, 208, 24.1, 202, 25, 214.1, 25, 218.5, 33, 233.5, 33, 236.4, 45, 240.4, 45, 242.2, 56.2, 241, 62.6, 241, 72.5, 235, 75.1, 235, 74, 204.9, 74, 197.3, 78, 188.4, 78, 187.2, 85, 184.3, 85.5, 184, 91, 203, 91, 206.6, 107.9, 232, 134, 232, 139, 225, 141.3, 225, 139, 206.8, 139, 194.3, 143, 185.4, 143, 183.8, 149, 189.8, 149, 191.3, 151.5, 192.4, 156.8, 187, 159, 187, 159, 178.5, 147.1, 157.7, 170, 137.9, 181, 135, 182.5, 135, 205, 122.2, 210.3, 121, 217.7, 121, 222.7, 117, 225, 117, 242, 95.7, 242, 77.8, 236, 44.6, 236, 41, 218.7, 27, 218, 26.5, 218, 10.6, 211, -5.39999, 211, -8.2, 201, -13.3, 201, -15.5, 173.1, -9.7, 162.3, -13, 159.3, -13, 150, -33.4, 150, -35.6, 130, -67.7, 130, -69.7, 120, -81.7, 120, -84)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_h13ik")
+}
 
 [connection signal="body_entered" from="DetectionCone" to="." method="_on_DetectionCone_body_entered"]
 [connection signal="body_entered" from="DeathAura" to="." method="_on_death_aura_body_entered"]
