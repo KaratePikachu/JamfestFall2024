@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dw1di6bneq8on" path="res://Enviorment/TextPopup/TextPopup.tscn" id="14_irc5d"]
 [ext_resource type="PackedScene" uid="uid://mxhsaam4gug" path="res://Enviorment/ForcedGlassesChange/glasses_change.tscn" id="15_3dak2"]
 [ext_resource type="Script" path="res://Level/trip_fall_die.gd" id="16_uuk8s"]
-[ext_resource type="Script" path="res://Level/timer.gd" id="17_lodg7"]
+[ext_resource type="PackedScene" uid="uid://2vflpwr853vc" path="res://UI/timer.tscn" id="17_sjuti"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_52ayu"]
 size = Vector2(159, 20)
@@ -133,12 +133,7 @@ tile_set = ExtResource("11_1wx7c")
 [node name="Player" parent="." instance=ExtResource("2_q76co")]
 position = Vector2(137, 536)
 
-[node name="Timer" type="CanvasLayer" parent="."]
-script = ExtResource("17_lodg7")
-
-[node name="TimerText" type="Label" parent="Timer"]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="Timer" parent="." instance=ExtResource("17_sjuti")]
 
 [connection signal="triggered" from="Objects/Switch" to="Objects/Door" method="_on_switch_triggered"]
 [connection signal="body_entered" from="Text & Triggers/GlassesChange2" to="Text & Triggers/TripFallDie" method="_on_glasses_change_2_body_entered"]

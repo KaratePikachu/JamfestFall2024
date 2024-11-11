@@ -2,6 +2,7 @@ extends Control
 
 func _ready() -> void:
 	$AnimationPlayer.play("flop")
+	$AnimationPlayer.queue("run")
 
 func _on_exit_pressed() -> void:
 	SFX.menu_click.play()
