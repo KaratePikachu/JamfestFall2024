@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://dtl1rrgehyumx"]
+[gd_scene load_steps=15 format=4 uid="uid://dtl1rrgehyumx"]
 
 [ext_resource type="PackedScene" uid="uid://diroxtluegurn" path="res://Objects/tile_map_layers.tscn" id="1_iw8wq"]
 [ext_resource type="PackedScene" uid="uid://u5vlmp8hm4ku" path="res://Player/player.tscn" id="1_srbwn"]
@@ -9,10 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://b68p8jegitusu" path="res://Enviorment/DeathSquare/death_square.tscn" id="5_4f2yv"]
 [ext_resource type="PackedScene" uid="uid://cf5674d77sx2n" path="res://Enviorment/Goomba/goomba.tscn" id="5_5sy5p"]
 [ext_resource type="PackedScene" uid="uid://dp7fxu33gf8m0" path="res://Canvas/vision_effects.tscn" id="7_hjpto"]
-[ext_resource type="Texture2D" uid="uid://bq46uody2moij" path="res://Interactable/end pickups/Toolbox.png" id="9_xgfgg"]
+[ext_resource type="Texture2D" uid="uid://ricoajc275f2" path="res://Enviorment/TextPopup/Frame.png" id="9_ao0kk"]
 [ext_resource type="PackedScene" uid="uid://mhre4wt3fwb8" path="res://Enviorment/SceneChange/scene_transition.tscn" id="10_7odqu"]
 [ext_resource type="PackedScene" uid="uid://bbvpyqfw7gn1j" path="res://Level/level_3 tileMapped.tscn" id="11_4nxeo"]
 [ext_resource type="PackedScene" uid="uid://c0irdu28sl6ah" path="res://Interactable/Glasses/Infared/infared_glasses_pickup.tscn" id="11_dh5lf"]
+[ext_resource type="PackedScene" uid="uid://dw1di6bneq8on" path="res://Enviorment/TextPopup/TextPopup.tscn" id="14_c23e8"]
 
 [node name="Node2D2" type="Node2D"]
 
@@ -64,7 +65,7 @@ scene_name = ExtResource("11_4nxeo")
 [node name="Sprite2D2" type="Sprite2D" parent="Text & Triggers/SceneTransition"]
 position = Vector2(0, 20)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("9_xgfgg")
+texture = ExtResource("9_ao0kk")
 
 [node name="VisionEffects" parent="." instance=ExtResource("7_hjpto")]
 
@@ -84,6 +85,14 @@ position = Vector2(-1, -3)
 [node name="DeathSquare17" parent="." instance=ExtResource("5_4f2yv")]
 position = Vector2(2190, 984)
 scale = Vector2(449.823, 16.101)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_priority = 11
+follow_viewport_enabled = true
+
+[node name="TextPopup" parent="CanvasLayer" instance=ExtResource("14_c23e8")]
+position = Vector2(-1, -10)
+text = "I found a screwdriver! Now I need new frames  "
 
 [connection signal="triggered" from="Objects/Switch" to="Objects/Door" method="_on_switch_triggered"]
 [connection signal="triggered" from="Objects/Switch" to="Objects/Door" method="_on_triggered"]
