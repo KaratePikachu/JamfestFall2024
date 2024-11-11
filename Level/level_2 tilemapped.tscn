@@ -59,12 +59,12 @@ position = Vector2(319, -32)
 scale = Vector2(1, 1.00872)
 
 [node name="SceneTransition" parent="Text & Triggers" instance=ExtResource("10_7odqu")]
-position = Vector2(2384, -288)
+position = Vector2(2416, -262)
+scale = Vector2(0.5, 0.5)
 scene_name = ExtResource("11_4nxeo")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Text & Triggers/SceneTransition"]
 position = Vector2(0, 20)
-scale = Vector2(0.5, 0.5)
 texture = ExtResource("9_ao0kk")
 
 [node name="VisionEffects" parent="." instance=ExtResource("7_hjpto")]

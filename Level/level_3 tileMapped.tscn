@@ -88,11 +88,11 @@ follow_viewport_enabled = true
 position = Vector2(213, 80)
 
 [node name="SceneTransition" parent="Text & Triggers" instance=ExtResource("13_rxni0")]
-position = Vector2(2633, -386)
+position = Vector2(2657, -380)
+scale = Vector2(0.4, 0.4)
 scene_name = ExtResource("10_ujcah")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Text & Triggers/SceneTransition"]
-scale = Vector2(0.5, 0.5)
 texture = ExtResource("12_sl47e")
 
 [node name="TileMapLayers" parent="." instance=ExtResource("11_ibrxf")]
