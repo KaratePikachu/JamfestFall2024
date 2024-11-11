@@ -102,5 +102,9 @@ text = "You got the screwdriver! You still have 2 more items to find"
 [node name="SunglassesPickup" parent="CanvasLayer" instance=ExtResource("5_sfhhk")]
 position = Vector2(279, 103)
 
+[node name="DeathSquare" parent="." instance=ExtResource("6_yp723")]
+position = Vector2(1180, 509)
+scale = Vector2(-451.746, -6.00406)
+
 [connection signal="triggered" from="Switch2" to="Door2" method="_on_switch_triggered"]
 [connection signal="triggered" from="Switch1" to="Door1" method="_on_switch_triggered"]
