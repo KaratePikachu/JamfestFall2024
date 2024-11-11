@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://b88b22toehhyu"]
+[gd_scene load_steps=20 format=4 uid="uid://b88b22toehhyu"]
 
 [ext_resource type="PackedScene" uid="uid://b68p8jegitusu" path="res://Enviorment/DeathSquare/death_square.tscn" id="1_syrov"]
 [ext_resource type="PackedScene" uid="uid://u5vlmp8hm4ku" path="res://Player/player.tscn" id="2_q76co"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://mxhsaam4gug" path="res://Enviorment/ForcedGlassesChange/glasses_change.tscn" id="15_3dak2"]
 [ext_resource type="Script" path="res://Level/trip_fall_die.gd" id="16_uuk8s"]
 [ext_resource type="PackedScene" uid="uid://2vflpwr853vc" path="res://UI/timer.tscn" id="17_sjuti"]
+[ext_resource type="Texture2D" uid="uid://cmxt0vt80jrcj" path="res://UI/ClearBackdrop.png" id="18_iu8na"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_52ayu"]
 size = Vector2(159, 20)
@@ -134,6 +135,11 @@ tile_set = ExtResource("11_1wx7c")
 position = Vector2(137, 536)
 
 [node name="Timer" parent="." instance=ExtResource("17_sjuti")]
+
+[node name="ClearBackdrop" type="Sprite2D" parent="."]
+z_index = -5
+position = Vector2(4456, -394)
+texture = ExtResource("18_iu8na")
 
 [connection signal="triggered" from="Objects/Switch" to="Objects/Door" method="_on_switch_triggered"]
 [connection signal="body_entered" from="Text & Triggers/GlassesChange2" to="Text & Triggers/TripFallDie" method="_on_glasses_change_2_body_entered"]
