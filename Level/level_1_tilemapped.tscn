@@ -77,7 +77,7 @@ follow_viewport_enabled = true
 
 [node name="TextPopup" parent="CanvasLayer" instance=ExtResource("12_n42ab")]
 position = Vector2(282, 108)
-text = "You got the sunglasses! The Sunglasses allow you to see but makes some objects too dark to detect. "
+text = "Pres E to pick up the sunglasses! The Sunglasses allow you to see but makes some objects too dark to detect. "
 
 [node name="TextPopup3" parent="CanvasLayer" instance=ExtResource("12_n42ab")]
 position = Vector2(-433, 79)
