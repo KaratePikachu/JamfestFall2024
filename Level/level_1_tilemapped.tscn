@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://c41bf4ogpo863"]
+[gd_scene load_steps=16 format=4 uid="uid://c41bf4ogpo863"]
 
 [ext_resource type="PackedScene" uid="uid://lpj2ux5e6qek" path="res://Interactable/Door/Door.tscn" id="1_n15bx"]
 [ext_resource type="PackedScene" uid="uid://bmvu0eqsw4qql" path="res://Interactable/Switch/switch.tscn" id="2_2wdbt"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://mhre4wt3fwb8" path="res://Enviorment/SceneChange/scene_transition.tscn" id="9_qfxnd"]
 [ext_resource type="PackedScene" uid="uid://dtl1rrgehyumx" path="res://Level/level_2 tilemapped.tscn" id="10_4misl"]
 [ext_resource type="PackedScene" uid="uid://dw1di6bneq8on" path="res://Enviorment/TextPopup/TextPopup.tscn" id="12_n42ab"]
+[ext_resource type="PackedScene" uid="uid://2vflpwr853vc" path="res://UI/timer.tscn" id="14_voqmn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jghdn"]
 shader = ExtResource("4_uhjqc")
@@ -106,6 +107,8 @@ position = Vector2(279, 103)
 [node name="DeathSquare" parent="." instance=ExtResource("6_yp723")]
 position = Vector2(1180, 509)
 scale = Vector2(-451.746, -6.00406)
+
+[node name="Timer" parent="." instance=ExtResource("14_voqmn")]
 
 [connection signal="triggered" from="Switch2" to="Door2" method="_on_switch_triggered"]
 [connection signal="triggered" from="Switch1" to="Door1" method="_on_switch_triggered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://bbvpyqfw7gn1j"]
+[gd_scene load_steps=17 format=4 uid="uid://bbvpyqfw7gn1j"]
 
 [ext_resource type="PackedScene" uid="uid://u5vlmp8hm4ku" path="res://Player/player.tscn" id="1_fg3qq"]
 [ext_resource type="PackedScene" uid="uid://djp7bfajmwpgl" path="res://Interactable/Glasses/Drone/drone_glasses_pickup.tscn" id="2_qq4mh"]
@@ -15,6 +15,7 @@
 [ext_resource type="TileSet" uid="uid://dcc3nrrdg01tm" path="res://Objects/tileset.tres" id="12_hf35i"]
 [ext_resource type="Texture2D" uid="uid://chqinlwuv26pn" path="res://Interactable/end pickups/Lens.png" id="12_sl47e"]
 [ext_resource type="PackedScene" uid="uid://mhre4wt3fwb8" path="res://Enviorment/SceneChange/scene_transition.tscn" id="13_rxni0"]
+[ext_resource type="PackedScene" uid="uid://2vflpwr853vc" path="res://UI/timer.tscn" id="16_mlw8b"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -106,6 +107,8 @@ tile_map_data = PackedByteArray("AAATAPL/AAAEAAIAAAASAPL/AAAEAAIAAAARAPL/AAAEAAI
 tile_set = ExtResource("12_hf35i")
 
 [node name="Player" parent="." instance=ExtResource("1_fg3qq")]
+
+[node name="Timer" parent="." instance=ExtResource("16_mlw8b")]
 
 [connection signal="triggered" from="Objects/Switch" to="Objects/Door" method="_on_switch_triggered"]
 [connection signal="triggered" from="Objects/Switch" to="Objects/Door" method="_on_triggered"]
