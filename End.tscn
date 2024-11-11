@@ -3,8 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://diroxtluegurn" path="res://Objects/tile_map_layers.tscn" id="1_d15be"]
 [ext_resource type="TileSet" uid="uid://dcc3nrrdg01tm" path="res://Objects/tileset.tres" id="2_wllbd"]
 [ext_resource type="PackedScene" uid="uid://u5vlmp8hm4ku" path="res://Player/player.tscn" id="3_qny47"]
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" uid="uid://djp7bfajmwpgl" path="res://Interactable/Glasses/Drone/drone_glasses_pickup.tscn" id="4_cjxq8"]
 [ext_resource type="PackedScene" uid="uid://dp7fxu33gf8m0" path="res://Canvas/vision_effects.tscn" id="5_rjplm"]
+=======
+[ext_resource type="PackedScene" uid="uid://c2c6j0ido1yw4" path="res://Interactable/Glasses/Normal/normal_glasses_pickup.tscn" id="4_qbabg"]
+>>>>>>> Stashed changes
 
 [node name="Node2D" type="Node2D"]
 
@@ -19,8 +23,14 @@ tile_set = ExtResource("2_wllbd")
 
 [node name="Player" parent="." instance=ExtResource("3_qny47")]
 position = Vector2(3, -14)
+worn_glasses = null
 
+<<<<<<< Updated upstream
 [node name="DroneGlassesPickup" parent="." instance=ExtResource("4_cjxq8")]
 position = Vector2(150, 85)
 
 [node name="VisionEffects" parent="." instance=ExtResource("5_rjplm")]
+=======
+[node name="NormalGlassesPickup" parent="." instance=ExtResource("4_qbabg")]
+position = Vector2(212, 89)
+>>>>>>> Stashed changes
