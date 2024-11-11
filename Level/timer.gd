@@ -1,4 +1,4 @@
-extends CanvasLayer
+class_name SpeedrunTimer extends CanvasLayer
 
 static var time_elapsed := 0.0
 

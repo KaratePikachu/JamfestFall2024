@@ -1,4 +1,4 @@
-extends "res://Level/timer.gd"
+extends SpeedrunTimer
 
 
 func _process(delta: float) -> void:
