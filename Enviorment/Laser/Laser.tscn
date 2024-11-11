@@ -12,6 +12,7 @@ script = ExtResource("1_cjqm3")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
+z_index = -1
 offset_right = 40.0
 offset_bottom = 40.0
 color = Color(0.492082, 8.36272e-07, 3.36915e-07, 1)

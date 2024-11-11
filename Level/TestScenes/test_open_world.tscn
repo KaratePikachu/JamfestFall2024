@@ -94,18 +94,15 @@ texture = ExtResource("2_wrlyu")
 
 [node name="Switch" parent="." instance=ExtResource("4_2pa1x")]
 position = Vector2(1885, 567)
-color = Color(0.6, 0.6, 0.6, 1)
 
 [node name="Door" parent="." instance=ExtResource("6_mqqco")]
 position = Vector2(2057, 352)
 scale = Vector2(1.08, 8.64)
-color = Color(1, 0, 0, 1)
 
 [node name="VisionEffects" parent="." instance=ExtResource("6_o2frb")]
 
 [node name="Enemy" parent="." instance=ExtResource("8_ovm8l")]
 position = Vector2(1023, 545)
-canSpin = true
 
 [node name="SunglassesPickup" parent="." instance=ExtResource("7_8mvxf")]
 position = Vector2(80, 535)

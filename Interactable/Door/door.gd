@@ -11,7 +11,7 @@ func _on_switch_triggered() -> void:
 	print("WAHHHHHHHH")
 	open = !open
 	if(open):
-		$DoorSprite.self_modulate.a = 0.2
+		$DoorSprite.self_modulate.a = 0.0
 		$CollisionArea.set_deferred("disabled", true)
 	else:
 		$DoorSprite.self_modulate.a = 1.0
