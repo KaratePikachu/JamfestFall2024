@@ -1,6 +1,7 @@
-[gd_scene load_steps=24 format=3 uid="uid://b0ao2qxh0iodv"]
+[gd_scene load_steps=25 format=3 uid="uid://b0ao2qxh0iodv"]
 
 [ext_resource type="Script" path="res://scene_tran.gd" id="1_8scfh"]
+[ext_resource type="PackedScene" uid="uid://sc34hymnuw3p" path="res://Level/End.tscn" id="2_06el5"]
 [ext_resource type="Texture2D" uid="uid://k7m1omb7r5cj" path="res://UI/MainMenu/fall/Fall1.png" id="2_ax5tu"]
 [ext_resource type="Texture2D" uid="uid://dddnikog0vs32" path="res://UI/MainMenu/fall/Fall2.png" id="3_8koe0"]
 [ext_resource type="Texture2D" uid="uid://d4et42pq8vg2l" path="res://UI/MainMenu/fall/Fall3.png" id="4_1b8xw"]
@@ -151,6 +152,7 @@ _data = {
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_8scfh")
+scene_name = ExtResource("2_06el5")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -38.0
@@ -177,3 +179,5 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
 text = "Frames Obtained!!!"
 metadata/_edit_use_anchors_ = true
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

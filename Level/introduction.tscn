@@ -12,7 +12,7 @@
 [ext_resource type="TileSet" uid="uid://dcc3nrrdg01tm" path="res://Objects/tileset.tres" id="11_1wx7c"]
 [ext_resource type="PackedScene" uid="uid://diroxtluegurn" path="res://Objects/tile_map_layers.tscn" id="11_v3t6o"]
 [ext_resource type="PackedScene" uid="uid://mhre4wt3fwb8" path="res://Enviorment/SceneChange/scene_transition.tscn" id="12_2wb1o"]
-[ext_resource type="PackedScene" uid="uid://c41bf4ogpo863" path="res://Level/level_1_tilemapped.tscn" id="12_gkxs0"]
+[ext_resource type="PackedScene" uid="uid://dd6s2dvtcg4qr" path="res://scene_tran1.tscn" id="12_ainaw"]
 [ext_resource type="PackedScene" uid="uid://dw1di6bneq8on" path="res://Enviorment/TextPopup/TextPopup.tscn" id="14_irc5d"]
 [ext_resource type="PackedScene" uid="uid://mxhsaam4gug" path="res://Enviorment/ForcedGlassesChange/glasses_change.tscn" id="15_3dak2"]
 [ext_resource type="Script" path="res://Level/trip_fall_die.gd" id="16_uuk8s"]
@@ -116,7 +116,7 @@ position = Vector2(148, 183)
 [node name="SceneTransition" parent="Text & Triggers" instance=ExtResource("12_2wb1o")]
 position = Vector2(4648, 275)
 scale = Vector2(37.36, 1)
-scene_name = ExtResource("12_gkxs0")
+scene_name = ExtResource("12_ainaw")
 
 [node name="VisionEffects" parent="." instance=ExtResource("7_087av")]
 

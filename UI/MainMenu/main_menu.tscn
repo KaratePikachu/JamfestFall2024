@@ -1,6 +1,4 @@
-
-[gd_scene load_steps=27 format=3 uid="uid://cq7qqb2224tf4"]
-
+[gd_scene load_steps=27 format=3 uid="uid://d22ikjjd224no"]
 
 [ext_resource type="Script" path="res://UI/MainMenu/main_menu.gd" id="1_4wr78"]
 [ext_resource type="Texture2D" uid="uid://k7m1omb7r5cj" path="res://UI/MainMenu/fall/Fall1.png" id="2_k7qwj"]
@@ -20,100 +18,13 @@
 [ext_resource type="Texture2D" uid="uid://11ha5y2gds0b" path="res://UI/MainMenu/fall/Fall15.png" id="16_ib0a1"]
 [ext_resource type="Texture2D" uid="uid://dbthgba3h4qmv" path="res://UI/MainMenu/fall/Fall16.png" id="17_tpebg"]
 [ext_resource type="Texture2D" uid="uid://ciwj04yv3t7o7" path="res://UI/MainMenu/fall/Fall18.png" id="18_hyw7r"]
-
-[ext_resource type="Texture2D" uid="uid://bpwnqtkb0yxxg" path="res://UI/MainMenu/fall/Fall17.png" id="18_qyd88"]
-
-[sub_resource type="Animation" id="Animation_rilcj"]
-length = 0.001
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3001, 0.4001, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("2_k7qwj"), ExtResource("3_r2l1k"), ExtResource("4_k2pn3"), ExtResource("5_asm76"), ExtResource("6_owvar"), ExtResource("7_gtir4"), ExtResource("8_7hjwb"), ExtResource("9_1y0ou"), ExtResource("10_vmvxc"), ExtResource("11_urcx0"), ExtResource("12_0syko"), ExtResource("13_47j77"), ExtResource("14_7a2yr"), ExtResource("15_1wj2p"), ExtResource("16_ib0a1"), ExtResource("17_tpebg"), ExtResource("18_qyd88"), ExtResource("18_hyw7r")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(323, 533), Vector2(686, 344)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-0.377775]
-}
-
-[sub_resource type="Animation" id="Animation_4nhci"]
-resource_name = "flop"
-length = 1.80001
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("2_k7qwj"), ExtResource("3_r2l1k"), ExtResource("4_k2pn3"), ExtResource("5_asm76"), ExtResource("6_owvar"), ExtResource("7_gtir4"), ExtResource("8_7hjwb"), ExtResource("9_1y0ou"), ExtResource("10_vmvxc"), ExtResource("11_urcx0"), ExtResource("12_0syko"), ExtResource("13_47j77"), ExtResource("14_7a2yr"), ExtResource("15_1wj2p"), ExtResource("16_ib0a1"), ExtResource("17_tpebg"), ExtResource("18_hyw7r")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.9),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(323, 533), Vector2(686, 344)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-0.377775]
-}
-
 [ext_resource type="Texture2D" uid="uid://dfi5ehafxd0tf" path="res://Enviorment/Goomba/Walk/Hyrax_Walk1.png" id="19_w4ef0"]
 [ext_resource type="Texture2D" uid="uid://yhfxpqtlg2cn" path="res://Enviorment/Goomba/Walk/Hyrax_Walk2.png" id="20_2hm0l"]
 [ext_resource type="Texture2D" uid="uid://4i1tc42g87wk" path="res://Enviorment/Goomba/Walk/Hyrax_Walk3.png" id="21_hqthj"]
 [ext_resource type="Texture2D" uid="uid://dmd1eefts7fda" path="res://Enviorment/Goomba/Walk/Hyrax_Walk4.png" id="22_q0jtc"]
 
-
-[sub_resource type="Animation" id="Animation_f5q8q"]
-resource_name = "flopp"
-length = 1.90001
-step = 0.1
+[sub_resource type="Animation" id="Animation_rilcj"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -121,10 +32,10 @@ tracks/0/path = NodePath("Guy:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3001, 0.4001, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_k7qwj"), ExtResource("3_r2l1k"), ExtResource("4_k2pn3"), ExtResource("5_asm76"), ExtResource("6_owvar"), ExtResource("7_gtir4"), ExtResource("8_7hjwb"), ExtResource("9_1y0ou"), ExtResource("10_vmvxc"), ExtResource("11_urcx0"), ExtResource("12_0syko"), ExtResource("13_47j77"), ExtResource("14_7a2yr"), ExtResource("15_1wj2p"), ExtResource("16_ib0a1"), ExtResource("17_tpebg"), ExtResource("18_qyd88"), ExtResource("18_hyw7r")]
+"values": [ExtResource("2_k7qwj")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -133,10 +44,10 @@ tracks/1/path = NodePath("Guy:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.8),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(323, 533), Vector2(686, 344)]
+"values": [Vector2(365, 580)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -249,8 +160,8 @@ tracks/1/keys = {
 _data = {
 "RESET": SubResource("Animation_rilcj"),
 "flop": SubResource("Animation_4nhci"),
-
 "run": SubResource("Animation_y5sly")
+}
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -299,10 +210,8 @@ libraries = {
 "": SubResource("AnimationLibrary_gwp2w")
 }
 
-
-[node name="Sprite" type="Sprite2D" parent="."]
-position = Vector2(323, 533)
-
+[node name="Guy" type="Sprite2D" parent="."]
+position = Vector2(365, 580)
 rotation = -0.377775
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_k7qwj")
